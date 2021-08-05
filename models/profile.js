@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  reps: {type: mongoose.Schema.Types.ObjectId, ref: "Reps", required: true}
+  reps: {type: mongoose.Schema.Types.ObjectId, ref: "Reps"}
 }, {
   timestamps: true
 })

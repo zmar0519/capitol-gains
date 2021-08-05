@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const repSchema = new mongoose.Schema({
   name: String,
-  purchases: {type: mongoose.Schema.Types.ObjectId, ref: "Transactions", required: true},
+  purchases: {type: mongoose.Schema.Types.ObjectId, ref: "Transactions"},
   avatar: String,
 }, {
   timestamps: true
