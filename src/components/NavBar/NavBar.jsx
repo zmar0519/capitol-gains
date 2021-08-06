@@ -11,8 +11,8 @@ const NavBar = ({ user, handleLogout }) => {
 					<div className="title">Capitol Gains</div>
 					<div className="right-nav-btn-container">
 					<div className="welcome">Welcome, {user.handle}</div>
-						<div>
-							<NavLink to="/myProfile" className="my-profile"><button className="my-profile-btn">My Profile</button></NavLink>
+						<div className="my-profile">
+							<NavLink to="/myProfile" ><button className="my-profile-btn">My Profile</button></NavLink>
 						</div>
 						<div>
 							<NavLink to='' onClick={handleLogout} className="log-out"><button className="log-out-btn">Log out</button></NavLink>
@@ -25,11 +25,11 @@ const NavBar = ({ user, handleLogout }) => {
 
 					<div className="right-nav-btn-container">
 						<div className="welcome">Welcome!</div>
-						<div>
-							<NavLink to="/login" className="log-in"><button>Log In</button></NavLink>
+						<div className="log-in">
+							<NavLink to="/login" ><button className="log-in-btn">Log In</button></NavLink>
 						</div>
-						<div>
-							<NavLink to="/signup" className="sign-up"><button>Sign Up</button></NavLink>
+						<div className="sign-up">
+							<NavLink to="/signup" ><button className="sign-up-btn">Sign Up</button></NavLink>
 						</div>
 					</div>
 				</div>

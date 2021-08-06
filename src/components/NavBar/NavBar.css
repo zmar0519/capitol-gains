@@ -21,6 +21,7 @@
     justify-content: space-between;
     margin: 0 20px;
     padding: 0;
+    align-items: center;
 }
 
 .title {
@@ -30,22 +31,48 @@
 }
 
 .my-profile, .log-out, .log-in, .sign-up {
+    display: flex;
+    align-items: center;
     color: white;
-    margin-left: 25px;
+    margin: 15px 10px 0;
+}
+
+.my-profile-btn,  .log-in-btn, .sign-up-btn {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(0,40,104,1);
+    color: white;
+    border-color: white;
     font-family: 'Yeseva One', cursive;
+
+}
+
+.log-out-btn {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(191,10,48,1);
+    border-color: white;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+
 }
 
 .welcome {
     color: white;
     margin-right: 25px;
+    font-size: 22px;
     font-family: 'Yeseva One', cursive;
 }
 
-.my-profile:hover, .log-in:hover, .sign-up:hover {
-    color: rgba(191,10,48,1);
+.my-profile-btn:hover, .log-in-btn:hover, .sign-up-btn:hover {
+    color: rgba(0,40,104,1);
+    border-color: rgba(0,40,104,1);
+    background-color: yellow;
 }
 
-.log-out:hover {
+.log-out-btn:hover {
+    background-color: white;
+    border-color: rgba(191,10,48,1);
     color: rgba(191,10,48,1);
 }
 
