@@ -11,7 +11,7 @@ import moon from "../../assets/avatars/moon.png";
 import { signup } from "../../services/authService";
 
 // Components
-// import AvatarSelection from "./AvatarSelection/AvatarSelection";
+import AvatarSelection from "./AvatarSelection/AvatarSelection";
 // import Animation from "../../components/misc/Animation";
 
 const SignUp = (props) => {
@@ -52,17 +52,17 @@ const SignUp = (props) => {
 
   return (
     <div className="signup-page">
-      {popup && (
+
+      {popup && 
         <AvatarSelection
           formData={formData}
           handleChange={handleChange}
           handlePopup={handlePopup}
         />
-      )}
-
-      
-        <div className="form-container">
-          <div className="title-container">
+      }
+    
+      <div className="form-container">
+        <div className="title-container">
             <h1>Create an Account</h1>
             {authError ? (
               <h3>{authError}</h3>
