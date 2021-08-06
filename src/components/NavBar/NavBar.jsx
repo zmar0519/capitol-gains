@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
-		<nav>
+		<nav className="nav-bar">
 			<div>
 			{user ? (
 				<ul>
@@ -12,7 +12,7 @@ const NavBar = ({ user, handleLogout }) => {
 						<NavLink to='' onClick={handleLogout}>Log out</NavLink>
 					</li>
 					<li>
-						<NavLink to="/users">Users</NavLink>
+						<NavLink to="/myProile">myProfile</NavLink>
 					</li>
 				</ul>
 			) : (
@@ -20,9 +20,9 @@ const NavBar = ({ user, handleLogout }) => {
 					<li>
 						<NavLink to="/login">Log In</NavLink>
 					</li>
-					<li>
-						<NavLink to="/users">Users</NavLink>
-					</li>
+					{/* <li>
+						<NavLink to="/myProfile">My Profile</NavLink>
+					</li> */}
 					<li>
 						<NavLink to="/signup">Sign Up</NavLink>
 					</li>
