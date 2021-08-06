@@ -5,6 +5,7 @@ const transactionSchema = new mongoose.Schema({
   amount: Number,
   date: Date,
   transactionType: String,
+  repName: String,
 }, {
   timestamps: true
 })
