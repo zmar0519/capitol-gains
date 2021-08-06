@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
 			{user ? (
 				<div className="nav-item-container">
 					<div className="welcome">Welcome, {user.handle}</div>
-					<div>
+					<div className="right-nav-btn-container">
 						<div>
 							<NavLink to="/myProfile" className="my-profile">My Profile</NavLink>
 						</div>
@@ -21,7 +21,7 @@ const NavBar = ({ user, handleLogout }) => {
 			) : (
 				<div className="nav-item-container">
 					<div className="welcome">Welcome!</div>
-					<div>
+					<div className="right-nav-btn-container">
 						<div>
 							<NavLink to="/login" className="log-in">Log In</NavLink>
 						</div>

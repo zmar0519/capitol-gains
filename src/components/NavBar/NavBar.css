@@ -24,8 +24,28 @@
 }
 
 .welcome {
-    font-size: 40px;
+    font-size: 35px;
     color: white;
+    font-family: 'Yeseva One', cursive;
+}
+
+.my-profile, .log-out, .log-in, .sign-up {
+    color: rgb(255, 255, 63);
+    margin-left: 25px;
+    font-family: 'Yeseva One', cursive;
+}
+
+.my-profile:hover, .log-in:hover, .sign-up:hover {
+    color: rgba(191,10,48,1);
+}
+
+.log-out:hover {
+    color: rgba(191,10,48,1);
+}
+
+.right-nav-btn-container {
+    display: flex;
+    align-items: center;
 }
 
 a {
