@@ -41,7 +41,7 @@ const App = () => {
 		<>
 			<NavBar user={user} handleLogout={handleLogout}/>
 			<Route exact path='/'>
-				<Landing user={user} />
+				<Landing user={user} senateTrans={senateTransactions} />
 			</Route>
 			<Route exact path='/signup'>
 				{user ? 
