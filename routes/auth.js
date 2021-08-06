@@ -10,6 +10,10 @@ router.post('/signup', authCtrl.signup)
 router.post('/login', authCtrl.login)
 
 /*---------- Protected Routes ----------*/
+
 router.use(decodeUserFromToken);
 
-export { router };
+export {
+  router
+}
+
