@@ -43,6 +43,7 @@ const App = () => {
 				}
 			}
 		}
+		verifyToken()
 	},[authenticated])
 
 	const handleLogout = () => {

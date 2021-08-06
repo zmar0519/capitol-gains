@@ -60,7 +60,7 @@ const SignUp = (props) => {
         />
       )}
 
-      <div className="left-container">
+      
         <div className="form-container">
           <div className="title-container">
             <h1>Create an Account</h1>
@@ -116,7 +116,7 @@ const SignUp = (props) => {
             </Link>
           </div>
         </div>
-      </div>
+     
     </div>
   )
     }

@@ -9,14 +9,12 @@ import "./Auth.css";
 const SignUp = (props) => {
   return (
     <div className="signup-page">
-      <div className="left-container">
         <div className="form-container">
           <div className="title-container">
             <h1>Create an Account</h1>
           </div>
           <form className="register-form">Inputs Here</form>
         </div>
-      </div>
     </div>
   );
 };
