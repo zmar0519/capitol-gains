@@ -1,7 +1,8 @@
-import React, { useState, Component } from "react";
+import React, { useState, components } from "react";
 import Avatar from "react-avatar";
 import { useHistory, Link } from "react-router-dom";
 import "./Auth.css";
+import moon from "../../assets/avatars/moon.png";
 
 // Assets
 
@@ -21,7 +22,7 @@ const SignUp = (props) => {
     handle: "",
     email: "",
     password: "",
-    avatar: "",
+    avatar: moon,
   });
 
   const handlePopup = () => {
@@ -44,19 +45,19 @@ const SignUp = (props) => {
         handle: "",
         email: "",
         password: "",
-        avatar: "",
+        avatar: moon,
       });
     }
   };
 
   return (
     <div className="signup-page">
-      {/* {popup && (
+      {popup && (
         <AvatarSelection
           formData={formData}
           handleChange={handleChange}
           handlePopup={handlePopup}
-        /> */}
+        />
       )}
 
       <div className="left-container">
@@ -100,7 +101,7 @@ const SignUp = (props) => {
             />
 
             <button id="profilePic-button" type="button" onClick={handlePopup}>
-              Upload a Profile Picture
+              Upload/Select a Profile Picture
             </button>
 
             <button id="submit-button" type="submit">

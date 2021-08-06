@@ -2,10 +2,9 @@ import React from "react";
 import "./Auth.css";
 
 // Assets
-import moon from "../../assets/avatars/moon.png";
 
 // Services
-// we will import a sign up service momentarily
+
 
 const SignUp = (props) => {
   return (

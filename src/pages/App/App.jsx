@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
 import { Route, Redirect, useHistory } from 'react-router-dom'
+
+
+// Pages + Component
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
+
+// Services
 import * as authService from '../../services/authService'
+import { getUser } from "../services/authService"
 
 const App = () => {
 	const history = useHistory()
 	const [user, setUser] = useState(authService.getUser())
+	const [currentUser, setCurrentUser] = useState()
+	const [authenticated, setAuthenticated] = useState(false)
 
 	const handleLogout = () => {
 		authService.logout()
