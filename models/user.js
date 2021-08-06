@@ -4,14 +4,17 @@ const SALT_ROUNDS = 6
 
 const userSchema = new mongoose.Schema(
   {
-    name: String,
+    handle: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     email: { type: String, required: true, lowercase: true, unique: true },
     password: { type: String, required: true }, // Summer added this
     avatar: { type: String, required: true }, // Summer added this
     profile: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Profile",
-      required: true,
     },
   },
   {
