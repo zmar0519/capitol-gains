@@ -5,7 +5,7 @@ const Landing = ({user, senateTrans}) => {
   return (
     <main className={styles.container}>
       <h1>
-        hello, {user ? user.name : "gang"}
+        Hello, {user ? user.handle : "gang"}
       </h1>
       <div>
         {senateTrans.map(transaction => (
