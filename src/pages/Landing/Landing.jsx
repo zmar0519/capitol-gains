@@ -1,8 +1,7 @@
 import styles from './Landing.css'
 import SideMenu from '../../components/SideMenu/SideMenu'
 
-const Landing = ({user, senateTrans}) => {
-  console.log("senate in landing", senateTrans)
+const Landing = ({user}) => {
   return (
     <main className={styles.container}>
       

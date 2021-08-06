@@ -12,8 +12,8 @@ const SideMenu = () => {
 
 				<div className="menu-items">
 						<>
-            <Link to="/house"><button>House List</button></Link>
-            <Link to="/senate"><button>Senate List</button></Link>
+            <Link to="/representatives"><button>Representatives</button></Link>
+            <Link to="/senators"><button>Senators</button></Link>
 						</>
 				</div>
 			</div>
