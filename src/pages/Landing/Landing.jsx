@@ -8,9 +8,6 @@ const Landing = ({user, senateTrans}) => {
         Hello, {user ? user.handle : "gang"}
       </h1>
       <div>
-        {senateTrans.map(transaction => (
-          <div>{transaction.senator}</div>
-        ))}
       </div>
     </main>
   )

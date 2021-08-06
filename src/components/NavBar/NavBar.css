@@ -1,14 +1,33 @@
-.nav-bar{
-    height: 70px;
-display: flex;
-align-items: center;
-border-bottom: 1px solid #292934;
-padding: 10px 35px 10px 35px;
-background: #12121b;
+.nav-bar {
+	height: 70px;
+	display: flex;
+    align-items: center;
+	border-bottom: 1px solid #292934;
+	background: linear-gradient(90deg, rgba(191,10,48,1) 0%, rgba(0,40,104,1) 100%);
 }
 
 .logo {
-display: flex;
-align-items: center;
-text-decoration: none;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+.nav-ul-container {
+    display: flex;
+    width: 100%;
+}
+.nav-item-container {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding: 0;
+}
+
+.welcome {
+    font-size: 40px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
 }
