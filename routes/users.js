@@ -6,12 +6,12 @@ const router = Router();
 
 // ========= Public Routes =========
 
-router.get("/top-users", usersCtrl.getTopUsers);
+// router.get("/top-users", usersCtrl.getTopUsers);
 
 
-/*---------- Protected Routes ----------*/
-router.use(decodeUserFromToken)
-router.get('/', checkAuth, usersCtrl.index)
+// /*---------- Protected Routes ----------*/
+// router.use(decodeUserFromToken)
+// router.get('/', checkAuth, usersCtrl.index)
 
 
 export { router }
