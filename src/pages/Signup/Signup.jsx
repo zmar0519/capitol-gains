@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { useHistory, Link } from "react-router-dom";
-import "./Auth.css";
-import moon from "../../assets/avatars/moon.png";
+import "./Signup.css";
+import moon from "../../assets/Avatars/moon.png";
 
 // Assets
 
@@ -10,8 +10,7 @@ import moon from "../../assets/avatars/moon.png";
 import { signup } from "../../services/authService";
 
 // Components
-import AvatarSelection from "./AvatarSelection/AvatarSelection";
-// import Animation from "../../components/misc/Animation";
+import AvatarSelection from "../AvatarSelection/AvatarSelection";
 
 const SignUp = (props) => {
   const [popup, setPopup] = useState(false);

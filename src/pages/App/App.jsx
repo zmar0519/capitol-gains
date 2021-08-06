@@ -4,14 +4,14 @@ import { Route, Redirect, useHistory } from 'react-router-dom'
 
 // Pages + Component
 import NavBar from '../../components/NavBar/NavBar'
-import Signup from '../Signup/Signup'
+import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 
 // Services
 import * as authService from '../../services/authService'
-import { getUser } from "../services/authService"
+import { getUser } from "../../services/authService"
 
 const App = () => {
 	const history = useHistory()
@@ -61,7 +61,7 @@ const App = () => {
 			<Route exact path='/signup'>
 				{user ? 
 					<Redirect to='/' /> : 
-					<Signup handleSignupOrLogin={handleSignupOrLogin}/>
+					<SignUp handleSignupOrLogin={handleSignupOrLogin}/>
 				}
 			</Route>
 			<Route exact path='/login'>
