@@ -19,15 +19,22 @@ const App = () => {
 	const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
 
-	const handleLogout = () => {
-		authService.logout()
-		setUser(null)
-		history.push('/')
+
+	// const handleSignupOrLogin = () => {
+	// 	setUser(authService.getUser())
+	// }
+
+	const handleSignupOrLogin = async () => {
+		const user = getUser()
+		setCurrentUser(user)
+		setAuthenticated(true)
 	}
 
-	const handleSignupOrLogin = () => {
-		setUser(authService.getUser())
-	}
+	const handleLogout = () => {
+      authService.logout();
+      setUser(null);
+      history.push("/");
+    };
 
 	return (
 		<>
