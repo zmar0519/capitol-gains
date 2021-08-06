@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Redirect, useHistory } from 'react-router-dom'
 
 
@@ -29,6 +29,21 @@ const App = () => {
 		setCurrentUser(user)
 		setAuthenticated(true)
 	}
+
+	useEffect(()=>{
+		const verifyToken = async()=>{
+			const token = localStorage.getItem("token")
+			if (token) {
+				try {
+					const user = getUser()
+					setCurrentUser(user)
+					setAuthenticated(true)
+				} catch (error){
+					localStorage.clear()
+				}
+			}
+		}
+	},[authenticated])
 
 	const handleLogout = () => {
       authService.logout();
