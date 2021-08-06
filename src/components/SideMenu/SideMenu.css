@@ -1,10 +1,9 @@
 /* SIDE PANEL CSS */
 
 .menu {
-  width: 100%;
+  width: 15%;
   height: 100%;
   text-align: left;
-  border-radius: 8px;
   border: 1px solid #292934;
   display: flex;
   flex-direction: column;
@@ -12,20 +11,20 @@
 }
 
 .menu-header {
-  padding-left: 12px;
   border-bottom: 1px solid #292934;
-  color: rgb(200, 200, 200);
+  color: yellow;
   height: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0;
-  background: #12121b;
+  background: linear-gradient(180deg, rgba(191,10,48,1) 0%, rgba(0,40,104,1) 50%);
 }
 
 .menu-items {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 79vh;
   padding: 10px;
 }
 
