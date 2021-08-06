@@ -1,5 +1,4 @@
-import React, { useState, components } from "react";
-import Avatar from "react-avatar";
+import React, { useState} from "react";
 import { useHistory, Link } from "react-router-dom";
 import "./Auth.css";
 import moon from "../../assets/avatars/moon.png";
@@ -67,7 +66,7 @@ const SignUp = (props) => {
             {authError ? (
               <h3>{authError}</h3>
             ) : (
-              <h3>Social media for developers</h3>
+              <h3>Invest Like Politicians</h3>
             )}
           </div>
           <form className="register-form" onSubmit={handleSubmit}>
@@ -110,7 +109,7 @@ const SignUp = (props) => {
           </form>
 
           <div className="redirect-container">
-            <p>Already have an account?</p>
+            <p>Already Signed Up?</p>
             <Link className="redirect-link" to="/signin">
               <p>Sign In</p>
             </Link>
