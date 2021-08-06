@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Redirect, useHistory } from 'react-router-dom'
+import * as houseApiService from "../../services/houseApiService"
+import * as senateApiService from "../../services/senateApiService"
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -10,6 +12,20 @@ import * as authService from '../../services/authService'
 const App = () => {
 	const history = useHistory()
 	const [user, setUser] = useState(authService.getUser())
+	const [houseTransactions, setHouseTransactions] = useState([])
+	const [senateTransactions, setSenateTransactions] = useState([])
+	
+	useEffect(() => {
+		async function getTransactions(){
+			let house = await houseApiService.getAllHouseApi()
+			console.log("this is house", house)
+			setHouseTransactions(house)
+			let senate = await senateApiService.getAllSenateApi()
+			console.log("this is senate", senate)
+			setSenateTransactions(senate)
+		}
+		getTransactions()
+	}, []);
 
 	const handleLogout = () => {
 		authService.logout()
