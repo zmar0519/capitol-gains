@@ -1,32 +1,35 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import "./NavBar.css"
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
 		<nav className="nav-bar">
-			<div>
+			<div className="nav-ul-container">
 			{user ? (
-				<ul>
-					<li>Welcome, {user.name}</li>
-					<li>
-						<NavLink to='' onClick={handleLogout}>Log out</NavLink>
-					</li>
-					<li>
-						<NavLink to="/myProfile">My Profile</NavLink>
-					</li>
-				</ul>
+				<div className="nav-item-container">
+					<div className="welcome">Welcome, {user.handle}</div>
+					<div className="right-nav-btn-container">
+						<div>
+							<NavLink to="/myProfile" className="my-profile">My Profile</NavLink>
+						</div>
+						<div>
+							<NavLink to='' onClick={handleLogout} className="log-out">Log out</NavLink>
+						</div>
+					</div>
+				</div>
 			) : (
-				<ul>
-					<li>
-						<NavLink to="/login">Log In</NavLink>
-					</li>
-					<li>
-						<NavLink to="/myProfile">My Profile</NavLink>
-					</li>
-					<li>
-						<NavLink to="/signup">Sign Up</NavLink>
-					</li>
-				</ul>
+				<div className="nav-item-container">
+					<div className="welcome">Welcome!</div>
+					<div className="right-nav-btn-container">
+						<div>
+							<NavLink to="/login" className="log-in">Log In</NavLink>
+						</div>
+						<div>
+							<NavLink to="/signup" className="sign-up">Sign Up</NavLink>
+						</div>
+					</div>
+				</div>
 			)}
 			</div>
 		</nav>
