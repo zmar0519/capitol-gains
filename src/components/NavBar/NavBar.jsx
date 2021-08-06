@@ -8,25 +8,28 @@ const NavBar = ({ user, handleLogout }) => {
 			<div className="nav-ul-container">
 			{user ? (
 				<div className="nav-item-container">
-					<div className="welcome">Welcome, {user.handle}</div>
+					<div className="title">Capitol Gains</div>
 					<div className="right-nav-btn-container">
-						<div>
-							<NavLink to="/myProfile" className="my-profile">My Profile</NavLink>
+					<div className="welcome">Welcome, {user.handle}</div>
+						<div className="my-profile">
+							<NavLink to="/myProfile" ><button className="my-profile-btn">My Profile</button></NavLink>
 						</div>
 						<div>
-							<NavLink to='' onClick={handleLogout} className="log-out">Log out</NavLink>
+							<NavLink to='' onClick={handleLogout} className="log-out"><button className="log-out-btn">Log out</button></NavLink>
 						</div>
 					</div>
 				</div>
 			) : (
 				<div className="nav-item-container">
-					<div className="welcome">Welcome!</div>
+					<div className="title">Capitol Gains</div>
+
 					<div className="right-nav-btn-container">
-						<div>
-							<NavLink to="/login" className="log-in">Log In</NavLink>
+						<div className="welcome">Welcome!</div>
+						<div className="log-in">
+							<NavLink to="/login" ><button className="log-in-btn">Log In</button></NavLink>
 						</div>
-						<div>
-							<NavLink to="/signup" className="sign-up">Sign Up</NavLink>
+						<div className="sign-up">
+							<NavLink to="/signup" ><button className="sign-up-btn">Sign Up</button></NavLink>
 						</div>
 					</div>
 				</div>
