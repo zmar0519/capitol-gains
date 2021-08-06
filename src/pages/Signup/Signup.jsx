@@ -11,7 +11,7 @@ const Signup = (props) => {
 
   return (
     <main className={styles.container}>
-      <h1>Sign Up</h1>
+      <h1>Join the Club</h1>
       {message && <p>{message}</p> }
       <SignupForm 
         updateMessage={updateMessage}

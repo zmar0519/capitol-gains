@@ -1,104 +1,123 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import styles from './SignupForm.module.css'
-import * as authService from '../../services/authService'
+import React, { useState, Component } from "react";
+import Avatar from "react-avatar";
+import { useHistory, Link } from "react-router-dom";
+import "./Auth.css";
 
-const SignupForm = (props) => {
-  const history = useHistory()
-  const [validForm, setValidForm] = useState(false)
+// Assets
+
+
+// Services
+import { signup } from "../../services/authService";
+
+// Components
+// import AvatarSelection from "./AvatarSelection/AvatarSelection";
+// import Animation from "../../components/misc/Animation";
+
+const SignUp = (props) => {
+  const [popup, setPopup] = useState(false);
+  const history = useHistory();
+  const [authError, setAuthError] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    passwordConf: '',
-  })
+    handle: "",
+    email: "",
+    password: "",
+    avatar: "",
+  });
 
-  const handleChange = evt => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
+  const handlePopup = () => {
+    setPopup(!popup);
+  };
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
-    authService.signup(formData)
-    .then(() => {
-      props.handleSignupOrLogin()
-      history.push('/')
-    })
-    .catch(err => {
-      props.updateMessage(err.message)
-    })
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  useEffect(() => {
-    const { name, email, password, passwordConf } = formData
-    const isFormInvalid = !(name && email && password === passwordConf)
-		setValidForm(isFormInvalid)
-	}, [formData])
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signup(formData);
+      props.handleSignupOrLogin();
+      history.push("/home");
+    } catch (error) {
+      setAuthError(error.message);
+      setFormData({
+        handle: "",
+        email: "",
+        password: "",
+        avatar: "",
+      });
+    }
+  };
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>
-          Name
-        </label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="name"
-          value={formData.name}
-          name="name"
-          onChange={handleChange}
-        />
+    <div className="signup-page">
+      {/* {popup && (
+        <AvatarSelection
+          formData={formData}
+          handleChange={handleChange}
+          handlePopup={handlePopup}
+        /> */}
+      )}
+
+      <div className="left-container">
+        <div className="form-container">
+          <div className="title-container">
+            <h1>Create an Account</h1>
+            {authError ? (
+              <h3>{authError}</h3>
+            ) : (
+              <h3>Social media for developers</h3>
+            )}
+          </div>
+          <form className="register-form" onSubmit={handleSubmit}>
+            <input
+              onChange={handleChange}
+              value={formData.handle}
+              autoComplete="off"
+              required
+              name="handle"
+              type="text"
+              placeholder="Username"
+            />
+            <input
+              onChange={handleChange}
+              value={formData.email}
+              autoComplete="off"
+              required
+              name="email"
+              type="email"
+              placeholder="Email"
+            />
+
+            <input
+              onChange={handleChange}
+              value={formData.password}
+              autoComplete="off"
+              required
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+
+            <button id="profilePic-button" type="button" onClick={handlePopup}>
+              Upload a Profile Picture
+            </button>
+
+            <button id="submit-button" type="submit">
+              SIGN UP
+            </button>
+          </form>
+
+          <div className="redirect-container">
+            <p>Already have an account?</p>
+            <Link className="redirect-link" to="/signin">
+              <p>Sign In</p>
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email-input" className={styles.label}>Email</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="email"
-          value={formData.email}
-          name="email"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password-input" className={styles.label}>
-          Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={formData.password}
-          name="password"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm-input" className={styles.label}>
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="confirm-input"
-          value={formData.passwordConf}
-          name="passwordConf"
-          onChange={handleChange}
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={validForm} className={styles.button}>Sign Up</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+    </div>
   )
-}
- 
-export default SignupForm
+    }
+
+export default SignUp;
