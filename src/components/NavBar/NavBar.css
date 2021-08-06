@@ -3,7 +3,7 @@
 	display: flex;
     align-items: center;
 	border-bottom: 1px solid #292934;
-	background: linear-gradient(90deg, rgba(191,10,48,1) 0%, rgba(0,40,104,1) 100%);
+	background: linear-gradient(90deg, rgba(0,40,104,1) 0%, rgba(191,10,48,1) 100%);
 }
 
 .logo {
@@ -23,15 +23,21 @@
     padding: 0;
 }
 
-.welcome {
+.title {
     font-size: 35px;
-    color: white;
+    color: yellow;
     font-family: 'Yeseva One', cursive;
 }
 
 .my-profile, .log-out, .log-in, .sign-up {
-    color: rgb(255, 255, 63);
+    color: white;
     margin-left: 25px;
+    font-family: 'Yeseva One', cursive;
+}
+
+.welcome {
+    color: white;
+    margin-right: 25px;
     font-family: 'Yeseva One', cursive;
 }
 

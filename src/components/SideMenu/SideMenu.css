@@ -12,13 +12,13 @@
 
 .menu-header {
   border-bottom: 1px solid #292934;
-  color: yellow;
+  color: white;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  background: linear-gradient(180deg, rgba(191,10,48,1) 0%, rgba(0,40,104,1) 50%);
+  background: linear-gradient(180deg, rgba(0,40,104,1) 0%, rgba(191,10,48,1) 50%);
 }
 
 .menu-items {
