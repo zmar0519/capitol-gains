@@ -2,14 +2,22 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 const SALT_ROUNDS = 6
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, required: true, lowercase: true, unique: true },
-  password: String,
-  profile: {type: mongoose.Schema.Types.ObjectId, ref: "Profile", required: true}
-}, {
-  timestamps: true,
-})
+const userSchema = new mongoose.Schema(
+  {
+    name: String,
+    email: { type: String, required: true, lowercase: true, unique: true },
+    password: { type: String, required: true }, // Summer added this
+    avatar: { type: String, required: true }, // Summer added this
+    profile: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Profile",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 userSchema.set('toJSON', {
   transform: function (doc, ret) {

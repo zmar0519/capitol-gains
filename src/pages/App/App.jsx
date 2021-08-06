@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Redirect, useHistory } from 'react-router-dom'
+
+
+
+// Pages + Component
+
 import * as houseApiService from "../../services/houseApiService"
 import * as senateApiService from "../../services/senateApiService"
+
 import NavBar from '../../components/NavBar/NavBar'
-import Signup from '../Signup/Signup'
+import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
+
+// Services
 import * as authService from '../../services/authService'
+import { getUser } from "../../services/authService"
 
 const App = () => {
 	const history = useHistory()
 	const [user, setUser] = useState(authService.getUser())
+
+	const [currentUser, setCurrentUser] = useState()
+	const [authenticated, setAuthenticated] = useState(false)
+
 	const [houseTransactions, setHouseTransactions] = useState([])
 	const [senateTransactions, setSenateTransactions] = useState([])
 	
@@ -27,15 +40,39 @@ const App = () => {
 		getTransactions()
 	}, []);
 
-	const handleLogout = () => {
-		authService.logout()
-		setUser(null)
-		history.push('/')
+
+
+	// const handleSignupOrLogin = () => {
+	// 	setUser(authService.getUser())
+	// }
+
+	const handleSignupOrLogin = async () => {
+		const user = getUser()
+		setCurrentUser(user)
+		setAuthenticated(true)
 	}
 
-	const handleSignupOrLogin = () => {
-		setUser(authService.getUser())
-	}
+	useEffect(()=>{
+		const verifyToken = async()=>{
+			const token = localStorage.getItem("token")
+			if (token) {
+				try {
+					const user = getUser()
+					setCurrentUser(user)
+					setAuthenticated(true)
+				} catch (error){
+					localStorage.clear()
+				}
+			}
+		}
+		verifyToken()
+	},[authenticated])
+
+	const handleLogout = () => {
+      authService.logout();
+      setUser(null);
+      history.push("/");
+    };
 
 	return (
 		<>
@@ -46,7 +83,7 @@ const App = () => {
 			<Route exact path='/signup'>
 				{user ? 
 					<Redirect to='/' /> : 
-					<Signup handleSignupOrLogin={handleSignupOrLogin}/>
+					<SignUp handleSignupOrLogin={handleSignupOrLogin}/>
 				}
 			</Route>
 			<Route exact path='/login'>
