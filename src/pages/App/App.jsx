@@ -147,9 +147,12 @@ const App = () => {
 				: <Redirect to='/login' />		
 				}
 			</Route>
-			<Route exact path={`/representatives/:senatorName`}>
+			<Route exact path={`/representatives/:representativeName`}>
 				{user ?
-				<RepresentativeDetails />
+				<RepresentativeDetails
+					houseTransactions={houseTransactions}
+					representativeList={representativeList}
+				/>
 				: <Redirect to='/login' />		
 				}
 			</Route>
