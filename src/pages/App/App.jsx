@@ -6,6 +6,7 @@ import { Route, Redirect, useHistory } from 'react-router-dom'
 // Pages + Component
 
 import Senators from '../Senators/Senators'
+import Representatives from '../Representatives/Representatives'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -54,11 +55,15 @@ const App = () => {
 
 	useEffect(() => {
 		async function getSenators(){
-			console.log(senatorList)
 			let senatorsArray = await senatorDoc.senators.map(senator => senator)
 			setSenatorList(senatorsArray)
 		}
+		async function getRepresentatives(){
+			let representativesArray = await representativeDoc.representatives.map(representative => representative)
+			setRepresentativeList(representativesArray)
+		}
 		getSenators()
+		getRepresentatives()
 	}, [])
 
 
@@ -119,6 +124,12 @@ const App = () => {
 			<Route exact path="/senators">
 				{user ?
 				<Senators senatorList={senatorList} />
+				: <Redirect to='/login' />
+				}
+			</Route>
+			<Route exact path="/representatives">
+				{user ?
+				<Representatives representativeList={representativeList} />
 				: <Redirect to='/login' />
 				}
 			</Route>

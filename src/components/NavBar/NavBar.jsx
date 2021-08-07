@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
 				<div className="nav-item-container">
 					<div className="title">Capitol Gains</div>
 					<div className="right-nav-btn-container">
-					<div className="welcome">Welcome, {user.handle}</div>
+					<div className="welcome">{user.handle}</div>
 						<div className="my-profile">
 							<NavLink to="/myProfile" ><button className="my-profile-btn">My Profile</button></NavLink>
 						</div>
@@ -24,7 +24,7 @@ const NavBar = ({ user, handleLogout }) => {
 					<div className="title">Capitol Gains</div>
 
 					<div className="right-nav-btn-container">
-						<div className="welcome">Welcome!</div>
+						<div className="welcome">Welcome! Please Sign-in.</div>
 						<div className="log-in">
 							<NavLink to="/login" ><button className="log-in-btn">Log In</button></NavLink>
 						</div>
