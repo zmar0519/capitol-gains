@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { NavLink } from 'react-router-dom'
 import "./NavBar.css"
 
@@ -8,7 +9,9 @@ const NavBar = ({ user, handleLogout }) => {
 			<div className="nav-ul-container">
 			{user ? (
 				<div className="nav-item-container">
-					<div className="title">Capitol Gains</div>
+					<Link to="/">
+						<div className="title">Capitol Gains</div>
+					</Link>
 					<div className="right-nav-btn-container">
 					<div className="welcome">{user.handle}</div>
 						<div className="my-profile">
