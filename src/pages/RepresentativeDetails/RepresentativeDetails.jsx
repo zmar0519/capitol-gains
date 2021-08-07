@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from '../../components/SideMenu/SideMenu'
 import "./RepresentativeDetails.css"
 
@@ -9,8 +9,15 @@ const RepresentativeDetails = (props) => {
 
 
   return (
-    <div>representative details</div>
+    <div className="main-container">
+      <div className="menu">
+        <SideMenu />
+      </div>
+
+      <div>representative details</div>
+
+    </div>
   )
 }
 
-export default RepresentativeDetails
+export default withRouter(RepresentativeDetails)

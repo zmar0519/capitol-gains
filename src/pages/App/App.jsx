@@ -131,13 +131,19 @@ const App = () => {
 			</Route>
 			<Route exact path="/representatives">
 				{user ?
-				<Representatives representativeList={representativeList} />
+				<Representatives 
+					representativeList={representativeList}
+
+				/>
 				: <Redirect to='/login' />
 				}
 			</Route>
 			<Route exact path={`/senators/:senatorName`}>
 				{user ?
-				<SenatorDetails />
+				<SenatorDetails 
+					senateTransactions={senateTransactions}
+					senatorList={senatorList}
+				/>
 				: <Redirect to='/login' />		
 				}
 			</Route>

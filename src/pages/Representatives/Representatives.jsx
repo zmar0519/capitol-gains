@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from '../../components/SideMenu/SideMenu'
 import "./Representatives.css"
 
@@ -26,4 +26,4 @@ const Representatives = (props) => {
 }
 
 
-export default Representatives
+export default withRouter(Representatives)
