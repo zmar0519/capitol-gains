@@ -7,6 +7,7 @@ import { Route, Redirect, useHistory } from 'react-router-dom'
 
 import Senators from '../Senators/Senators'
 import Representatives from '../Representatives/Representatives'
+import SenatorDetails from '../SenatorDetails/SenatorDetails'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -131,6 +132,12 @@ const App = () => {
 				{user ?
 				<Representatives representativeList={representativeList} />
 				: <Redirect to='/login' />
+				}
+			</Route>
+			<Route exact path={`/senators/:senatorName`}>
+				{user ?
+				<SenatorDetails />
+				: <Redirect to='/login' />		
 				}
 			</Route>
 		</>

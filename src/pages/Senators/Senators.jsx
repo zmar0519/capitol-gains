@@ -15,10 +15,12 @@ const Senators = (props) => {
       </div>
       <div className="all-senators-container">
         {props.senatorList.map(senator => (
-          <div className="senator-container">
-            <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
-            <div className="senator-name">{senator.name}</div>
-          </div>
+          <Link to={`/senators/` + senator.name}>
+            <div className="senator-container">
+              <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
+              <div className="senator-name">{senator.name}</div>
+            </div>
+          </Link>
         ))}
 
       </div>
