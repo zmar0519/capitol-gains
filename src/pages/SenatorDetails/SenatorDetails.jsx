@@ -6,7 +6,7 @@ import "./SenatorDetails.css"
 const SenatorDetails = (props) => {
   console.log(props.senateTransactions)
 	const [currentSenator, setCurrentSenator] = useState([])
-  const [currentSenatorTransactions, setCurentSenatorTransactions] = useState([])
+  const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
 
 	useEffect(() => {
 		async function getSenator() {
@@ -26,11 +26,9 @@ const SenatorDetails = (props) => {
 	}, [props])
   
   async function getTransactions(){
-    console.log("imma be a transaction")
     let allSenatorsTransactions = []
     await props.senateTransactions.map(transaction => props.match.params.senatorName === transaction.senator && transaction.ticker !== "--" && allSenatorsTransactions.push(transaction))
-    if (allSenatorsTransactions) {setCurentSenatorTransactions(allSenatorsTransactions)}
-    console.log(allSenatorsTransactions)
+    if (allSenatorsTransactions) {setCurrentSenatorTransactions(allSenatorsTransactions)}
   }
 
 	return (
