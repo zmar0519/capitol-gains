@@ -26,11 +26,9 @@ const SenatorDetails = (props) => {
 	}, [props])
   
   async function getTransactions(){
-    console.log("imma be a transaction")
     let allSenatorsTransactions = []
     await props.senateTransactions.map(transaction => props.match.params.senatorName === transaction.senator && transaction.ticker !== "--" && allSenatorsTransactions.push(transaction))
     if (allSenatorsTransactions) {setCurentSenatorTransactions(allSenatorsTransactions)}
-    console.log(allSenatorsTransactions)
   }
 
 	return (
