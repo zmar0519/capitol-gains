@@ -13,10 +13,12 @@ const Representatives = (props) => {
       </div>
       <div className="all-representatives-container">
         {props.representativeList.map(representative => (
-          <div className="representative-container">
-            <div className="head-shot"><img className="head-shot" src={representative.image} alt={`${representative.name} head-shot`} /></div>
-            <div className="representative-name">{representative.name}</div>
-          </div>
+          <Link to={`/representatives/` + representative.name}>
+            <div className="representative-container">
+              <div className="head-shot"><img className="head-shot" src={representative.image} alt={`${representative.name} head-shot`} /></div>
+              <div className="representative-name">{representative.name}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
