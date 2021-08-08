@@ -93,12 +93,14 @@ const RepresentativeDetails = (props) => {
         <div className="all-transaction-container">
           {currentRepresentativeTransactions?.map(eachTransaction => (
             eachTransaction.type === "purchase" &&
-            <div className="transaction-container-purchase">
-              <div>{eachTransaction.ticker}</div>
-              <div>{eachTransaction.amount}</div>
-              <div>{eachTransaction.transaction_date}</div>
-              <div>{eachTransaction.type}</div>
-            </div>
+            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker}>
+              <div className="transaction-container-purchase">
+                <div>{eachTransaction.ticker}</div>
+                <div>{eachTransaction.amount}</div>
+                <div>{eachTransaction.transaction_date}</div>
+                <div>{eachTransaction.type}</div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -107,12 +109,14 @@ const RepresentativeDetails = (props) => {
         <div className="all-transaction-container">
           {currentRepresentativeTransactions?.map(eachTransaction => (
             eachTransaction.type !== "purchase" &&
-            <div className="transaction-container-sale">
-              <div>{eachTransaction.ticker}</div>
-              <div>{eachTransaction.amount}</div>
-              <div>{eachTransaction.transaction_date}</div>
-              <div>{eachTransaction.type}</div>
-            </div>
+            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker}>
+              <div className="transaction-container-sale">
+                <div>{eachTransaction.ticker}</div>
+                <div>{eachTransaction.amount}</div>
+                <div>{eachTransaction.transaction_date}</div>
+                <div>{eachTransaction.type}</div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
