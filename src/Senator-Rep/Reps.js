@@ -359,7 +359,7 @@ let representatives = [
 		name: "Hon. Gilbert Cisneros",
 		party: "Democrat",
 		state: "Democrat",
-		image: "CA",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. K. Michael Conaway",
