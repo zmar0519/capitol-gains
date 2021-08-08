@@ -48,19 +48,21 @@ const RepresentativeDetails = (props) => {
     if (allRepresentativesTransactions) {
       allRepresentativesTransactions.sort(compareDates)
       setCurrentRepresentativeTransactions(allRepresentativesTransactions)
-      getMovedStocks()
     }
   }
-  async function getMovedStocks() {
-    let movingStocks= []
-    await currentRepresentativeTransactions?.map(eachTransaction => {
-      if (!movingStocks.includes(eachTransaction.ticker)) {
-        movingStocks.push(eachTransaction.ticker)
-      }
-    })
-    movingStocks.sort()
-    setMovedStocks(movingStocks)
-  }
+  useEffect(() => {
+    async function getMovedStocks() {
+      let movingStocks= []
+      await currentRepresentativeTransactions?.map(eachTransaction => {
+        if (!movingStocks.includes(eachTransaction?.ticker)) {
+          movingStocks.push(eachTransaction?.ticker)
+        }
+      })
+      movingStocks.sort()
+      setMovedStocks(movingStocks)
+    }
+    getMovedStocks()
+  }, [currentRepresentativeTransactions]);
 
   return (
     <div className="main-container">
@@ -77,38 +79,42 @@ const RepresentativeDetails = (props) => {
 				</div>
 				<div className="senator-name">{currentRepresentative[0]?.name}</div>
         <div className="stocks-held-container">
-          <div className="stocks-held-title-txt">Stocks Held</div>
-          <div>
-            {movedStocks.map(eachStockTicker => (
-              <div>{eachStockTicker}</div>
+          <div className="stocks-held-title-txt">Stock Interactions</div>
+          <div className="each-stock-ticker-container">
+            {movedStocks?.map(eachStockTicker => (
+              <div className="each-stock-ticker">{eachStockTicker}</div>
             ))}
           </div>
         </div>
 
 			</div>
-      <div className="all-transaction-container">
-        <div>Purchases:</div>
-        {currentRepresentativeTransactions?.map(eachTransaction => (
-          eachTransaction.type === "purchase" &&
-          <div className="transaction-container">
-            <div>{eachTransaction.ticker}</div>
-            <div>{eachTransaction.amount}</div>
-            <div>{eachTransaction.transaction_date}</div>
-            <div>{eachTransaction.type}</div>
-          </div>
-        ))}
+      <div className="sale-buy-container">
+        <div className="purchase-txt">Purchases:</div>
+        <div className="all-transaction-container">
+          {currentRepresentativeTransactions?.map(eachTransaction => (
+            eachTransaction.type === "purchase" &&
+            <div className="transaction-container-purchase">
+              <div>{eachTransaction.ticker}</div>
+              <div>{eachTransaction.amount}</div>
+              <div>{eachTransaction.transaction_date}</div>
+              <div>{eachTransaction.type}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="all-transaction-container">
-        <div>Sales:</div>
-        {currentRepresentativeTransactions?.map(eachTransaction => (
-          eachTransaction.type !== "purchase" &&
-          <div className="transaction-container">
-            <div>{eachTransaction.ticker}</div>
-            <div>{eachTransaction.amount}</div>
-            <div>{eachTransaction.transaction_date}</div>
-            <div>{eachTransaction.type}</div>
-          </div>
-        ))}
+      <div className="sale-buy-container">
+        <div className="sale-txt">Sales:</div>
+        <div className="all-transaction-container">
+          {currentRepresentativeTransactions?.map(eachTransaction => (
+            eachTransaction.type !== "purchase" &&
+            <div className="transaction-container-sale">
+              <div>{eachTransaction.ticker}</div>
+              <div>{eachTransaction.amount}</div>
+              <div>{eachTransaction.transaction_date}</div>
+              <div>{eachTransaction.type}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

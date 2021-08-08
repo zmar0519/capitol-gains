@@ -66,7 +66,7 @@ const SenatorDetails = (props) => {
 			</div>
       <div className="all-transaction-container">
         {currentSenatorTransactions?.map(eachTransaction => (
-          <div className="transaction-container">
+          <div className="transaction-container-sale">
             <div>{eachTransaction.ticker}</div>
             <div>{eachTransaction.amount}</div>
             <div>{eachTransaction.transaction_date}</div>
