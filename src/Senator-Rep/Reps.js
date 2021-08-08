@@ -17,8 +17,7 @@ let representatives = [
 		name: "Mr. TJ John (Tj) Cox",
 		party: "Democrat",
 		state: "CA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Mo Brooks",
@@ -162,8 +161,7 @@ let representatives = [
 		name: "Kathy Manning",
 		party: "Democrat",
 		state: "NC",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Sean Patrick Maloney",
@@ -181,8 +179,7 @@ let representatives = [
 		name: "Hon. Greg Steube",
 		party: "Republican",
 		state: "FL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Donald Sternoff Honorable Beyer",
@@ -194,8 +191,7 @@ let representatives = [
 		name: "Hon. Mark Dr Green",
 		party: "Republican",
 		state: "TN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Earl Leroy Carter",
@@ -213,15 +209,13 @@ let representatives = [
 		name: "Hon. Rohit Khanna",
 		party: "Democrat",
 		state: "CA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Christopher L. Jacobs",
 		party: "Republican",
 		state: "NY",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Billy Long",
@@ -239,8 +233,7 @@ let representatives = [
 		name: "Mr. Peter Meijer",
 		party: "Republican",
 		state: "MI",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Richard W. Allen",
@@ -252,8 +245,7 @@ let representatives = [
 		name: "Hon. James E Hon Banks",
 		party: "Republican",
 		state: "IN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Debbie Dingell",
@@ -295,8 +287,7 @@ let representatives = [
 		name: "Hon. Peter J. Visclosky",
 		party: "Democrat",
 		state: "IN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. George Holding",
@@ -314,8 +305,7 @@ let representatives = [
 		name: "Hon. Sara Jacobs",
 		party: "Democrat",
 		state: "CA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Dwight Evans",
@@ -357,8 +347,7 @@ let representatives = [
 		name: "Hon. Marie Newman",
 		party: "Democrat",
 		state: "IL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. James French Hill",
@@ -370,7 +359,7 @@ let representatives = [
 		name: "Hon. Gilbert Cisneros",
 		party: "Democrat",
 		state: "Democrat",
-		image: "CA",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. K. Michael Conaway",
@@ -394,8 +383,7 @@ let representatives = [
 		name: "Hon. August Lee Pfluger",
 		party: "Republican",
 		state: "TX",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Brian Mast",
@@ -413,8 +401,7 @@ let representatives = [
 		name: "Hon. Scott Franklin",
 		party: "Republican",
 		state: "FL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Kurt Schrader",
@@ -432,8 +419,7 @@ let representatives = [
 		name: "Hon. Mark Green",
 		party: "Republican",
 		state: "TN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. John Rutherford",
@@ -469,8 +455,7 @@ let representatives = [
 		name: "Hon. Michael Garcia",
 		party: "Republican",
 		state: "CA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Tom Malinowski",
@@ -488,8 +473,7 @@ let representatives = [
 		name: "Hon. Victoria Spartz",
 		party: "Republican",
 		state: "IN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Mike Kelly",
@@ -537,8 +521,7 @@ let representatives = [
 		name: "Hon. Debbie Wasserman Schultz",
 		party: "Democrat",
 		state: "FL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Ed Perlmutter",
@@ -550,8 +533,7 @@ let representatives = [
 		name: "Hon. Andrew Garbarino",
 		party: "Republican",
 		state: "NY",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Raúl M. Grijalva",
@@ -575,8 +557,7 @@ let representatives = [
 		name: "Hon. Wm. Lacy Clay",
 		party: "Democrat",
 		state: "MO",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Chellie Pingree",
@@ -612,8 +593,7 @@ let representatives = [
 		name: "Hon. Michael John Gallagher",
 		party: "Democrat",
 		state: "WI",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Seth Moulton",
@@ -631,15 +611,13 @@ let representatives = [
 		name: "Ashley Hinson Arenholz",
 		party: "Republican",
 		state: "IA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Marjorie Taylor Greene",
 		party: "Republican",
 		state: "GA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. David P. Joyce",
@@ -657,8 +635,7 @@ let representatives = [
 		name: "Hon. Daniel Crenshaw",
 		party: "Republican",
 		state: "TX",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Garret Graves",
@@ -670,8 +647,7 @@ let representatives = [
 		name: "Hon. Deborah K. Ross",
 		party: "Democrat",
 		state: "NC",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Michael Patrick Guest",
@@ -689,8 +665,7 @@ let representatives = [
 		name: "Hon. Tom O'Halleran",
 		party: "Democrat",
 		state: "AZ",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. David P. Roe",
@@ -732,8 +707,7 @@ let representatives = [
 		name: "Hon. Kathy Manning",
 		party: "Democrat",
 		state: "NC",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Kathy Manning",
@@ -745,8 +719,7 @@ let representatives = [
 		name: "Hon. Blake Moore",
 		party: "Republican",
 		state: "UT",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Austin Scott",
@@ -776,8 +749,7 @@ let representatives = [
 		name: "Deborah K. Ross",
 		party: "Democrat",
 		state: "NC",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Matt Gaetz",
@@ -807,8 +779,7 @@ let representatives = [
 		name: "Hon. Joseph P. Kennedy",
 		party: "Democrat",
 		state: "MA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Susan W. Brooks",
@@ -844,8 +815,7 @@ let representatives = [
 		name: "Sara Jacobs",
 		party: "Democrat",
 		state: "CA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Eleanor Holmes Norton",
@@ -857,8 +827,7 @@ let representatives = [
 		name: "Mrs. Marjorie Taylor Greene",
 		party: "Republican",
 		state: "GA",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Carol Devine Miller",
@@ -882,22 +851,19 @@ let representatives = [
 		name: "Marie Newman",
 		party: "Democrat",
 		state: "IL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Patrick Fallon",
 		party: "Republican",
 		state: "TX",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Felix Barry Moore",
 		party: "Republican",
 		state: "AL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Gus M. Bilirakis",
@@ -921,15 +887,13 @@ let representatives = [
 		name: "Victoria Spartz",
 		party: "Republican",
 		state: "IN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Mr. Scott Franklin",
 		party: "Republican",
 		state: "FL",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Elaine Luria",
@@ -989,8 +953,7 @@ let representatives = [
 		name: "Hon. James Hagedorn",
 		party: "Republican",
 		state: "MN",
-		image:
-			"https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Hon. Justin Amash",

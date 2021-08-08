@@ -1,5 +1,5 @@
 import { Router } from 'express'
 
-/*---------- Public Routes ----------*/
+/*---------- Public Routes -----------*/
 
 /*---------- Protected Routes ----------*/
