@@ -35,6 +35,10 @@ const App = () => {
 	const [senateTransactions, setSenateTransactions] = useState([])
 	const [senatorList, setSenatorList] = useState([])
 	const [representativeList, setRepresentativeList] = useState([])
+	const [currentRepresentative, setCurrentRepresentative] = useState([])
+  const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
+  const [moverStocks, setMoverStocks] = useState([])
+
 	
 	function compareReps(a, b) {
 		if (a.name < b.name) {
@@ -152,6 +156,12 @@ const App = () => {
 				{user ?
 				<RepresentativeDetails
 					houseTransactions={houseTransactions}
+					currentRepresentative={currentRepresentative}
+					setCurrentRepresentative={setCurrentRepresentative}
+					currentRepresentativeTransactions={currentRepresentativeTransactions}
+					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
+					movedStocks={moverStocks}
+					setMovedStocks={setMoverStocks}
 					representativeList={representativeList}
 				/>
 				: <Redirect to='/login' />		
@@ -159,9 +169,18 @@ const App = () => {
 			</Route>
 			<Route
 				exact
-				path="/representatives/:representativeName/:ticker"
+				path="/representatives/:representativeName/:ticker/:date"
 				>
-					<StockByRep houseTransactions={houseTransactions} representativeList={representativeList} />
+					<StockByRep 
+					houseTransactions={houseTransactions}
+					currentRepresentative={currentRepresentative}
+					setCurrentRepresentative={setCurrentRepresentative}
+					currentRepresentativeTransactions={currentRepresentativeTransactions}
+					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
+					// movedStocks={moverStocks}
+					// setMovedStocks={setMoverStocks}
+					representativeList={representativeList}
+					/>
 			</Route>
 		</>
 	)

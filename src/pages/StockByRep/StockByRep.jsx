@@ -6,78 +6,91 @@ import Graph from "../../components/StockGraph/Graph"
 import "./StockByRep.css"
 
 function StockByRep(props) {
-	const [repTransactions, setRepTransactions] = useState([])
-	const [stock, setStock] = useState([])
-	const [stockTimes, setStockTimes] = useState([])
+  const [stock, setStock] = useState([])
+  const [stockTimes, setStockTimes] = useState([])
 	const [stockPrices, setStockPrices] = useState([])
-	const [percent, setPercent] = useState(null)
+  const [currentTransactions, setCurrentTransactions] = useState([])
+  const [currentTransactionsDates, setCurrentTransactionsDates] = useState([])
 
-	useEffect(() => {
-		async function getPercent() {
-			if (stockPrices) {
-				let diff = await `${Math.floor(
-					(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
-				)}%`
-				setPercent(diff)
-			}
+  console.log(props)
+	// useEffect(() => {
+	// 	async function getPercent() {
+	// 		if (stockPrices) {
+	// 			let diff = await `${Math.floor(
+	// 				(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
+	// 			)}%`
+	// 			setPercent(diff)
+	// 		}
+	// 	}
+	// 	getPercent()
+	// }, [stockPrices])
+  function compareDates(a, b) {
+		if (b.transaction_date < a.transaction_date) {
+			return -1
 		}
-		getPercent()
-	}, [stockPrices])
-
-	useEffect(() => {
-		async function callStockApi() {
-			let transactionArrayEpoch = []
-			let transactionTickerArray = []
-			let transactionObject = {}
-			let transactionAmount = ""
-			const transactionArray = []
-			let repTrans = []
-			try {
-				const dateString2 = await Math.floor(new Date().getTime() / 1000)
-				await props?.transactions?.map((transaction) => {
-					if (
-						transaction.representative === props?.match.params.rep &&
-						transaction.ticker === props?.match.params.ticker
-					) {
-						repTrans.push(transaction)
-						transactionArray.push(transaction.transaction_date)
-						transactionArrayEpoch.push(
-							Math.floor(
-								new Date(transaction.transaction_date).getTime() / 1000
-							)
-						)
-						if (transactionTickerArray.includes(transaction.ticker)) {
-							transactionTickerArray.push(transaction.ticker)
-						}
-						transactionObject[transaction.ticker]
-							? (transactionObject[transaction.ticker] +=
-									parseInt(transactionAmount))
-							: (transactionObject[transaction.ticker] =
-									parseInt(transactionAmount))
-					}
-				})
-				setRepTransactions(repTrans)
-				let dateString1 = await transactionArrayEpoch.shift()
-				let result = await findRange(
-					dateString1,
-					dateString2,
-					props?.match.params.ticker
-				)
-				await setStock(result)
-				const adjustStockTimes = await result?.chart?.result[0]?.timestamp.map(
-					(time) => new Date(time * 1000).toLocaleString().split(", ").shift()
-				)
-				await setStockTimes(adjustStockTimes)
-				await setStockPrices(
-					result?.chart?.result[0]?.indicators?.quote[0]?.close
-				)
-			} catch (error) {
-				console.log(error)
-			}
+		if (b.transaction_date > a.transaction_date) {
+			return 1
 		}
-		callStockApi()
-	}, [props])
+		return 0
+	}
+	useEffect(() => {
+		async function getRepresentative() {
+			let thisRepresentative = []
+			await props.representativeList?.map(
+				(representative) =>
+					props.match.params.representativeName === representative.name &&
+					thisRepresentative.push(representative)
+			)
+			if(thisRepresentative) {
+        props.setCurrentRepresentative(thisRepresentative) 
+        getTransactions()
+      }
+		}
+		getRepresentative()
+	}, [props.houseTransactions])
+  
+  async function getTransactions(){
+    let allRepresentativesTransactions = []
+    await props.houseTransactions.map(transaction => {
+      props.match.params.representativeName === transaction.representative 
+      && transaction.ticker === props.match.params.ticker
+      && allRepresentativesTransactions.push(transaction)
+    })
+    if (allRepresentativesTransactions) {
+      allRepresentativesTransactions.sort(compareDates)
+      console.log(allRepresentativesTransactions)
+      setCurrentTransactions(allRepresentativesTransactions)
+    }
+  }
 
+  async function getCurrentTransactionsDates() {
+    let transactionDates = await currentTransactions?.map(transaction => {
+      let date = transaction.transaction_date
+      let unfixed = date.split("-")
+      let year = unfixed.shift()
+      unfixed.push(year)
+      let fixed = unfixed.join("/")
+      return fixed  
+    })
+    console.log(transactionDates)
+    setCurrentTransactionsDates(transactionDates)
+  }
+
+useEffect(() => {
+  async function callStockApi(){
+    await getCurrentTransactionsDates()
+  }
+  callStockApi()
+}, [currentTransactions]);
+
+  function fixDate(date){
+    let unfixed = date.split("-")
+    let year = unfixed.shift()
+    unfixed.push(year)
+    let fixed = unfixed.join("/")
+    return fixed
+
+  }
 	return (
 		<div>
 			<Graph
@@ -85,12 +98,12 @@ function StockByRep(props) {
 				price={stockPrices}
 				ticker={props?.match.params.ticker}
 			/>
-      <div className="percent">
+      {/* <div className="percent">
         {percent !== "NaN%" ? <div>{percent} Increase!</div> : ""}
-      </div>
+      </div> */}
       <div className="transaction-container">
-			{repTransactions?.map((transaction) => (
-				<div key={transaction.id} className="transaction">
+			{currentTransactions?.map((transaction) => (
+				<div key={transaction._id} className="transaction">
 					<div>{transaction?.representative}</div>
 					<div>{transaction.amount}</div>
 					<div>{transaction.ticker}</div>
