@@ -15,7 +15,7 @@
 		margin-top: 50px;
 }
 
-.question-prompt {
+.enter-name-prompt {
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,17 +31,8 @@
     height: 16px;
 }
 
-.code-prompt {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    color: rgb(200, 200, 200);
-    font-size: 15px;
-    font-weight: bold;
-    margin: 20px 0px 6px 0px;
-}
 
-.code-prompt {
+.comment-prompt {
     width: 100%;
     display: flex;
     color: rgb(200, 200, 200);
