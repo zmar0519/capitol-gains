@@ -11,28 +11,21 @@ function StockByRep(props) {
 	const [stockPrices, setStockPrices] = useState([])
   const [currentTransactions, setCurrentTransactions] = useState([])
   const [currentTransactionsDates, setCurrentTransactionsDates] = useState([])
+	const [percent, setPercent] = useState(null)
 
+  const [epoch, setEpoch] = useState()
   console.log(props)
-	// useEffect(() => {
-	// 	async function getPercent() {
-	// 		if (stockPrices) {
-	// 			let diff = await `${Math.floor(
-	// 				(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
-	// 			)}%`
-	// 			setPercent(diff)
-	// 		}
-	// 	}
-	// 	getPercent()
-	// }, [stockPrices])
-  function compareDates(a, b) {
-		if (b.transaction_date < a.transaction_date) {
-			return -1
+	useEffect(() => {
+		async function getPercent() {
+			if (stockPrices) {
+				let diff = await `${Math.floor(
+					(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
+				)}%`
+				setPercent(diff)
+			}
 		}
-		if (b.transaction_date > a.transaction_date) {
-			return 1
-		}
-		return 0
-	}
+		getPercent()
+	}, [stockPrices])
 	useEffect(() => {
 		async function getRepresentative() {
 			let thisRepresentative = []
@@ -54,10 +47,10 @@ function StockByRep(props) {
     await props.houseTransactions.map(transaction => {
       props.match.params.representativeName === transaction.representative 
       && transaction.ticker === props.match.params.ticker
+      && transaction.transaction_date === props.match.params.date
       && allRepresentativesTransactions.push(transaction)
     })
     if (allRepresentativesTransactions) {
-      allRepresentativesTransactions.sort(compareDates)
       console.log(allRepresentativesTransactions)
       setCurrentTransactions(allRepresentativesTransactions)
     }
@@ -72,25 +65,36 @@ function StockByRep(props) {
       let fixed = unfixed.join("/")
       return fixed  
     })
-    console.log(transactionDates)
+    setEpoch(Math.floor(
+      new Date(transactionDates).getTime() / 1000
+    ))
+      
+      console.log(epoch)
     setCurrentTransactionsDates(transactionDates)
   }
 
 useEffect(() => {
   async function callStockApi(){
+    const dateString2 = Math.floor(new Date().getTime() / 1000)
     await getCurrentTransactionsDates()
+    let stockResult = await findRange(
+      epoch,
+      dateString2,
+      props?.match?.params.ticker
+    )
+    console.log(stockResult)
+    setStock(stockResult)
+    const adjustStockTimes = await stockResult?.chart?.result[0]?.timestamp.map(
+      (time) => new Date(time * 1000).toLocaleString().split(", ").shift()
+    )
+    await setStockTimes(adjustStockTimes)
+    await setStockPrices(
+      stockResult?.chart?.result[0]?.indicators?.quote[0]?.close
+    )
   }
   callStockApi()
-}, [currentTransactions]);
+}, []);
 
-  function fixDate(date){
-    let unfixed = date.split("-")
-    let year = unfixed.shift()
-    unfixed.push(year)
-    let fixed = unfixed.join("/")
-    return fixed
-
-  }
 	return (
 		<div>
 			<Graph
@@ -98,9 +102,9 @@ useEffect(() => {
 				price={stockPrices}
 				ticker={props?.match.params.ticker}
 			/>
-      {/* <div className="percent">
-        {percent !== "NaN%" ? <div>{percent} Increase!</div> : ""}
-      </div> */}
+      <div className="percent">
+        {percent !== "NaN%" ? <div>{percent} Change Since Transaction</div> : ""}
+      </div>
       <div className="transaction-container">
 			{currentTransactions?.map((transaction) => (
 				<div key={transaction._id} className="transaction">
