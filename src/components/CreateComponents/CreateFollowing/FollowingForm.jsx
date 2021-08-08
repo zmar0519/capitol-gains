@@ -8,22 +8,17 @@ const FollowingForm = (props) => {
         <div className="enter-name-prompt">
           <label>Enter A Senator/ Representative</label>
         </div>
-        <input
-          required
-          autoComplete="off"
-          placeholder="Name"
-          name="name"
-        />
-
+        <input required autoComplete="off" placeholder="Name" name="name" />
+        value={props.name}
+        onChange={(e) => props.setName(e.target.value)}
+        
         <div className="border"></div>
-
         <div className="comment-prompt">
           <label>Comment</label>
           <button type="button" id="plus-button">
             +
           </button>
         </div>
-
         <div className="border"></div>
         <button type="submit">Submit</button>
       </form>

@@ -5,13 +5,12 @@ const CreateFollowingHeader = (props) => {
   return (
     <div className="hidden-container">
       <div className="header">
-        <h3>Create A Following</h3>
+        <h3>Start a Following</h3>
         <div className="header-buttons">
-          <button>Cancel</button>
+          <button onClick={() => props.setToggleMyProfile(true)}>Cancel</button>
         </div>
       </div>
     </div>
   );
 };
-
 export default CreateFollowingHeader;
