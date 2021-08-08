@@ -8,6 +8,17 @@ const SenatorDetails = (props) => {
 	const [currentSenator, setCurrentSenator] = useState([])
   const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
 
+
+  function compareDates(a, b) {
+		if (b.transaction_date < a.transaction_date) {
+			return -1
+		}
+		if (b.transaction_date > a.transaction_date) {
+			return 1
+		}
+		return 0
+	}
+
 	useEffect(() => {
 		async function getSenator() {
 			let thisSenator = []
@@ -27,8 +38,15 @@ const SenatorDetails = (props) => {
   
   async function getTransactions(){
     let allSenatorsTransactions = []
-    await props.senateTransactions.map(transaction => props.match.params.senatorName === transaction.senator && transaction.ticker !== "--" && allSenatorsTransactions.push(transaction))
-    if (allSenatorsTransactions) {setCurrentSenatorTransactions(allSenatorsTransactions)}
+    await props.senateTransactions.map(transaction => {
+      props.match.params.senatorName === transaction.senator 
+      && transaction.ticker !== "--" 
+      && transaction.ticker !== "N/A" 
+      && allSenatorsTransactions.push(transaction)
+    })
+    if (allSenatorsTransactions) {
+      setCurrentSenatorTransactions(allSenatorsTransactions)
+    }
   }
 
 	return (
