@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Line } from "react-chartjs-2"
-import getStocks from "../../services/stockApi"
-import "./RepTicker.css"
+import { findRange } from "../../services/stockApiService"
+import "../../pages/StockByRep/StockByRep.css"
 
 function Graph(props) {
 	const state = {
@@ -25,7 +25,7 @@ function Graph(props) {
 				data={state}
 				options={{
 					title: {
-						display: true,
+						display: false,
 						text: "Average Rainfall per month",
 						fontSize: 20,
 					},

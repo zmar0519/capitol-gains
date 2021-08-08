@@ -9,6 +9,7 @@ import Senators from '../Senators/Senators'
 import Representatives from '../Representatives/Representatives'
 import SenatorDetails from '../SenatorDetails/SenatorDetails'
 import RepresentativeDetails from '../RepresentativeDetails/RepresentativeDetails'
+import StockByRep from '../StockByRep/StockByRep'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -155,6 +156,12 @@ const App = () => {
 				/>
 				: <Redirect to='/login' />		
 				}
+			</Route>
+			<Route
+				exact
+				path="/representatives/:representativeName/:ticker"
+				>
+					<StockByRep houseTransactions={houseTransactions} representativeList={representativeList} />
 			</Route>
 		</>
 	)
