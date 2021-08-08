@@ -280,8 +280,7 @@ let senators = [
 		name: "Robert P Casey, Jr.",
 		party: "Democrat",
 		state: "PA",
-		image:
-			"https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Robert J Portman",
@@ -305,8 +304,7 @@ let senators = [
 		name: "Joseph Manchin, Iii",
 		party: "Democrat",
 		state: "WV",
-		image:
-			"https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Michael D Crapo",
@@ -330,8 +328,7 @@ let senators = [
 		name: "Chris Van Hollen",
 		party: "Democrat",
 		state: "MD",
-		image:
-			"https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "John Cornyn",
@@ -367,8 +364,7 @@ let senators = [
 		name: "Jack Reed",
 		party: "Democrat",
 		state: "RI",
-		image:
-			"https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://senatestockwatcher.com/static/media/placeholder.157f088b.png",
 	},
 	{
 		name: "Angus S King",
@@ -410,8 +406,7 @@ let senators = [
 		name: "Rafael Edward (Ted) Cruz",
 		party: "Republican",
 		state: "TX",
-		image:
-			"https://upload.wikimedia.org/wikipedia/commons/9/95/Ted_Cruz_official_116th_portrait.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Ted_Cruz_official_116th_portrait.jpg",
 	},
 	{
 		name: "Elizabeth Warren",
