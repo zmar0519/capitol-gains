@@ -17,10 +17,10 @@ const myProfile = (props) => {
           <button>
             <Link to="/home">Home</Link>
           </button>
-          <button>Create Post</button>
+          <button>Create a Following</button>
           <button>Sign Out</button>
       </div>
-      <div className="profile-right">
+      <div className="profile-watchlist">
         <div className="profile-post-container">
           <div className="sub-container">
             <div className="profile-posts-header">
