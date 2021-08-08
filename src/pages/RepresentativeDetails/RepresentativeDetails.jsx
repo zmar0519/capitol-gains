@@ -8,7 +8,17 @@ const RepresentativeDetails = (props) => {
   console.log(props)
 	const [currentRepresentative, setCurrentRepresentative] = useState([])
   const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
+  const [movedStocks, setMovedStocks] = useState([])
 
+  function compareDates(a, b) {
+		if (b.transaction_date < a.transaction_date) {
+			return -1
+		}
+		if (b.transaction_date > a.transaction_date) {
+			return 1
+		}
+		return 0
+	}
 	useEffect(() => {
 		async function getRepresentative() {
 			let thisRepresentative = []
@@ -29,10 +39,30 @@ const RepresentativeDetails = (props) => {
   
   async function getTransactions(){
     let allRepresentativesTransactions = []
-    await props.houseTransactions.map(transaction => props.match.params.representativeName === transaction.representative && transaction.ticker !== "--" && allRepresentativesTransactions.push(transaction))
-    if (allRepresentativesTransactions) {setCurrentRepresentativeTransactions(allRepresentativesTransactions)}
+    await props.houseTransactions.map(transaction => {
+      props.match.params.representativeName === transaction.representative 
+      && transaction.ticker !== "--" 
+      && transaction.ticker !== "N/A" 
+      && allRepresentativesTransactions.push(transaction)
+    })
+    if (allRepresentativesTransactions) {
+      allRepresentativesTransactions.sort(compareDates)
+      setCurrentRepresentativeTransactions(allRepresentativesTransactions)
+    }
   }
-
+  useEffect(() => {
+    async function getMovedStocks() {
+      let movingStocks= []
+      await currentRepresentativeTransactions?.map(eachTransaction => {
+        if (!movingStocks.includes(eachTransaction?.ticker)) {
+          movingStocks.push(eachTransaction?.ticker)
+        }
+      })
+      movingStocks.sort()
+      setMovedStocks(movingStocks)
+    }
+    getMovedStocks()
+  }, [currentRepresentativeTransactions]);
 
   return (
     <div className="main-container">
@@ -48,17 +78,43 @@ const RepresentativeDetails = (props) => {
 					/>
 				</div>
 				<div className="senator-name">{currentRepresentative[0]?.name}</div>
-			</div>
-      <div className="all-transaction-container">
-        {currentRepresentativeTransactions?.map(eachTransaction => (
-          <div className="transaction-container">
-            <div>{eachTransaction.ticker}</div>
-            <div>{eachTransaction.amount}</div>
-            <div>{eachTransaction.transaction_date}</div>
-            <div>{eachTransaction.type}</div>
+        <div className="stocks-held-container">
+          <div className="stocks-held-title-txt">Stock Interactions</div>
+          <div className="each-stock-ticker-container">
+            {movedStocks?.map(eachStockTicker => (
+              <div className="each-stock-ticker">{eachStockTicker}</div>
+            ))}
           </div>
-        ))}
+        </div>
 
+			</div>
+      <div className="sale-buy-container">
+        <div className="purchase-txt">Purchases:</div>
+        <div className="all-transaction-container">
+          {currentRepresentativeTransactions?.map(eachTransaction => (
+            eachTransaction.type === "purchase" &&
+            <div className="transaction-container-purchase">
+              <div>{eachTransaction.ticker}</div>
+              <div>{eachTransaction.amount}</div>
+              <div>{eachTransaction.transaction_date}</div>
+              <div>{eachTransaction.type}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="sale-buy-container">
+        <div className="sale-txt">Sales:</div>
+        <div className="all-transaction-container">
+          {currentRepresentativeTransactions?.map(eachTransaction => (
+            eachTransaction.type !== "purchase" &&
+            <div className="transaction-container-sale">
+              <div>{eachTransaction.ticker}</div>
+              <div>{eachTransaction.amount}</div>
+              <div>{eachTransaction.transaction_date}</div>
+              <div>{eachTransaction.type}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
