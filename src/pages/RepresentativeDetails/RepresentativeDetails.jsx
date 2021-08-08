@@ -5,7 +5,6 @@ import "./RepresentativeDetails.css"
 
 
 const RepresentativeDetails = (props) => {
-  console.log(props)
 	const [currentRepresentative, setCurrentRepresentative] = useState([])
   const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
   const [movedStocks, setMovedStocks] = useState([])
@@ -28,12 +27,10 @@ const RepresentativeDetails = (props) => {
 					thisRepresentative.push(representative)
 			)
 			if(thisRepresentative) {
-        console.log(thisRepresentative)
         setCurrentRepresentative(thisRepresentative) 
         getTransactions()
       }
 		}
-    console.log(currentRepresentative)
 		getRepresentative()
 	}, [props])
   

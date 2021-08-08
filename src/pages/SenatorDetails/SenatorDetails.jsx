@@ -4,7 +4,6 @@ import SideMenu from "../../components/SideMenu/SideMenu"
 import "./SenatorDetails.css"
 
 const SenatorDetails = (props) => {
-  console.log(props.senateTransactions)
 	const [currentSenator, setCurrentSenator] = useState([])
   const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
 
@@ -32,7 +31,6 @@ const SenatorDetails = (props) => {
         getTransactions()
       }
 		}
-    console.log(currentSenator)
 		getSenator()
 	}, [props])
   

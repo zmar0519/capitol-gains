@@ -6,7 +6,6 @@ import "./Senators.css"
 
 
 const Senators = (props) => {
-  console.log(props)
   return (
     
     <div className="main-container">
