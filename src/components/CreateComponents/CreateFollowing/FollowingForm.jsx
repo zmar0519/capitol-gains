@@ -9,21 +9,12 @@ const FollowingForm = (props) => {
     <div className="create-form-container">
       <form className="create-form">
         <div className="enter-name-prompt">
-          <label>Enter A Senator/ Representative</label>
+          <label>Create a Watchlist</label>
         </div>
-        <input required autoComplete="off" placeholder="Name" name="name" />
-        value={props.name}
-        onChange={(e) => props.setName(e.target.value)}
+        <input required autoComplete="off" placeholder="Watchlist Name" name="name" />
         <div className="border"></div>
         <div className="comment-prompt">
           <label>Comment</label>
-          <button
-            type="button"
-            id="plus-button"
-            onClick={() => props.setToggleComment(!props.toggleComment)}
-          >
-            +
-          </button>
         </div>
 
         <TextField
