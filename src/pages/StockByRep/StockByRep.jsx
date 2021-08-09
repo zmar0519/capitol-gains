@@ -12,8 +12,8 @@ function StockByRep(props) {
   const [currentTransactions, setCurrentTransactions] = useState([])
   const [currentTransactionsDates, setCurrentTransactionsDates] = useState([])
 	const [percent, setPercent] = useState(null)
-
   const [epoch, setEpoch] = useState()
+
   console.log(props)
 	useEffect(() => {
 		async function getPercent() {
@@ -26,6 +26,7 @@ function StockByRep(props) {
 		}
 		getPercent()
 	}, [stockPrices])
+  
 	useEffect(() => {
 		async function getRepresentative() {
 			let thisRepresentative = []
@@ -63,6 +64,8 @@ function StockByRep(props) {
       let year = unfixed.shift()
       unfixed.push(year)
       let fixed = unfixed.join("/")
+      // setEpoch(Math.floor(
+      //   new Date(fixed).getTime() / 1000))
       return fixed  
     })
     setEpoch(Math.floor(
@@ -76,24 +79,27 @@ function StockByRep(props) {
 useEffect(() => {
   async function callStockApi(){
     const dateString2 = Math.floor(new Date().getTime() / 1000)
+    if (epoch) {
+      let stockResult = await findRange(
+        epoch,
+        dateString2,
+        props?.match?.params.ticker
+      )
+      console.log(stockResult)
+      setStock(stockResult)
+      const adjustStockTimes = await stockResult?.chart?.result[0]?.timestamp.map(
+        (time) => new Date(time * 1000).toLocaleString().split(", ").shift()
+      )
+      await setStockTimes(adjustStockTimes)
+      await setStockPrices(
+        stockResult?.chart?.result[0]?.indicators?.quote[0]?.close
+      )
+    }
     await getCurrentTransactionsDates()
-    let stockResult = await findRange(
-      epoch,
-      dateString2,
-      props?.match?.params.ticker
-    )
-    console.log(stockResult)
-    setStock(stockResult)
-    const adjustStockTimes = await stockResult?.chart?.result[0]?.timestamp.map(
-      (time) => new Date(time * 1000).toLocaleString().split(", ").shift()
-    )
-    await setStockTimes(adjustStockTimes)
-    await setStockPrices(
-      stockResult?.chart?.result[0]?.indicators?.quote[0]?.close
-    )
+    
   }
   callStockApi()
-}, []);
+}, [epoch]);
 
 	return (
 		<div>

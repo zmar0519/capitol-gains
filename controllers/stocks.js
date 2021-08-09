@@ -11,7 +11,7 @@ function findRange(req, res){
   var options = {
     method: 'GET',
     url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart',
-    params: {period1: req.params.date1, period2: req.params.date2, symbol: req.params.ticker, range: '5d'},
+    params: {period1: req.params.date1, period2: req.params.date2, symbol: req.params.ticker},
     headers: {
       'x-rapidapi-key': stockKey,
       'x-rapidapi-host': stockHost
