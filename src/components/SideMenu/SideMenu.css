@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  background: linear-gradient(180deg, rgba(0,40,104,1) 0%, rgba(191,10,48,1) 50%);
+  background-color: rgba(191,10,48,1);
 }
 
 .menu-items {
@@ -40,6 +40,3 @@
   padding: 10px;
 }
 
-.spacing-block {
-  margin-bottom: 60px;
-}
