@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Redirect, useHistory } from 'react-router-dom'
+import { Route, Redirect, useHistory} from 'react-router-dom'
 
 
 
@@ -36,8 +36,10 @@ const App = () => {
 	const [senatorList, setSenatorList] = useState([])
 	const [representativeList, setRepresentativeList] = useState([])
 	const [currentRepresentative, setCurrentRepresentative] = useState([])
+	const [currentSenator, setCurrentSenator] = useState([])
   const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
-  const [moverStocks, setMoverStocks] = useState([])
+  const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
+  const [movedStocks, setMovedStocks] = useState([])
 
 	
 	function compareReps(a, b) {
@@ -148,6 +150,9 @@ const App = () => {
 				<SenatorDetails 
 					senateTransactions={senateTransactions}
 					senatorList={senatorList}
+					currentSenator={currentSenator}
+					setCurrentSenator={setCurrentSenator}
+
 				/>
 				: <Redirect to='/login' />		
 				}
@@ -160,8 +165,8 @@ const App = () => {
 					setCurrentRepresentative={setCurrentRepresentative}
 					currentRepresentativeTransactions={currentRepresentativeTransactions}
 					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
-					movedStocks={moverStocks}
-					setMovedStocks={setMoverStocks}
+					movedStocks={movedStocks}
+					setMovedStocks={setMovedStocks}
 					representativeList={representativeList}
 				/>
 				: <Redirect to='/login' />		

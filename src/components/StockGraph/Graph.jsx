@@ -5,6 +5,7 @@ import { findRange } from "../../services/stockApiService"
 import "../../pages/StockByRep/StockByRep.css"
 
 function Graph(props) {
+	console.log(props)
 	const state = {
 		labels: props.time,
 		datasets: [
