@@ -16,6 +16,7 @@ import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
+import MyProfile from "../MyProfile/MyProfile"
 
 // Services
 import * as houseApiService from "../../services/houseApiService"
@@ -202,6 +203,13 @@ const App = () => {
 					currentSenatorTransactions={currentSenatorTransactions}
 					setCurrentSenatorTransactions={setCurrentSenatorTransactions}
 				/>
+			</Route>
+			<Route exact path={`/myProfile/:myProfile`}>
+				{user ?
+				<MyProfile
+				currentUser={currentUser}/>
+				:<Redirect to='/login' />
+			}
 			</Route>
 		</>
 	)
