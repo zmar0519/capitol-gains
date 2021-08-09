@@ -5,7 +5,6 @@ import "./RepresentativeDetails.css"
 
 
 const RepresentativeDetails = (props) => {
-  console.log(props)
 	// const [currentRepresentative, setCurrentRepresentative] = useState([])
   // const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
   // const [movedStocks, setMovedStocks] = useState([])
@@ -75,7 +74,7 @@ const RepresentativeDetails = (props) => {
 						alt={`${props.currentRepresentative[0]?.name} head-shot`}
 					/>
 				</div>
-				<div className="senator-name">{props.currentRepresentative[0]?.name}</div>
+				<div className="representative-name">{props.currentRepresentative[0]?.name}</div>
         <div className="stocks-held-container">
           <div className="stocks-held-title-txt">Stock Interactions</div>
           <div className="each-stock-ticker-container">
@@ -91,7 +90,12 @@ const RepresentativeDetails = (props) => {
         <div className="all-transaction-container">
           {props.currentRepresentativeTransactions?.map(eachTransaction => (
             eachTransaction.type === "purchase" &&
-            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker + "/" + eachTransaction.transaction_date}>
+            <Link to={
+              `/representatives/` 
+              + props.match.params.representativeName 
+              + "/" + eachTransaction.ticker + "/" 
+              + eachTransaction.transaction_date
+            }>
               <div className="transaction-container-purchase" key={eachTransaction._id}>
                 <div>{eachTransaction.ticker}</div>
                 <div>{eachTransaction.amount}</div>
@@ -107,7 +111,12 @@ const RepresentativeDetails = (props) => {
         <div className="all-transaction-container">
           {props.currentRepresentativeTransactions?.map(eachTransaction => (
             eachTransaction.type !== "purchase" &&
-            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker + "/" + eachTransaction.transaction_date}>
+            <Link to={
+              `/representatives/` 
+              + props.match.params.representativeName 
+              + "/" + eachTransaction.ticker 
+              + "/" + eachTransaction.transaction_date
+            }>
               <div className="transaction-container-sale">
                 <div>{eachTransaction.ticker}</div>
                 <div>{eachTransaction.amount}</div>

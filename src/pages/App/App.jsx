@@ -10,6 +10,7 @@ import Representatives from '../Representatives/Representatives'
 import SenatorDetails from '../SenatorDetails/SenatorDetails'
 import RepresentativeDetails from '../RepresentativeDetails/RepresentativeDetails'
 import StockByRep from '../StockByRep/StockByRep'
+import StockBySenator from '../StockBySenator/StockBySenator'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -40,6 +41,7 @@ const App = () => {
   const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
   const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
   const [movedStocks, setMovedStocks] = useState([])
+	
 
 	
 	function compareReps(a, b) {
@@ -152,6 +154,10 @@ const App = () => {
 					senatorList={senatorList}
 					currentSenator={currentSenator}
 					setCurrentSenator={setCurrentSenator}
+					currentSenatorTransactions={currentSenatorTransactions}
+					setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+					movedStocks={movedStocks}
+					setMovedStocks={setMovedStocks}
 
 				/>
 				: <Redirect to='/login' />		
@@ -177,15 +183,25 @@ const App = () => {
 				path="/representatives/:representativeName/:ticker/:date"
 				>
 					<StockByRep 
-					houseTransactions={houseTransactions}
-					currentRepresentative={currentRepresentative}
-					setCurrentRepresentative={setCurrentRepresentative}
-					currentRepresentativeTransactions={currentRepresentativeTransactions}
-					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
-					// movedStocks={moverStocks}
-					// setMovedStocks={setMoverStocks}
-					representativeList={representativeList}
+						houseTransactions={houseTransactions}
+						currentRepresentative={currentRepresentative}
+						setCurrentRepresentative={setCurrentRepresentative}
+						currentRepresentativeTransactions={currentRepresentativeTransactions}
+						setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
+						// movedStocks={moverStocks}
+						// setMovedStocks={setMoverStocks}
+						representativeList={representativeList}
 					/>
+			</Route>
+			<Route exact path="/senators/:senatorName/:ticker/:month/:day/:year">
+				<StockBySenator 
+					senateTransactions={senateTransactions}
+					senatorList={senatorList}
+					currentSenator={currentSenator}
+					setCurrentSenator={setCurrentSenator}
+					currentSenatorTransactions={currentSenatorTransactions}
+					setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+				/>
 			</Route>
 		</>
 	)
