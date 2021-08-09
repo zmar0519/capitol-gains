@@ -107,7 +107,7 @@ const RepresentativeDetails = (props) => {
         <div className="all-transaction-container">
           {props.currentRepresentativeTransactions?.map(eachTransaction => (
             eachTransaction.type !== "purchase" &&
-            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker}>
+            <Link to={`/representatives/` + props.match.params.representativeName + "/" + eachTransaction.ticker + "/" + eachTransaction.transaction_date}>
               <div className="transaction-container-sale">
                 <div>{eachTransaction.ticker}</div>
                 <div>{eachTransaction.amount}</div>

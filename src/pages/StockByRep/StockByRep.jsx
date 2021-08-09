@@ -16,17 +16,17 @@ function StockByRep(props) {
 
 
   console.log(props)
-	// useEffect(() => {
-	// 	async function getPercent() {
-	// 		if (stockPrices) {
-	// 			let diff = await `${Math.floor(
-	// 				(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
-	// 			)}%`
-	// 			setPercent(diff)
-	// 		}
-	// 	}
-	// 	getPercent()
-	// }, [stockPrices])
+	useEffect(() => {
+		async function getPercent() {
+			if (stockPrices) {
+				let diff = await `${Math.floor(
+					(stockPrices[stockPrices?.length - 1] / stockPrices[0] - 1) * 100
+				)}%`
+				setPercent(diff)
+			}
+		}
+		getPercent()
+	}, [stockPrices])
   
 	useEffect(() => {
 		async function getRepresentative() {
@@ -93,6 +93,7 @@ function StockByRep(props) {
         )
         console.log(stockResult)
         setStock(stockResult)
+        if (!stockResult?.chart?.result[0]?.timestamp) return
         const adjustStockTimes = await stockResult?.chart?.result[0]?.timestamp.map(
           (time) => new Date(time * 1000).toLocaleString().split(", ").shift()
         )
@@ -106,18 +107,21 @@ function StockByRep(props) {
   }, [epoch]);
 
 
-
-
 	return (
 		<div>
+      {
+        !stock?.chart?.result[0]?.timestamp ? 
+        <div>Waiting for data</div>
+        :
         <Graph
           time={stockTimes}
           price={stockPrices}
           ticker={props?.match.params.ticker}
         />
-      {/* <div className="percent">
+      }
+      <div className="percent">
         {percent !== "NaN%" ? <div>{percent} Change Since Transaction</div> : ""}
-      </div> */}
+      </div>
       <div className="transaction-container">
 			{currentTransactions?.map((transaction) => (
 				<div key={transaction._id} className="transaction">
