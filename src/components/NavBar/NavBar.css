@@ -1,0 +1,86 @@
+.nav-bar {
+	height: 70px;
+	display: flex;
+    align-items: center;
+	border-bottom: 1px solid #292934;
+	background: linear-gradient(90deg, rgba(0,40,104,1) 0%, rgba(191,10,48,1) 100%);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+.nav-ul-container {
+    display: flex;
+    width: 100%;
+}
+.nav-item-container {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding: 0;
+    align-items: center;
+}
+
+.title {
+    font-size: 35px;
+    color: yellow;
+    font-family: 'Yeseva One', cursive;
+}
+
+.my-profile, .log-out, .log-in, .sign-up {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 15px 10px 0;
+}
+
+.my-profile-btn,  .log-in-btn, .sign-up-btn {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(0,40,104,1);
+    color: white;
+    border-color: white;
+    font-family: 'Yeseva One', cursive;
+
+}
+
+.log-out-btn {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(191,10,48,1);
+    border-color: white;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+
+}
+
+.welcome {
+    color: white;
+    margin-right: 25px;
+    font-size: 22px;
+    font-family: 'Yeseva One', cursive;
+}
+
+.my-profile-btn:hover, .log-in-btn:hover, .sign-up-btn:hover {
+    color: rgba(0,40,104,1);
+    border-color: rgba(0,40,104,1);
+    background-color: yellow;
+}
+
+.log-out-btn:hover {
+    background-color: white;
+    border-color: rgba(191,10,48,1);
+    color: rgba(191,10,48,1);
+}
+
+.right-nav-btn-container {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}

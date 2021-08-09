@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./MyProfile.css";
+import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
+import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing";
 
 
 
-const myProfile = (props) => {
+
+const MyProfile = (props) => {
+  
   
   const { _id, avatar, handle } = props.currentUser || {};
 
   return (
     <div className="profile-page">
         <div className="profile-user-info">
-          <img alt="user avatar"></img>
+          <img src={avatar} alt="user avatar"></img>
           <h3>Handle Here</h3>
-          <h4>Solution Count Here</h4>
           <button>
             <Link to="/home">Home</Link>
           </button>
@@ -30,8 +33,12 @@ const myProfile = (props) => {
           <div className="user-posts">Posts go here!</div>
         </div>
       </div>
+      <div className="following-form">
+      <CreateFollowing/>
+      </div>
     </div>
+  
   );
 };
 
-export default myProfile;
+export default MyProfile;

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../Create.css";
 
+
 // Components
 import FollowingForm from "./FollowingForm";
-import CreateFollowingHeader from "./CreatePostHeader";
+import CreateFollowingHeader from "./CreateFollowingHeader";
 
 const CreateFollowing = (props) => {
   const [toggleComment, setToggleComment] = useState(false);

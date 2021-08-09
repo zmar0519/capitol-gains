@@ -1,11 +1,15 @@
-import styles from './Landing.module.css'
+import styles from './Landing.css'
+import SideMenu from '../../components/SideMenu/SideMenu'
 
 const Landing = ({user}) => {
   return (
     <main className={styles.container}>
-      <h1>
-        hello, {user ? user.name : "friend"}
-      </h1>
+      
+        
+      
+      <div>
+        <SideMenu />
+      </div>
     </main>
   )
 }

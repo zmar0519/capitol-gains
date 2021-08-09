@@ -1,0 +1,93 @@
+.main-container {
+  display: flex;
+}
+
+.menu {
+  width: fit-content;
+}
+
+.representative-container {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+}
+
+.senator-name {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.stocks-held-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  margin-top: 10px;
+}
+
+.stocks-held-title-txt {
+  font-size: 18px;
+}
+
+.each-stock-ticker-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.each-stock-ticker {
+  margin: 3px;
+}
+
+.all-transaction-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.all-transaction-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.sale-buy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.purchase-txt, .sale-txt {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.transaction-container-purchase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 100px;
+  border: 1px black solid;
+  background-color: rgba(36, 214, 19, .5);
+}
+
+.transaction-container-sale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 100px;
+  border: 1px black solid;
+  background-color: rgba(222, 18, 18, .5);
+}
