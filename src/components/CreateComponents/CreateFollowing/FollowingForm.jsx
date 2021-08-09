@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../Create.css";
 import TextField from "@material-ui/core/TextField";
 
-// import CommentEditor from "../../Code/CommentEditor";
 
 const FollowingForm = (props) => {
     const [comment, setComment] = useState("")
@@ -34,12 +33,13 @@ const FollowingForm = (props) => {
             setComment(e.target.value);
           }}
         />
-        ); 
+        ; 
     
         <div className="border"></div>
         <button type="submit">Submit</button>
       </form>
     </div>
+  )
   }
 
 export default FollowingForm;
