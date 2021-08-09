@@ -15,7 +15,7 @@ const NavBar = ({ user, handleLogout }) => {
 					<div className="right-nav-btn-container">
 					<div className="welcome">{user.handle}</div>
 						<div className="my-profile">
-							<NavLink to="/myProfile" ><button className="my-profile-btn">My Profile</button></NavLink>
+							<NavLink to={`/myProfile/` + user._id} ><button className="my-profile-btn">My Profile</button></NavLink>
 						</div>
 						<div>
 							<NavLink to='' onClick={handleLogout} className="log-out"><button className="log-out-btn">Log out</button></NavLink>
