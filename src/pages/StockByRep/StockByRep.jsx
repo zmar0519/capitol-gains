@@ -104,7 +104,7 @@ function StockByRep(props) {
       }
     }
       callStockApi()
-  }, [epoch]);
+  }, []);
 
 
 	return (
