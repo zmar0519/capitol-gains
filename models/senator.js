@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const repSchema = new mongoose.Schema({
+const senatorSchema = new mongoose.Schema({
   name: String,
   party: String,
   state: String,
@@ -9,8 +9,8 @@ const repSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Rep = mongoose.model('Rep', repSchema)
+const Senator = mongoose.model('Senator', senatorSchema)
 
 export {
-  Rep
+  Senator
 }
