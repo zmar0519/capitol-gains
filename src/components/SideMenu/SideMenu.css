@@ -2,23 +2,25 @@
 
 .menu {
   width: 20%;
-  height: 100%;
+  height: 90%;
   text-align: left;
-  border: 1px solid #292934;
+  border: 1px solid rgb(246,224,179);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: rgb(32,58,95);
 }
 
 .menu-header {
-  border-bottom: 1px solid #292934;
+  border-bottom: 1px solid rgb(246,224,179);
   color: white;
+  font-family: 'Yeseva One', cursive;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  background-color: rgba(191,10,48,1);
+  background: rgb(32,58,95);
 }
 
 .menu-items {
@@ -33,10 +35,19 @@
 }
 
 .menu-items button {
-  color: white;
-  background: #12121b;
+  color: rgb(246,224,179);
+  font-family: 'Yeseva One', cursive;
+  background-color: rgb(113,37,15);
   border: 1px solid #292934;
   border-radius: 8px;
   padding: 10px;
 }
 
+.representatives-btn:hover, .senators-btn:hover{
+background-color: rgb(93,141,106)
+}
+
+
+.spacing-block {
+  margin-bottom: 60px;
+}
