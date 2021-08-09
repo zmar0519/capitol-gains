@@ -68,20 +68,22 @@ const StockDetails = (props) => {
 
   return (
     <div>
-      <div>
-        Stock Details Page
-      </div>
 
+
+      <div className="stock-graph-container">
       {
         !stock?.chart?.result[0]?.timestamp ? 
-        <div>Waiting for data</div>
+        <div className="waiting-txt">Waiting for data</div>
         :
-        <Graph
-          time={stockTimes}
-          price={stockPrices}
-          ticker={props?.match.params.ticker}
-        />
+        <div className="stock-graph">
+          <Graph
+            time={stockTimes}
+            price={stockPrices}
+            ticker={props?.match.params.ticker}
+          />
+        </div>
       }
+      </div>
     <div>
       <div>Reps That have made transactions</div>
       <div>
