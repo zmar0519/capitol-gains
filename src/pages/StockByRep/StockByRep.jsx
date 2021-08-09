@@ -46,7 +46,7 @@ function StockByRep(props) {
   useEffect(() => {
     async function getTransactions(){
       let allRepresentativesTransactions = []
-      await props.houseTransactions.map(transaction => {
+      await props.houseTransactions?.map(transaction => {
         props.match.params.representativeName === transaction.representative 
         && transaction.ticker === props.match.params.ticker
         && transaction.transaction_date === props.match.params.date
@@ -54,7 +54,7 @@ function StockByRep(props) {
       })
       if (allRepresentativesTransactions) {
         console.log(allRepresentativesTransactions)
-        setCurrentTransactions(allRepresentativesTransactions)
+        await setCurrentTransactions(allRepresentativesTransactions)
       }
     }
     getTransactions()
@@ -104,7 +104,7 @@ function StockByRep(props) {
       }
     }
       callStockApi()
-  }, []);
+  }, [epoch]);
 
 
 	return (

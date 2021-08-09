@@ -46,7 +46,7 @@ function StockBySenator(props) {
   useEffect(() => {
     async function getTransactions(){
       let allSenatorsTransactions = []
-      await props.senateTransactions.map(transaction => {
+      await props.senateTransactions?.map(transaction => {
         props.match.params.senatorName === transaction.senator
         && transaction.ticker === props.match.params.ticker
         && transaction.transaction_date === (`${props.match.params.month}/${props.match.params.day}/${props.match.params.year}`)
