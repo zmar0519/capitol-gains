@@ -73,13 +73,13 @@ const RepresentativeDetails = (props) => {
             src={props.currentRepresentative[0]?.image}
             alt={`${props.currentRepresentative[0]?.name} head-shot`}
           />
-          <button type="button" id="watchList-button"> //need an onlick
-            AddToWatchList
-          </button>
         </div>
         <div className="representative-name">
           {props.currentRepresentative[0]?.name}
         </div>
+        <button type="button" id="watchList-button">
+          Add To WatchList
+        </button>
         <div className="stocks-held-container">
           <div className="stocks-held-title-txt">Stock Interactions</div>
           <div className="each-stock-ticker-container">

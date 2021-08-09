@@ -18,6 +18,13 @@
   margin: 10px;
 }
 
+#watchList-button{
+  font-size: 15px;
+  margin: 0px, 0px, 10px;
+  color:  black;
+  padding: 5px;
+}
+
 .stocks-held-container {
   display: flex;
   flex-direction: column;
