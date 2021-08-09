@@ -43,6 +43,10 @@
   padding: 10px;
 }
 
+.representatives-btn:hover, .senators-btn:hover{
+background-color: rgb(93,141,106)
+}
+
 
 .spacing-block {
   margin-bottom: 60px;
