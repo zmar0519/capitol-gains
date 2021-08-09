@@ -91,3 +91,8 @@
   border: 1px black solid;
   background-color: rgba(222, 18, 18, .5);
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

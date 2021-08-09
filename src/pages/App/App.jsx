@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Redirect, useHistory } from 'react-router-dom'
+import { Route, Redirect, useHistory} from 'react-router-dom'
 
 
 
@@ -9,6 +9,7 @@ import Senators from '../Senators/Senators'
 import Representatives from '../Representatives/Representatives'
 import SenatorDetails from '../SenatorDetails/SenatorDetails'
 import RepresentativeDetails from '../RepresentativeDetails/RepresentativeDetails'
+import StockByRep from '../StockByRep/StockByRep'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -34,6 +35,12 @@ const App = () => {
 	const [senateTransactions, setSenateTransactions] = useState([])
 	const [senatorList, setSenatorList] = useState([])
 	const [representativeList, setRepresentativeList] = useState([])
+	const [currentRepresentative, setCurrentRepresentative] = useState([])
+	const [currentSenator, setCurrentSenator] = useState([])
+  const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
+  const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
+  const [movedStocks, setMovedStocks] = useState([])
+
 	
 	function compareReps(a, b) {
 		if (a.name < b.name) {
@@ -143,6 +150,9 @@ const App = () => {
 				<SenatorDetails 
 					senateTransactions={senateTransactions}
 					senatorList={senatorList}
+					currentSenator={currentSenator}
+					setCurrentSenator={setCurrentSenator}
+
 				/>
 				: <Redirect to='/login' />		
 				}
@@ -151,10 +161,31 @@ const App = () => {
 				{user ?
 				<RepresentativeDetails
 					houseTransactions={houseTransactions}
+					currentRepresentative={currentRepresentative}
+					setCurrentRepresentative={setCurrentRepresentative}
+					currentRepresentativeTransactions={currentRepresentativeTransactions}
+					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
+					movedStocks={movedStocks}
+					setMovedStocks={setMovedStocks}
 					representativeList={representativeList}
 				/>
 				: <Redirect to='/login' />		
 				}
+			</Route>
+			<Route
+				exact
+				path="/representatives/:representativeName/:ticker/:date"
+				>
+					<StockByRep 
+					houseTransactions={houseTransactions}
+					currentRepresentative={currentRepresentative}
+					setCurrentRepresentative={setCurrentRepresentative}
+					currentRepresentativeTransactions={currentRepresentativeTransactions}
+					setCurrentRepresentativeTransactions={setCurrentRepresentativeTransactions}
+					// movedStocks={moverStocks}
+					// setMovedStocks={setMoverStocks}
+					representativeList={representativeList}
+					/>
 			</Route>
 		</>
 	)
