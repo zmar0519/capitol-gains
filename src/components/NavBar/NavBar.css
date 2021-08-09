@@ -3,7 +3,7 @@
 	display: flex;
     align-items: center;
 	border-bottom: 1px solid #292934;
-	background: linear-gradient(90deg, rgba(0,40,104,1) 0%, rgba(191,10,48,1) 100%);
+	background: linear-gradient(90deg, rgb(71,99,136) 0%, rgb(180,46,43) 100%);
 }
 
 .logo {
@@ -26,23 +26,23 @@
 
 .title {
     font-size: 35px;
-    color: yellow;
+    color: rgb(234,188,86);
     font-family: 'Yeseva One', cursive;
 }
 
 .my-profile, .log-out, .log-in, .sign-up {
     display: flex;
     align-items: center;
-    color: white;
+    color: rgb(246,224,179);
     margin: 15px 10px 0;
 }
 
 .my-profile-btn,  .log-in-btn, .sign-up-btn {
     border-radius: 8px;
     padding: 8px;
-    background-color: rgba(0,40,104,1);
-    color: white;
-    border-color: white;
+    background-color: rgb(32,58,95);
+    color: rgb(246,224,179);
+    border-color: rgb(246,224,179);
     font-family: 'Yeseva One', cursive;
 
 }
@@ -50,15 +50,15 @@
 .log-out-btn {
     border-radius: 8px;
     padding: 8px;
-    background-color: rgba(191,10,48,1);
-    border-color: white;
-    color: white;
+    background-color: rgb(32,58,95);
+    border-color:rgb(246,224,179);
+    color: rgb(246,224,179);
     font-family: 'Yeseva One', cursive;
 
 }
 
 .welcome {
-    color: white;
+    color: rgb(246,224,179);
     margin-right: 25px;
     font-size: 22px;
     font-family: 'Yeseva One', cursive;
@@ -67,13 +67,13 @@
 .my-profile-btn:hover, .log-in-btn:hover, .sign-up-btn:hover {
     color: rgba(0,40,104,1);
     border-color: rgba(0,40,104,1);
-    background-color: yellow;
+    background-color: rgb(93,141,106);
 }
 
 .log-out-btn:hover {
-    background-color: white;
-    border-color: rgba(191,10,48,1);
-    color: rgba(191,10,48,1);
+    background-color: rgb(93,141,106);
+    border-color: rgba(0,40,104,1);
+    color: rgba(0,40,104,1);
 }
 
 .right-nav-btn-container {
