@@ -4,8 +4,8 @@ import SideMenu from "../../components/SideMenu/SideMenu"
 import "./SenatorDetails.css"
 
 const SenatorDetails = (props) => {
-	const [currentSenator, setCurrentSenator] = useState([])
-  const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
+	// const [currentSenator, setCurrentSenator] = useState([])
+  // const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
 
 
   function compareDates(a, b) {
@@ -27,12 +27,12 @@ const SenatorDetails = (props) => {
 					thisSenator.push(senator)
 			)
 			if(thisSenator) {
-        setCurrentSenator(thisSenator) 
+        props.setCurrentSenator(thisSenator) 
         getTransactions()
       }
 		}
 		getSenator()
-	}, [props])
+	}, [props.senateTransactions])
   
   async function getTransactions(){
     let allSenatorsTransactions = []
@@ -43,9 +43,23 @@ const SenatorDetails = (props) => {
       && allSenatorsTransactions.push(transaction)
     })
     if (allSenatorsTransactions) {
-      setCurrentSenatorTransactions(allSenatorsTransactions)
+			allSenatorsTransactions.sort(compareDates)
+      props.setCurrentSenatorTransactions(allSenatorsTransactions)
     }
   }
+	useEffect(() => {
+    async function getMovedStocks() {
+      let movingStocks= []
+      await props.currentSenatorTransactions?.map(eachTransaction => {
+        if (!movingStocks.includes(eachTransaction?.ticker)) {
+          movingStocks.push(eachTransaction?.ticker)
+        }
+      })
+      movingStocks.sort()
+      props.setMovedStocks(movingStocks)
+    }
+    getMovedStocks()
+  }, [props.currentSenatorTransactions]);
 
 	return (
 		<div className="main-container">
@@ -56,25 +70,65 @@ const SenatorDetails = (props) => {
 				<div className="head-shot">
 					<img
 						className="head-shot"
-						src={currentSenator[0]?.image}
-						alt={`${currentSenator[0]?.name} head-shot`}
+						src={props.currentSenator[0]?.image}
+						alt={`${props.currentSenator[0]?.name} head-shot`}
 					/>
 				</div>
-				<div className="senator-name">{currentSenator[0]?.name}</div>
-			</div>
-      <div className="all-transaction-container">
-        {currentSenatorTransactions?.map(eachTransaction => (
-          <div className="transaction-container-sale">
-            <div>{eachTransaction.ticker}</div>
-            <div>{eachTransaction.amount}</div>
-            <div>{eachTransaction.transaction_date}</div>
-            <div>{eachTransaction.type}</div>
+				<div className="senator-name">{props.currentSenator[0]?.name}</div>
+        <div className="stocks-held-container">
+          <div className="stocks-held-title-txt">Stock Interactions</div>
+          <div className="each-stock-ticker-container">
+            {props.movedStocks?.map(eachStockTicker => (
+              <div className="each-stock-ticker">{eachStockTicker}</div>
+            ))}
           </div>
-        ))}
+        </div>
 
+			</div>
+      <div className="sale-buy-container">
+        <div className="purchase-txt">Purchases:</div>
+        <div className="all-transaction-container">
+          {props.currentSenatorTransactions?.map(eachTransaction => (
+            eachTransaction.type === "Purchase" &&
+            <Link to={
+              `/senators/` 
+              + props.match.params.senatorName 
+              + "/" + eachTransaction.ticker + "/" 
+              + eachTransaction.transaction_date
+            }>
+              <div className="transaction-container-purchase" key={eachTransaction._id}>
+                <div>{eachTransaction.ticker}</div>
+                <div>{eachTransaction.amount}</div>
+                <div>{eachTransaction.transaction_date}</div>
+                <div>{eachTransaction.type}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-		</div>
-	)
+      <div className="sale-buy-container">
+        <div className="sale-txt">Sales:</div>
+        <div className="all-transaction-container">
+          {props.currentSenatorTransactions?.map(eachTransaction => (
+            eachTransaction.type !== "Purchase" &&
+            <Link to={
+              `/senators/` 
+              + props.match.params.senatorName 
+              + "/" + eachTransaction.ticker 
+              + "/" + eachTransaction.transaction_date
+            }>
+              <div className="transaction-container-sale">
+                <div>{eachTransaction.ticker}</div>
+                <div>{eachTransaction.amount}</div>
+                <div>{eachTransaction.transaction_date}</div>
+                <div>{eachTransaction.type}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default withRouter(SenatorDetails)

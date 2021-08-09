@@ -14,7 +14,8 @@ function findRange(req, res){
     params: {
       period1: req.params.date1, 
       period2: req.params.date2, 
-      symbol: req.params.ticker
+      symbol: req.params.ticker,
+      interval: "1mo",
     },
     headers: {
       'x-rapidapi-key': stockKey,
