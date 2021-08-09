@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./MyProfile.css";
 import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing";
-
+import { createWatchlist } from "../../services/watchlistService";
 
 
 
@@ -28,6 +28,7 @@ const MyProfile = (props) => {
             <div className="profile-posts-header">
               <h3>My Watchlists</h3>
             </div>
+            <div></div>
           </div>
           <div className="user-posts">Watchlists got here!</div>
         </div>
