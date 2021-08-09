@@ -2,4 +2,5 @@ img {
   width: 400px;
   margin: auto;
   display: block;
+  border-radius: 50%;
 }
