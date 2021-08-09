@@ -12,6 +12,8 @@ const StockDetails = (props) => {
   const [stock, setStock] = useState([])
   const [stockTimes, setStockTimes] = useState([])
 	const [stockPrices, setStockPrices] = useState([])
+  const [repsWithTrans, setRepsWithTrans] = useState([])
+  const [senateWithTrans, setSenateWithTrans] = useState([])
 
   useEffect(() => {
     async function callStockApi(){
@@ -35,11 +37,42 @@ const StockDetails = (props) => {
       }
     }
       callStockApi()
+  }, [props])
+
+  useEffect(() => {
+    async function getSortedReps() {
+      let sortReps = []
+       await props.houseTransactions.map(transaction => {
+        if(transaction.ticker === props.match?.params.ticker && !sortReps.includes(transaction.representative)){
+          sortReps.push(transaction.representative)
+          console.log(sortReps)
+  
+        }
+      })
+      setRepsWithTrans(sortReps)
+    }
+    async function getSortedSenate() {
+      let sortSenate = []
+       await props.senateTransactions.map(transaction => {
+        if(transaction.ticker === props.match?.params.ticker && !sortSenate.includes(transaction.representative)){
+          sortSenate.push(transaction.senator)
+          console.log(sortSenate)
+  
+        }
+      })
+      setSenateWithTrans(sortSenate)
+    }
+    getSortedSenate()
+    getSortedReps()
   }, [props]);
 
   return (
-    <div>Stock Details Page
-            {
+    <div>
+      <div>
+        Stock Details Page
+      </div>
+
+      {
         !stock?.chart?.result[0]?.timestamp ? 
         <div>Waiting for data</div>
         :
@@ -49,7 +82,36 @@ const StockDetails = (props) => {
           ticker={props?.match.params.ticker}
         />
       }
-
+    <div>
+      <div>Reps That have made transactions</div>
+      <div>
+        {repsWithTrans ? props.representativeList.map(representative => (
+          repsWithTrans.includes(representative.name) &&
+          <Link to={`/representatives/` + representative.name}>
+            <div className="representative-container">
+              <div className="head-shot"><img className="head-shot" src={representative.image} alt={`${representative.name} head-shot`} /></div>
+              <div className="representative-name">{representative.name}</div>
+            </div>
+          </Link>
+        ))
+      : ""} 
+      </div>
+      <div>
+        <div>Senators That have made transactions</div>
+        <div>
+          {senateWithTrans ? props.senatorList.map(senator => (
+            senateWithTrans.includes(senator.name) &&
+            <Link to={`/senators/` + senator.name}>
+              <div className="senator-container">
+                <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
+                <div className="senator-name">{senator.name}</div>
+              </div>
+            </Link>
+          ))
+        : ""} 
+      </div>
+      </div>
+    </div>
     </div>
   )
 }
