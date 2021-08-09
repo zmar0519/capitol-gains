@@ -213,7 +213,14 @@ const App = () => {
 			}
 			</Route>
 			<Route exact path="/stocks/:ticker">
-				<StockDetails />
+				<StockDetails 
+					senateTransactions={senateTransactions}
+					senatorList={senatorList}
+					houseTransactions={houseTransactions}
+					representativeList={representativeList}
+
+
+				/>
 			</Route>
 		</>
 	)
