@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as repsCtrl from "../controllers/reps.js"
+import * as senatorsCtrl from "../controllers/senators.js"
 import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
@@ -8,7 +8,7 @@ const router = Router()
 
 /*---------- Public Routes -----------*/
 
-router.post("/create", repsCtrl.create)
+router.post("/create", senatorsCtrl.create)
 
 
 /*---------- Protected Routes ----------*/
