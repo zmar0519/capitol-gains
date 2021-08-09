@@ -79,7 +79,9 @@ const SenatorDetails = (props) => {
           <div className="stocks-held-title-txt">Stock Interactions</div>
           <div className="each-stock-ticker-container">
             {props.movedStocks?.map(eachStockTicker => (
-              <div className="each-stock-ticker">{eachStockTicker}</div>
+              <Link to={"/stocks/" + eachStockTicker}>
+                <div className="each-stock-ticker">{eachStockTicker}</div>
+              </Link>            
             ))}
           </div>
         </div>

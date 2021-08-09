@@ -11,6 +11,7 @@ import SenatorDetails from '../SenatorDetails/SenatorDetails'
 import RepresentativeDetails from '../RepresentativeDetails/RepresentativeDetails'
 import StockByRep from '../StockByRep/StockByRep'
 import StockBySenator from '../StockBySenator/StockBySenator'
+import StockDetails from '../StockDetails/StockDetails'
 import NavBar from '../../components/NavBar/NavBar'
 import SignUp from '../Signup/Signup'
 import Login from '../Login/Login'
@@ -210,6 +211,9 @@ const App = () => {
 				currentUser={currentUser}/>
 				:<Redirect to='/login' />
 			}
+			</Route>
+			<Route exact path="/stocks/:ticker">
+				<StockDetails />
 			</Route>
 		</>
 	)
