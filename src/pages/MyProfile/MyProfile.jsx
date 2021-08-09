@@ -17,20 +17,19 @@ const MyProfile = (props) => {
         <div className="profile-user-info">
           <img src={avatar} alt="user avatar"></img>
           <h3>Handle Here</h3>
-          <button>
-            <Link to="/home">Home</Link>
+          <button className="home-button">
+            <Link to="/">Home</Link>
           </button>
-          <button>Create a Following</button>
           <button>Sign Out</button>
       </div>
       <div className="profile-watchlist">
         <div className="profile-post-container">
           <div className="sub-container">
             <div className="profile-posts-header">
-              <h3>My WatchList</h3>
+              <h3>My Watchlists</h3>
             </div>
           </div>
-          <div className="user-posts">Posts go here!</div>
+          <div className="user-posts">Watchlists got here!</div>
         </div>
       </div>
       <div className="following-form">

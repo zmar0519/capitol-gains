@@ -12,22 +12,8 @@ const FollowingForm = (props) => {
           <label>Create a Watchlist</label>
         </div>
         <input required autoComplete="off" placeholder="Watchlist Name" name="name" />
-        <div className="border"></div>
-        <div className="comment-prompt">
-          <label>Comment</label>
-        </div>
-
-        <TextField
-          value={comment}
-          label="Enter your comment"
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-        />
-        ; 
     
-        <div className="border"></div>
-        <button type="submit">Submit</button>
+        <button className="watchlist-submit" type="submit">Submit</button>
       </form>
     </div>
   )
