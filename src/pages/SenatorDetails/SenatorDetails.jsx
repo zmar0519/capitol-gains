@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from "../../components/SideMenu/SideMenu"
+import { addSenToWatchlist } from "../../services/senatorService"
 import "./SenatorDetails.css"
 
 const SenatorDetails = (props) => {
@@ -74,7 +75,12 @@ const SenatorDetails = (props) => {
             alt={`${props.currentSenator[0]?.name} head-shot`}
           />
         </div>
-        <button type="button" className="watchList-button">
+        <button type="button" className="watchList-button" onClick={() => addSenToWatchlist({
+          name: props.currentSenator[0].name,
+          party: props.currentSenator[0].party,
+          state: props.currentSenator[0].state,
+          image: props.currentSenator[0].image,
+        })}>
           Add To WatchList
         </button>
         <div className="senator-name">{props.currentSenator[0]?.name}</div>
