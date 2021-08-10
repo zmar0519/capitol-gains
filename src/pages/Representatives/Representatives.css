@@ -10,7 +10,6 @@
 
 .rep-header{
   display: flex;
-  width: fit-content;
   flex-direction: row;
   justify-content: center;
   align-items: center;
