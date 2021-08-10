@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from '../../components/SideMenu/SideMenu'
 import "./RepresentativeDetails.css"
+import RepHeader from "../../components/RepHeader/RepHeader"
 
 
 const RepresentativeDetails = (props) => {
@@ -63,6 +64,9 @@ const RepresentativeDetails = (props) => {
 
   return (
     <div className="main-container">
+      <div className = "header">
+        <RepHeader/>
+      </div>
       <div className="menu">
         <SideMenu />
       </div>

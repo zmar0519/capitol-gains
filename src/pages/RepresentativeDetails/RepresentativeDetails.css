@@ -1,5 +1,12 @@
 .main-container {
   display: flex;
+  background-color: rgb(235,224,205);
+}
+
+.header {
+  font-size: 35px;
+    font-family: 'Yeseva One', cursive;
+    color: rgb(32,58,95)
 }
 
 .menu {
@@ -11,11 +18,16 @@
   height: fit-content;
   width: fit-content;
   padding: 10px;
+  margin: 28px;
+}
+
+img.head-shot {
+  border-right: thin rgb(32,58,95);
 }
 
 .representative-name {
-  font-size: 25px;
-  margin: 10px;
+  font-size: 18px;
+  margin: 12px;
 }
 
 #watchList-button{
