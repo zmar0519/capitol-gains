@@ -3,6 +3,8 @@ import { Link, withRouter } from "react-router-dom"
 import { Line } from "react-chartjs-2"
 import { findRange } from "../../services/stockApiService"
 import Graph from "../../components/StockGraph/Graph"
+import loadingData from "../../assets/Lottie/lf30_editor_hrnlpjer.json"
+import LoadingAnimation from "../../components/Misc/LoadingAnimation"
 import "./StockByRep.css"
 
 function StockByRep(props) {
@@ -111,7 +113,7 @@ function StockByRep(props) {
     <div className="main-stock-container">
         <div className="stock-graph-container">
           {!stock?.chart?.result[0]?.timestamp ? (
-            <div className="waiting-txt">Waiting for data</div>
+            <div className="waiting-txt"><LoadingAnimation loadingData={loadingData}/></div>
           ) : (
             <div className="stock-graph">
               <Graph

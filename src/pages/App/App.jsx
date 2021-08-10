@@ -31,7 +31,7 @@ const App = () => {
 	const history = useHistory()
 	const [user, setUser] = useState(authService.getUser())
 
-	const [currentUser, setCurrentUser] = useState()
+	// const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
 
 	const [houseTransactions, setHouseTransactions] = useState([])
@@ -87,7 +87,7 @@ const App = () => {
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
-		setCurrentUser(user)
+		setUser(user)
 		setAuthenticated(true)
 	}
 
@@ -97,7 +97,7 @@ const App = () => {
 			if (token) {
 				try {
 					const user = getUser()
-					setCurrentUser(user)
+					setUser(user)
 					setAuthenticated(true)
 				} catch (error){
 					localStorage.clear()
@@ -115,7 +115,7 @@ const App = () => {
 
 	return (
 		<>
-			<NavBar user={user} handleLogout={handleLogout}/>
+			<NavBar user={user} authenticated={authenticated} handleLogout={handleLogout}/>
 			<Route exact path='/'>
 				<Landing user={user} senateTrans={senateTransactions} />
 			</Route>
@@ -208,7 +208,7 @@ const App = () => {
 			<Route exact path={`/myProfile/:myProfile`}>
 				{user ?
 				<MyProfile
-				currentUser={currentUser}/>
+				currentUser={user}/>
 				:<Redirect to='/login' />
 			}
 			</Route>
