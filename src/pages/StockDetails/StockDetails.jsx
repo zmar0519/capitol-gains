@@ -72,7 +72,7 @@ const StockDetails = (props) => {
     <div className="main-stock-container">
       <div className="stock-graph-container">
         {!stock?.chart?.result[0]?.timestamp ? (
-          <div className="waiting-txt">Waiting for data</div>
+          <div className="waiting-txt">Waiting for Data</div>
         ) : (
           <div className="stock-graph">
             <Graph
@@ -85,7 +85,7 @@ const StockDetails = (props) => {
       </div>
       <div className="lower-section">
         <div className="rep">
-          <div className="rep-list-txt">Reps That have made transactions</div>
+          <div className="rep-list-txt">Representatives</div>
           <div>
             {repsWithTrans
               ? props.representativeList.map(
@@ -112,7 +112,7 @@ const StockDetails = (props) => {
         </div>
         <div className="sen">
             <div className="sen-list-txt">
-              Senators That have made transactions
+              Senators 
             </div>
             <div>
               {senateWithTrans
