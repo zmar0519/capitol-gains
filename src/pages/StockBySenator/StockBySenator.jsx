@@ -103,7 +103,7 @@ function StockBySenator(props) {
 
 
 	return (
-		<div>
+		<div className="main-stock-container">
       <div className="stock-graph-container">
       {
         !stock?.chart?.result[0]?.timestamp ? 
@@ -132,7 +132,6 @@ function StockBySenator(props) {
 				</div>
 			))}
       </div>
-      anything
 		</div>
 	)
 }
