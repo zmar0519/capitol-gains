@@ -26,8 +26,8 @@
 .menu-items {
   display: flex;
   flex-direction: column;
-  height: 79vh;
-  padding: 10px;
+  height: 23vh;
+  padding: 15px;
 }
 
 .menu-items a, button {
@@ -44,7 +44,7 @@
 }
 
 .representatives-btn:hover, .senators-btn:hover{
-background-color: rgb(93,141,106)
+background-color: rgb(93,141,106);
 }
 
 

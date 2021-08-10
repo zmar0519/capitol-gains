@@ -18,6 +18,15 @@
   margin: 10px;
 }
 
+.watchList-button{
+  margin-top: 10px;
+  background-color: rgb(113,37,15);
+  border: 1px solid #292934;
+  border-radius: 8px;
+  padding: 10px;
+  width: 80%;
+}
+
 .stocks-held-container {
   display: flex;
   flex-direction: column;
@@ -48,12 +57,6 @@
   justify-content: space-evenly;
   align-items: stretch;
 }
-.all-transaction-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: stretch;
-}
 
 .sale-buy-container {
   display: flex;
@@ -76,7 +79,7 @@
   width: 200px;
   height: 100px;
   border: 1px black solid;
-  background-color: rgba(36, 214, 19, .5);
+  background-color:rgb(93,141,106);
 }
 
 .transaction-container-sale {
@@ -89,7 +92,7 @@
   width: 200px;
   height: 100px;
   border: 1px black solid;
-  background-color: rgba(222, 18, 18, .5);
+  background-color: rgb(204,79,52);
 }
 
 a {
