@@ -15,6 +15,7 @@ import "./config/database.js"
 
 const app = express()
 
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
 
 app.use(cors())
 app.use(logger("dev"))
@@ -26,12 +27,16 @@ app.use("/api/stocks", stocksRouter)
 app.use("/api/reps", repsRouter)
 app.use("/api/senators", senatorsRouter)
 
-app.get("*", function (req, res) {
-	console.log("This is the path console log", path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html"))
-	res.sendFile(
-		path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html")
-	)
+
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(path.dirname(fileURLToPath(import.meta.url)),'build','index.html'))
 })
+// app.get("*", function (req, res) {
+// 	console.log("This is the path console log", path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html"))
+// 	res.sendFile(
+// 		path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html")
+// 	)
+// })
 
 const port = process.env.PORT || 3001
 
