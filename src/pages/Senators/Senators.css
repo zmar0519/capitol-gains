@@ -6,9 +6,17 @@
   width: fit-content;
 }
 
+.sen-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .all-senators-container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0px;
 }
 
 .senator-container {
