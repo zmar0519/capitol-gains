@@ -108,37 +108,42 @@ function StockByRep(props) {
 
 
 	return (
-		<div>
-      <div className="stock-graph-container">
-      {
-        !stock?.chart?.result[0]?.timestamp ? 
-        <div className="waiting-txt">Waiting for data</div>
-        :
-        <div className="stock-graph">
-          <Graph
-            time={stockTimes}
-            price={stockPrices}
-            ticker={props?.match.params.ticker}
-          />
+    <div>
+      <div className="left-upper-corner">
+        <div className="stock-graph-container">
+          {!stock?.chart?.result[0]?.timestamp ? (
+            <div className="waiting-txt">Waiting for data</div>
+          ) : (
+            <div className="stock-graph">
+              <Graph
+                time={stockTimes}
+                price={stockPrices}
+                ticker={props?.match.params.ticker}
+              />
+            </div>
+          )}
         </div>
-      }
       </div>
       <div className="percent">
-        {percent !== "NaN%" ? <div>{percent} Change Since Transaction</div> : ""}
+        {percent !== "NaN%" ? (
+          <div>{percent} Change Since Transaction</div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="transaction-container">
-			{currentTransactions?.map((transaction) => (
-				<div key={transaction._id} className="transaction">
-					<div>{transaction?.representative}</div>
-					<div>{transaction.amount}</div>
-					<div>{transaction.ticker}</div>
-					<div>{transaction.type}</div>
-					<div>{transaction.transaction_date}</div>
-				</div>
-			))}
+        {currentTransactions?.map((transaction) => (
+          <div key={transaction._id} className="transaction">
+            <div>{transaction?.representative}</div>
+            <div>{transaction.amount}</div>
+            <div>{transaction.ticker}</div>
+            <div>{transaction.type}</div>
+            <div>{transaction.transaction_date}</div>
+          </div>
+        ))}
       </div>
-		</div>
-	)
+    </div>
+  );
 }
 
 export default withRouter(StockByRep)
