@@ -1,6 +1,36 @@
-.lower-section {
+.main-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+}
+
+.stock-graph-container {
+    /* margin: 20px 180px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    min-height: 35vh;
+    padding-bottom: 20px;
+  }
+  
+  .waiting-txt {
+    font-size: 40px;
+    margin: 20px 180px;
+  }
+  
+  .stock-graph {
+    width: 70%;
+    min-height: 35vh;
+  }
+
+
+.lower-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
 
 .rep-list-txt{
@@ -15,17 +45,22 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-margin-top: 10px;
 }
 
 .sen{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    margin: 10px;
 }
 
 .rep{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    margin: 10px;
 }
 /* 
 

@@ -5,7 +5,7 @@ const BASE_URL =
 
 function getAllHouseApi() {
 	return fetch(BASE_URL, {
-        // headers: {
+    //     headers: {
     //   'Authorization': `Bearer ${tokenService.getToken()}`
     // },
     }

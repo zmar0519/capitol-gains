@@ -69,7 +69,7 @@ const StockDetails = (props) => {
   }, [props]);
 
   return (
-    <div>
+    <div className="main-container">
       <div className="stock-graph-container">
         {!stock?.chart?.result[0]?.timestamp ? (
           <div className="waiting-txt">Waiting for data</div>
@@ -109,6 +109,7 @@ const StockDetails = (props) => {
                 )
               : ""}
           </div>
+        </div>
         <div className="sen">
             <div className="sen-list-txt">
               Senators That have made transactions
@@ -134,10 +135,10 @@ const StockDetails = (props) => {
                   )
                 : ""}
             </div>
-          </div>
         </div>
       </div>
     </div>
+
   );
 }
 
