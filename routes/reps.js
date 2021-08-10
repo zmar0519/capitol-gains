@@ -8,11 +8,12 @@ const router = Router()
 
 /*---------- Public Routes -----------*/
 
-router.post("/create", repsCtrl.create)
 
 
 /*---------- Protected Routes ----------*/
-
+router.use(decodeUserFromToken)
+router.post("/watchlist", checkAuth, repsCtrl.addToWatchlist)
+router.post("/create", checkAuth, repsCtrl.create)
 
 
 export {

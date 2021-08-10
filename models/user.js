@@ -12,6 +12,8 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, lowercase: true, unique: true },
     password: { type: String, required: true }, // Summer added this
     avatar: { type: String, required: true }, // Summer added this
+    reps: [{type: mongoose.Schema.Types.ObjectId, ref: "Reps"}],
+    senators: [{type: mongoose.Schema.Types.ObjectId, ref: "Senators"}],
     profile: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Profile",

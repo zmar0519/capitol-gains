@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from '../../components/SideMenu/SideMenu'
+import { addRepToWatchlist } from '../../services/repService'
 import "./RepresentativeDetails.css"
 
 
@@ -79,7 +80,12 @@ const RepresentativeDetails = (props) => {
         <div className="representative-name">
           {props.currentRepresentative[0]?.name}
         </div>
-        <button type="button" className="watchList-button">
+        <button type="button" className="watchList-button" onClick={()=> addRepToWatchlist({
+          name: props.currentRepresentative[0].name,
+          party: props.currentRepresentative[0].party,
+          state: props.currentRepresentative[0].state,
+          image: props.currentRepresentative[0].image,
+        })}>
           Add To WatchList
         </button>
         <div className="stocks-held-container">
