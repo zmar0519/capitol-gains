@@ -27,10 +27,9 @@ app.use("/api/reps", repsRouter)
 app.use("/api/senators", senatorsRouter)
 
 app.get("*", function (req, res) {
-	// res.sendFile(
-	// 	path.dirname(fileURLToPath(import.meta.url), "build", "index.html")
-	// )
-	res.send("<h1>Something</h1>")
+	res.sendFile(
+		path.dirname(fileURLToPath(import.meta.url), "build", "index.html")
+	)
 })
 
 const port = process.env.PORT || 3001
