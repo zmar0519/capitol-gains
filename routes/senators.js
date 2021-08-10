@@ -8,10 +8,11 @@ const router = Router()
 
 /*---------- Public Routes -----------*/
 
-router.post("/create", senatorsCtrl.create)
-
 
 /*---------- Protected Routes ----------*/
+router.use(decodeUserFromToken)
+router.post("/watchlist", checkAuth, senatorsCtrl.addToWatchlist)
+router.post("/create", checkAuth, senatorsCtrl.create)
 
 
 
