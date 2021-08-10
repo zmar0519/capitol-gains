@@ -6,6 +6,9 @@ import Graph from "../../components/StockGraph/Graph"
 import "./StockDetails.css"
 import SenHeader from "../../components/SenHeader/SenHeader";
 import RepHeader from "../../components/RepHeader/RepHeader"
+import loadingData from "../../assets/Lottie/lf30_editor_hrnlpjer.json"
+import LoadingAnimation from "../../components/Misc/LoadingAnimation"
+
 
 
 
@@ -72,8 +75,8 @@ const StockDetails = (props) => {
     <div className="main-stock-container">
       <div className="stock-graph-container">
         {!stock?.chart?.result[0]?.timestamp ? (
-          <div className="waiting-txt">Waiting for Data</div>
-        ) : (
+            <div className="waiting-txt"><LoadingAnimation loadingData={loadingData}/></div>
+            ) : (
           <div className="stock-graph">
             <Graph
               time={stockTimes}
@@ -116,7 +119,7 @@ const StockDetails = (props) => {
             </div>
             <div>
               {senateWithTrans
-                ? props.senatorList.map(
+                && props.senatorList.map(
                     (senator) =>
                       senateWithTrans.includes(senator.name) && (
                         <Link to={`/senators/` + senator.name}>
@@ -132,8 +135,7 @@ const StockDetails = (props) => {
                           </div>
                         </Link>
                       )
-                  )
-                : ""}
+                  )}
             </div>
         </div>
       </div>
