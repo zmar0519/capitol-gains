@@ -20,12 +20,14 @@ function addToWatchlist (req, res) {
   .then(repId => {
     User.findById(req.user._id)
     .then(user => {
-      user.reps.push(repId)
-      user.save()
-      const token = createJWT(user)
-        res.json({ token })
-    }
-    )
+      if(user.reps.includes(repId) === false){
+        user.reps.push(repId)
+        user.save()
+        const token = createJWT(user)
+          res.json({ token })        
+      }
+      return
+    })
   })
 }
 
