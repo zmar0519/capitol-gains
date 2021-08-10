@@ -5,7 +5,7 @@ import { findRange } from "../../services/stockApiService"
 import Graph from "../../components/StockGraph/Graph"
 import "./StockDetails.css"
 import SenHeader from "../../components/SenHeader/SenHeader";
-import RepHeader from "../../components/RepHeader/RepHeader";
+import RepHeader from "../../components/RepHeader/RepHeader"
 
 
 
