@@ -18,7 +18,7 @@ const Senators = (props) => {
       <div className="all-senators-container">
         {props.senatorList.map(senator => (
           <Link to={`/senators/` + senator.name}>
-            <div className="senator-container">
+            <div className="senator-container senate-contain">
               <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
               <div className="senator-name">{senator.name}</div>
             </div>
