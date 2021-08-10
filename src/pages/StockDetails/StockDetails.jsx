@@ -68,54 +68,73 @@ const StockDetails = (props) => {
 
   return (
     <div>
-
-
       <div className="stock-graph-container">
-      {
-        !stock?.chart?.result[0]?.timestamp ? 
-        <div className="waiting-txt">Waiting for data</div>
-        :
-        <div className="stock-graph">
-          <Graph
-            time={stockTimes}
-            price={stockPrices}
-            ticker={props?.match.params.ticker}
-          />
-        </div>
-      }
-      </div>
-    <div>
-      <div>Reps That have made transactions</div>
-      <div>
-        {repsWithTrans ? props.representativeList.map(representative => (
-          repsWithTrans.includes(representative.name) &&
-          <Link to={`/representatives/` + representative.name}>
-            <div className="representative-container">
-              <div className="head-shot"><img className="head-shot" src={representative.image} alt={`${representative.name} head-shot`} /></div>
-              <div className="representative-name">{representative.name}</div>
-            </div>
-          </Link>
-        ))
-      : ""} 
+        {!stock?.chart?.result[0]?.timestamp ? (
+          <div className="waiting-txt">Waiting for data</div>
+        ) : (
+          <div className="stock-graph">
+            <Graph
+              time={stockTimes}
+              price={stockPrices}
+              ticker={props?.match.params.ticker}
+            />
+          </div>
+        )}
       </div>
       <div>
-        <div>Senators That have made transactions</div>
+        <div className="rep-list-txt">Reps That have made transactions</div>
         <div>
-          {senateWithTrans ? props.senatorList.map(senator => (
-            senateWithTrans.includes(senator.name) &&
-            <Link to={`/senators/` + senator.name}>
-              <div className="senator-container">
-                <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
-                <div className="senator-name">{senator.name}</div>
-              </div>
-            </Link>
-          ))
-        : ""} 
-      </div>
+          {repsWithTrans
+            ? props.representativeList.map(
+                (representative) =>
+                  repsWithTrans.includes(representative.name) && (
+                    <Link to={`/representatives/` + representative.name}>
+                      <div className="representative-container">
+                        <div className="head-shot">
+                          <img
+                            className="head-shot"
+                            src={representative.image}
+                            alt={`${representative.name} head-shot`}
+                          />
+                        </div>
+                        <div className="representative-name">
+                          {representative.name}
+                        </div>
+                      </div>
+                    </Link>
+                  )
+              )
+            : ""}
+        </div>
+        <div>
+          <div className="sen-list-txt">
+            Senators That have made transactions
+          </div>
+          <div>
+            {senateWithTrans
+              ? props.senatorList.map(
+                  (senator) =>
+                    senateWithTrans.includes(senator.name) && (
+                      <Link to={`/senators/` + senator.name}>
+                        <div className="senator-container">
+                          <div className="head-shot">
+                            <img
+                              className="head-shot"
+                              src={senator.image}
+                              alt={`${senator.name} head-shot`}
+                            />
+                          </div>
+                          <div className="senator-name">{senator.name}</div>
+                        </div>
+                      </Link>
+                    )
+                )
+              : ""}
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
 
 
