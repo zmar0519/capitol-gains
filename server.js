@@ -26,7 +26,7 @@ app.use("/api/stocks", stocksRouter)
 app.use("/api/reps", repsRouter)
 app.use("/api/senators", senatorsRouter)
 
-app.get("/*", function (req, res) {
+app.get("*", function (req, res) {
 	res.sendFile(
 		path.dirname(fileURLToPath(import.meta.url), "build", "index.html")
 	)
