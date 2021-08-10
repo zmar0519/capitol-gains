@@ -28,6 +28,12 @@
   width: 250px;
   height: 250px;
 }
+.senate-contain {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+}
 
 .head-shot {
   width: 200px;
