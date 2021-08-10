@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { NavLink } from 'react-router-dom'
 import "./NavBar.css"
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, authenticated }) => {
 	return (
 		<nav className="nav-bar">
 			<div className="nav-ul-container">
