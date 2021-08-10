@@ -20,7 +20,7 @@
 
 .watchList-button{
   margin-top: 10px;
-  background-color: rgb(113,37,15);
+  background-color: rgba(113,37,15, 0.7);
   border: 1px solid #292934;
   border-radius: 8px;
   padding: 10px;
@@ -79,7 +79,7 @@
   width: 200px;
   height: 100px;
   border: 1px black solid;
-  background-color:rgb(93,141,106);
+  background-color:rgba(93,141,106, 0.7);
 }
 
 .transaction-container-sale {
@@ -92,7 +92,7 @@
   width: 200px;
   height: 100px;
   border: 1px black solid;
-  background-color: rgb(204,79,52);
+  background-color: rgba(204,79,52,0.7);
 }
 
 a {
