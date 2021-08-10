@@ -707,7 +707,7 @@ let representatives = [
 		name: "Hon. Kathy Manning",
 		party: "Democrat",
 		state: "NC",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "http://manning.house.gov/sites/evo-subsites/manning.house.gov/files/evo-media-image/Kathy-Manning-Official-Portrait.jpg",
 	},
 	{
 		name: "Hon. Kathy Manning",
@@ -719,7 +719,7 @@ let representatives = [
 		name: "Hon. Blake Moore",
 		party: "Republican",
 		state: "UT",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "http://blakemoore.house.gov/sites/evo-subsites/blakemoore.house.gov/files/evo-media-image/2020_Official_Blake_Moore.jpg",
 	},
 	{
 		name: "Hon. Austin Scott",
@@ -749,7 +749,7 @@ let representatives = [
 		name: "Deborah K. Ross",
 		party: "Democrat",
 		state: "NC",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Deborah_Ross_117th_U.S_Congress.jpg/1200px-Deborah_Ross_117th_U.S_Congress.jpg",
 	},
 	{
 		name: "Hon. Matt Gaetz",
@@ -779,7 +779,7 @@ let representatives = [
 		name: "Hon. Joseph P. Kennedy",
 		party: "Democrat",
 		state: "MA",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Joe_Kennedy_III%2C_official_portrait%2C_116th_Congress.jpg",
 	},
 	{
 		name: "Hon. Susan W. Brooks",
@@ -815,7 +815,7 @@ let representatives = [
 		name: "Sara Jacobs",
 		party: "Democrat",
 		state: "CA",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Sara_Jacobs_117th_U.S_Congress.jpg",
 	},
 	{
 		name: "Hon. Eleanor Holmes Norton",
@@ -851,19 +851,19 @@ let representatives = [
 		name: "Marie Newman",
 		party: "Democrat",
 		state: "IL",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marie_Newman_Official_Portrait.jpg/1200px-Marie_Newman_Official_Portrait.jpg",
 	},
 	{
 		name: "Hon. Patrick Fallon",
 		party: "Republican",
 		state: "TX",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/PatFallon.jpg/1200px-PatFallon.jpg",
 	},
 	{
 		name: "Hon. Felix Barry Moore",
 		party: "Republican",
 		state: "AL",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Barry_Moore_117th_U.S_Congress.jpg",
 	},
 	{
 		name: "Hon. Gus M. Bilirakis",
@@ -887,13 +887,13 @@ let representatives = [
 		name: "Victoria Spartz",
 		party: "Republican",
 		state: "IN",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Victoria_Spartz_117th_U.S_Congress.jpg",
 	},
 	{
 		name: "Mr. Scott Franklin",
 		party: "Republican",
 		state: "FL",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "http://franklin.house.gov/sites/evo-subsites/franklin.house.gov/files/evo-media-image/rep-franklin-official2-small.JPG",
 	},
 	{
 		name: "Hon. Elaine Luria",
@@ -953,7 +953,7 @@ let representatives = [
 		name: "Hon. James Hagedorn",
 		party: "Republican",
 		state: "MN",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://hagedorn.house.gov/sites/hagedorn.house.gov/files/wysiwyg_uploaded/rep-hagedorn-official.jpg",
 	},
 	{
 		name: "Hon. Justin Amash",
