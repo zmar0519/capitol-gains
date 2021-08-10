@@ -14,7 +14,7 @@ function StockByRep(props) {
   const [currentTransactions, setCurrentTransactions] = useState([])
   const [currentTransactionsDates, setCurrentTransactionsDates] = useState([])
 	const [percent, setPercent] = useState(null)
-  const [epoch, setEpoch] = useState("")
+  const [epoch, setEpoch] = useState()
 
 
   console.log(props)
@@ -64,6 +64,7 @@ function StockByRep(props) {
 
   useEffect(() => {    
     async function getCurrentTransactionsDates() {
+      console.log("im the current transaction", currentTransactions)
       let transactionDates = await currentTransactions?.map(transaction => {
         let date = transaction.transaction_date
         let unfixed = date.split("-")
@@ -73,10 +74,9 @@ function StockByRep(props) {
         return fixed  
       })
       let newDate = await (Math.floor(
-        new Date(transactionDates).getTime() / 1000
+        new Date(transactionDates[0]).getTime() / 1000
       ))
       
-        console.log(newDate)
       await setEpoch(newDate)
       await setCurrentTransactionsDates(newDate)
     }
@@ -133,15 +133,15 @@ function StockByRep(props) {
         )}
       </div>
       <div className="transaction-container">
-        {currentTransactions?.map((transaction) => (
-          <div key={transaction._id} className="transaction">
-            <div>{transaction?.representative}</div>
-            <div>{transaction.amount}</div>
-            <div>{transaction.ticker}</div>
-            <div>{transaction.type}</div>
-            <div>{transaction.transaction_date}</div>
+
+          <div className="transaction">
+            <div>{currentTransactions[0]?.representative}</div>
+            <div>{currentTransactions[0]?.amount}</div>
+            <div>{currentTransactions[0]?.ticker}</div>
+            <div>{currentTransactions[0]?.type}</div>
+            <div>{currentTransactions[0]?.transaction_date}</div>
           </div>
-        ))}
+
       </div>
     </div>
   );
