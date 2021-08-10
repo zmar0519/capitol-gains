@@ -108,7 +108,7 @@ function StockByRep(props) {
 
 
 	return (
-    <div>
+    <div className="main-stock-container">
         <div className="stock-graph-container">
           {!stock?.chart?.result[0]?.timestamp ? (
             <div className="waiting-txt">Waiting for data</div>
