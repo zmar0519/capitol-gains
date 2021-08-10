@@ -12,7 +12,7 @@ function Graph(props) {
 				label: props.ticker,
 				fill: true,
 				lineTension: 0.5,
-				backgroundColor: "rgba(0,255,0,.5)",
+				backgroundmage: "url(../../assets/components/Flag",
 				borderColor: "rgba(0,0,0,1)",
 				borderWidth: 2,
 				data: props.price,
