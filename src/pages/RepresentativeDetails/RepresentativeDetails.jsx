@@ -79,11 +79,11 @@ const RepresentativeDetails = (props) => {
         <div className="representative-name">
           {props.currentRepresentative[0]?.name}
         </div>
-        <button type="button" id="watchList-button">
+        <button type="button" className="watchList-button">
           Add To WatchList
         </button>
         <div className="stocks-held-container">
-          <div className="stocks-held-title-txt">Stock Interactions</div>
+          <div className="stocks-held-title-txt">Stocks Held</div>
           <div className="each-stock-ticker-container">
             {props.movedStocks?.map((eachStockTicker) => (
               <Link to={"/stocks/" + eachStockTicker}>
