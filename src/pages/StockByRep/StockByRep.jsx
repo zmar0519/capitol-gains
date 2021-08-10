@@ -109,7 +109,6 @@ function StockByRep(props) {
 
 	return (
     <div>
-      <div className="left-upper-corner">
         <div className="stock-graph-container">
           {!stock?.chart?.result[0]?.timestamp ? (
             <div className="waiting-txt">Waiting for data</div>
@@ -122,7 +121,7 @@ function StockByRep(props) {
               />
             </div>
           )}
-        </div>
+       
       </div>
       <div className="percent">
         {percent !== "NaN%" ? (

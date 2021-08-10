@@ -1,20 +1,35 @@
-
-
-/* .waiting-txt{
-
-}
-
-.stock-graph{
-
+.lower-section {
+    display: flex;
+    flex-direction: column;
 }
 
 .rep-list-txt{
-
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
 }
 
 .sen-list-txt{
-
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
 }
+
+.sen{
+    display: flex;
+    flex-direction: row;
+}
+
+.rep{
+    display: flex;
+    flex-direction: row;
+}
+/* 
+
+
 
 
 .representative-container{
@@ -35,4 +50,4 @@
 
 .senator-name{
 
-} */
+} */ 

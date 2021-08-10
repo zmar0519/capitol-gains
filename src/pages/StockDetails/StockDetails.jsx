@@ -4,6 +4,8 @@ import { Line } from "react-chartjs-2"
 import { findRange } from "../../services/stockApiService"
 import Graph from "../../components/StockGraph/Graph"
 import "./StockDetails.css"
+import SenHeader from "../../components/SenHeader/SenHeader";
+import RepHeader from "../../components/RepHeader/RepHeader";
 
 
 
@@ -81,55 +83,57 @@ const StockDetails = (props) => {
           </div>
         )}
       </div>
-      <div>
-        <div className="rep-list-txt">Reps That have made transactions</div>
-        <div>
-          {repsWithTrans
-            ? props.representativeList.map(
-                (representative) =>
-                  repsWithTrans.includes(representative.name) && (
-                    <Link to={`/representatives/` + representative.name}>
-                      <div className="representative-container">
-                        <div className="head-shot">
-                          <img
-                            className="head-shot"
-                            src={representative.image}
-                            alt={`${representative.name} head-shot`}
-                          />
-                        </div>
-                        <div className="representative-name">
-                          {representative.name}
-                        </div>
-                      </div>
-                    </Link>
-                  )
-              )
-            : ""}
-        </div>
-        <div>
-          <div className="sen-list-txt">
-            Senators That have made transactions
-          </div>
+      <div className="lower-section">
+        <div className="rep">
+          <div className="rep-list-txt">Reps That have made transactions</div>
           <div>
-            {senateWithTrans
-              ? props.senatorList.map(
-                  (senator) =>
-                    senateWithTrans.includes(senator.name) && (
-                      <Link to={`/senators/` + senator.name}>
-                        <div className="senator-container">
+            {repsWithTrans
+              ? props.representativeList.map(
+                  (representative) =>
+                    repsWithTrans.includes(representative.name) && (
+                      <Link to={`/representatives/` + representative.name}>
+                        <div className="representative-container">
                           <div className="head-shot">
                             <img
                               className="head-shot"
-                              src={senator.image}
-                              alt={`${senator.name} head-shot`}
+                              src={representative.image}
+                              alt={`${representative.name} head-shot`}
                             />
                           </div>
-                          <div className="senator-name">{senator.name}</div>
+                          <div className="representative-name">
+                            {representative.name}
+                          </div>
                         </div>
                       </Link>
                     )
                 )
               : ""}
+          </div>
+        <div className="sen">
+            <div className="sen-list-txt">
+              Senators That have made transactions
+            </div>
+            <div>
+              {senateWithTrans
+                ? props.senatorList.map(
+                    (senator) =>
+                      senateWithTrans.includes(senator.name) && (
+                        <Link to={`/senators/` + senator.name}>
+                          <div className="senator-container">
+                            <div className="head-shot">
+                              <img
+                                className="head-shot"
+                                src={senator.image}
+                                alt={`${senator.name} head-shot`}
+                              />
+                            </div>
+                            <div className="senator-name">{senator.name}</div>
+                          </div>
+                        </Link>
+                      )
+                  )
+                : ""}
+            </div>
           </div>
         </div>
       </div>
