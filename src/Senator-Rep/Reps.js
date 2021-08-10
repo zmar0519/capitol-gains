@@ -17,7 +17,7 @@ let representatives = [
 		name: "Mr. TJ John (Tj) Cox",
 		party: "Democrat",
 		state: "CA",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/0/0a/TJ_Cox%2C_official_portrait%2C_116th_Congress2.jpg",
 	},
 	{
 		name: "Hon. Mo Brooks",
@@ -161,7 +161,7 @@ let representatives = [
 		name: "Kathy Manning",
 		party: "Democrat",
 		state: "NC",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "http://manning.house.gov/sites/evo-subsites/manning.house.gov/files/evo-media-image/Kathy-Manning-Official-Portrait.jpg",
 	},
 	{
 		name: "Hon. Sean Patrick Maloney",
@@ -179,7 +179,7 @@ let representatives = [
 		name: "Hon. Greg Steube",
 		party: "Republican",
 		state: "FL",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Greg_Steube%2C_official_portrait%2C_116th_congress.jpg",
 	},
 	{
 		name: "Hon. Donald Sternoff Honorable Beyer",
@@ -191,7 +191,7 @@ let representatives = [
 		name: "Hon. Mark Dr Green",
 		party: "Republican",
 		state: "TN",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/d/de/Mark_Green%2C_official_portrait%2C_116th_Congress.jpg",
 	},
 	{
 		name: "Hon. Earl Leroy Carter",
@@ -209,13 +209,13 @@ let representatives = [
 		name: "Hon. Rohit Khanna",
 		party: "Democrat",
 		state: "CA",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/1/11/Ro_Khanna%2C_official_portrait%2C_115th_Congress.jpg",
 	},
 	{
 		name: "Hon. Christopher L. Jacobs",
 		party: "Republican",
 		state: "NY",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/6/62/Chris_Jacobs_117th_Congress.jpeg",
 	},
 	{
 		name: "Hon. Billy Long",
@@ -233,7 +233,7 @@ let representatives = [
 		name: "Mr. Peter Meijer",
 		party: "Republican",
 		state: "MI",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Rep._Peter_Meijer_official_photo_117th_Congress.jpg/1200px-Rep._Peter_Meijer_official_photo_117th_Congress.jpg",
 	},
 	{
 		name: "Hon. Richard W. Allen",
@@ -245,7 +245,7 @@ let representatives = [
 		name: "Hon. James E Hon Banks",
 		party: "Republican",
 		state: "IN",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/8/88/Jim_Banks_official_portrait.jpg",
 	},
 	{
 		name: "Hon. Debbie Dingell",
@@ -287,7 +287,7 @@ let representatives = [
 		name: "Hon. Peter J. Visclosky",
 		party: "Democrat",
 		state: "IN",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Pete_Visclosky_official_photo.png",
 	},
 	{
 		name: "Hon. George Holding",
@@ -305,7 +305,7 @@ let representatives = [
 		name: "Hon. Sara Jacobs",
 		party: "Democrat",
 		state: "CA",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Sara_Jacobs_117th_U.S_Congress.jpg",
 	},
 	{
 		name: "Hon. Dwight Evans",
@@ -347,7 +347,7 @@ let representatives = [
 		name: "Hon. Marie Newman",
 		party: "Democrat",
 		state: "IL",
-		image: "https://housestockwatcher.com/static/media/placeholder.157f088b.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marie_Newman_Official_Portrait.jpg/1200px-Marie_Newman_Official_Portrait.jpg",
 	},
 	{
 		name: "Hon. James French Hill",
