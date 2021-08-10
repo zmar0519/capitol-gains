@@ -3,12 +3,6 @@
   background-color: rgb(235,224,205);
 }
 
-.header {
-  font-size: 35px;
-    font-family: 'Yeseva One', cursive;
-    color: rgb(32,58,95)
-}
-
 .menu {
   width: fit-content;
 }

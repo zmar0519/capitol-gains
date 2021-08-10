@@ -6,9 +6,17 @@
   width: fit-content;
 }
 
+.rep-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .all-representatives-container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0px;
 }
 
 .representative-container {
