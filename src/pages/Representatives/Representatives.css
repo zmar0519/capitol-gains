@@ -3,11 +3,6 @@
   flex-direction: row;
 }
 
-.menu {
-
-  width: fit-content;
-}
-
 .rep-header{
   display: flex;
   flex-direction: row;

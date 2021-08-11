@@ -8,9 +8,6 @@ import SenHeader from "../../components/SenHeader/SenHeader";
 const Senators = (props) => {
   return (
     <div className="main-container">
-      <div className="menu">
-        <SideMenu />
-      </div>
       <div className="right-side">
         <div className="sen-header">
           <SenHeader/>

@@ -64,9 +64,6 @@ const SenatorDetails = (props) => {
 
 	return (
     <div className="main-container">
-      <div className="menu">
-        <SideMenu />
-      </div>
       <div className="senator-container">
         <div className="head-shot">
           <img
@@ -75,6 +72,7 @@ const SenatorDetails = (props) => {
             alt={`${props.currentSenator[0]?.name} head-shot`}
           />
         </div>
+        <div className="senator-name">{props.currentSenator[0]?.name}</div>
         <button type="button" className="watchList-button" onClick={() => addSenToWatchlist({
           name: props.currentSenator[0].name,
           party: props.currentSenator[0].party,
@@ -83,7 +81,6 @@ const SenatorDetails = (props) => {
         })}>
           Add To WatchList
         </button>
-        <div className="senator-name">{props.currentSenator[0]?.name}</div>
         <div className="stocks-held-container">
           <div className="stocks-held-title-txt">Stocks Held</div>
           <div className="each-stock-ticker-container">

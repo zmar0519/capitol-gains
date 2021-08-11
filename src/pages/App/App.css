@@ -1,0 +1,14 @@
+main {
+  background-color: rgb(235,224,205);
+  height: 100%;
+
+}
+.app-main-container {
+  display: flex;
+  height: auto;
+}
+
+.app-side-menu {
+  width: fit-content;
+  height: auto;
+}

@@ -1,11 +1,7 @@
 .main-container {
   display: flex;
-  background-color: rgb(235,224,205);
 }
 
-.menu {
-  width: fit-content;
-}
 
 .representative-container {
   display: flex;
@@ -105,4 +101,9 @@
 a {
   text-decoration: none;
   color: black;
+}
+
+.watchList-button:hover {
+  background: rgb(32,58,95);
+  color: white;
 }

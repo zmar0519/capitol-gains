@@ -1,10 +1,16 @@
 /* SIDE PANEL CSS */
-
+.side-panel {
+  height: 100%;
+}
 .menu {
-  width: 20%;
-  height: 90%;
+  position: relative;
+  width: fit-content;
+  height: 100%;
   text-align: left;
-  border: 1px solid rgb(246,224,179);
+  border-left: 1px solid rgb(246,224,179);
+  border-right: 1px solid rgb(246,224,179);
+  border-top: 1px solid rgb(246,224,179);
+  border-bottom: 1px solid rgb(246,224,179);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -26,8 +32,8 @@
 .menu-items {
   display: flex;
   flex-direction: column;
-  height: 23vh;
   padding: 15px;
+  margin-top: 10px;
 }
 
 .menu-items a, button {
@@ -48,6 +54,4 @@ background-color: rgb(93,141,106);
 }
 
 
-.spacing-block {
-  margin-bottom: 60px;
-}
+

@@ -3,14 +3,11 @@ import SideMenu from '../../components/SideMenu/SideMenu'
 
 const Landing = ({user}) => {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       
         
       
-      <div>
-        <SideMenu />
-      </div>
-    </main>
+    </div>
   )
 }
  
