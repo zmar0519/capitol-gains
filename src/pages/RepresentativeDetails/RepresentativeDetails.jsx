@@ -108,7 +108,7 @@ const RepresentativeDetails = (props) => {
 					>
 						Add To WatchList
 					</button>
-					: <button className="watchList-button">Watching</button>	
+					: <button className="watchList-button-watched">Watching</button>	
 				}
 				<div className="stocks-held-container">
 					<div className="stocks-held-title-txt">Stocks Held</div>
