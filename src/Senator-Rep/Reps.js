@@ -14,12 +14,6 @@ let representatives = [
 		image: "https://theunitedstates.io/images/congress/450x550/L000579.jpg",
 	},
 	{
-		name: "Mr. TJ John (Tj) Cox",
-		party: "Democrat",
-		state: "CA",
-		image: "https://upload.wikimedia.org/wikipedia/commons/0/0a/TJ_Cox%2C_official_portrait%2C_116th_Congress2.jpg",
-	},
-	{
 		name: "Hon. Mo Brooks",
 		party: "Republican",
 		state: "AL",
@@ -30,12 +24,6 @@ let representatives = [
 		party: "Republican",
 		state: "VA",
 		image: "https://theunitedstates.io/images/congress/450x550/P000449.jpg",
-	},
-	{
-		name: "Hon. Vern Buchanan",
-		party: "Republican",
-		state: "FL",
-		image: "https://theunitedstates.io/images/congress/450x550/B001260.jpg",
 	},
 	{
 		name: "Hon. Lois Frankel",

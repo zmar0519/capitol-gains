@@ -1,6 +1,7 @@
 /* SIDE PANEL CSS */
 .side-panel {
   height: 100%;
+  min-height: 100vh;
 }
 .menu {
   position: relative;
