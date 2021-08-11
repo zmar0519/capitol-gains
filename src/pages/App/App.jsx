@@ -26,10 +26,11 @@ import * as representativeDoc from "../../Senator-Rep/Reps"
 import * as senatorDoc from "../../Senator-Rep/Senators"
 import { getUser, logout } from "../../services/authService"
 import SideMenu from "../../components/SideMenu/SideMenu"
+import ProtectedRoute from "../../components/Misc/ProtectedRoute"
 
 const App = () => {
 	const history = useHistory()
-	const [user, setUser] = useState(authService.getUser())
+	const [user, setUser] = useState()
 
 	// const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
@@ -232,13 +233,11 @@ const App = () => {
 								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
 							/>
 						</Route>
-						<Route exact path={`/myProfile/:myProfile`}>
-							{user ? (
+						<ProtectedRoute authenticated={authenticated} path="/myProfile/:myProfile">
+							
 								<MyProfile currentUser={user} />
-							) : (
-								<Redirect to="/login" />
-							)}
-						</Route>
+
+						</ProtectedRoute>
 						<Route exact path="/stocks/:ticker">
 							<StockDetails
 								senateTransactions={senateTransactions}
