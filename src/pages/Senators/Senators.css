@@ -2,10 +2,6 @@
   display: flex;
 }
 
-.menu {
-  width: fit-content;
-}
-
 .sen-header{
   display: flex;
   flex-direction: row;

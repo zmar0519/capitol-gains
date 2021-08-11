@@ -9,9 +9,6 @@ const Representatives = (props) => {
   
   return (
     <div className="main-container">
-      <div className="menu">
-        <SideMenu />
-      </div>
       <div className="right-side">
         <div className="rep-header">
           <RepHeader/>

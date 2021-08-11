@@ -9,21 +9,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 100%;
     min-height: 35vh;
     padding-bottom: 20px;
+    margin: 50px 0;
+    transition: ease-in;
   }
   
   .waiting-txt {
-    font-size: 40px;
+    width: 30%;
     margin: 20px 180px;
     font-style: italic;
-    color: rgb(0,0,0,0.5)
+    color: rgb(0,0,0,0.5);
+    transition: ease-in;
   }
   
   .stock-graph {
     width: 70%;
     min-height: 35vh;
+    transition: ease-in;
   }
 
 

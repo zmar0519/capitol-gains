@@ -65,10 +65,6 @@ const RepresentativeDetails = (props) => {
 
   return (
     <div className="main-container">
-    
-      <div className="menu">
-        <SideMenu />
-      </div>
       <div className="representative-container">
         <div className="head-shot">
           <img
