@@ -26,10 +26,11 @@ import * as representativeDoc from "../../Senator-Rep/Reps"
 import * as senatorDoc from "../../Senator-Rep/Senators"
 import { getUser, logout } from "../../services/authService"
 import SideMenu from "../../components/SideMenu/SideMenu"
+import ProtectedRoute from "../../components/Misc/ProtectedRoute"
 
 const App = () => {
 	const history = useHistory()
-	const [user, setUser] = useState(authService.getUser())
+	const [user, setUser] = useState()
 
 	// const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
@@ -151,18 +152,10 @@ const App = () => {
 							{user ? <Users /> : <Redirect to="/login" />}
 						</Route>
 						<Route exact path="/senators">
-							{user ? (
 								<Senators senatorList={senatorList} />
-							) : (
-								<Redirect to="/login" />
-							)}
 						</Route>
 						<Route exact path="/representatives">
-							{user ? (
 								<Representatives representativeList={representativeList} />
-							) : (
-								<Redirect to="/login" />
-							)}
 						</Route>
 						<Route exact path={`/senators/:senatorName`}>
 							{user ? (
@@ -204,6 +197,7 @@ const App = () => {
 							exact
 							path="/representatives/:representativeName/:ticker/:date"
 						>
+							{user ? (
 							<StockByRep
 								houseTransactions={houseTransactions}
 								currentRepresentative={currentRepresentative}
@@ -218,11 +212,15 @@ const App = () => {
 								// setMovedStocks={setMoverStocks}
 								representativeList={representativeList}
 							/>
+							) : (
+								<Redirect to="/login" />
+							)}
 						</Route>
 						<Route
 							exact
 							path="/senators/:senatorName/:ticker/:month/:day/:year"
 						>
+							{user ? (
 							<StockBySenator
 								senateTransactions={senateTransactions}
 								senatorList={senatorList}
@@ -231,21 +229,27 @@ const App = () => {
 								currentSenatorTransactions={currentSenatorTransactions}
 								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
 							/>
-						</Route>
-						<Route exact path={`/myProfile/:myProfile`}>
-							{user ? (
-								<MyProfile currentUser={user} />
 							) : (
 								<Redirect to="/login" />
 							)}
 						</Route>
+						<Route exact path="/myProfile/:myProfile">
+							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
+									<MyProfile currentUser={user} />
+							</ProtectedRoute>
+						</Route>
 						<Route exact path="/stocks/:ticker">
+							{user ? (
 							<StockDetails
 								senateTransactions={senateTransactions}
 								senatorList={senatorList}
 								houseTransactions={houseTransactions}
 								representativeList={representativeList}
 							/>
+							) : (
+								<Redirect to="/login" />
+							)}
+
 						</Route>
 					</div>
 				</div>
