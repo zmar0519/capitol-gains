@@ -51,6 +51,10 @@ button {
 	padding: 10px;
 }
 
+.menu-items button:hover {
+	cursor: pointer;
+}
+
 .representatives-btn:hover,
 .senators-btn:hover {
 	background-color: rgb(93, 141, 106);
