@@ -7,10 +7,17 @@ import { getUserSenators } from "../../services/senatorService";
 
 
 
-
 const MyProfile = (props) => {
-  
-  getUserSenators()
+  useEffect(() => {
+    function grabSenRepData(){
+      getUserSenators()
+      .then(data => {
+        console.log(data)
+      })
+
+    }
+    grabSenRepData()
+  }, []);
   
   const { _id, avatar, handle } = props.currentUser || {};
 
