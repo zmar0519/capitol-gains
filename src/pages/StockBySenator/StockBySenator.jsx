@@ -123,7 +123,7 @@ function StockBySenator(props) {
       </div>
       <div className="percent">
         {percent !== "NaN%" ? (
-          <div>
+          <div className="percent-txt">
             <strong>Change Since Transaction: {percent} </strong>
           </div>
         ) : (
