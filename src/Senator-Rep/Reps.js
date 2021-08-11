@@ -1,4 +1,3 @@
-export { representatives }
 
 let representatives = [
 	{
@@ -950,3 +949,5 @@ let representatives = [
 		image: "https://theunitedstates.io/images/congress/450x550/A000367.jpg",
 	},
 ]
+
+export { representatives }

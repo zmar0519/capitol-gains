@@ -31,6 +31,10 @@ export function getUserSenators() {
 		}, {mode: "cors"}),
 	})
   .then(res => {
-    console.log(res.json())
+    if (res.ok) return res.json()
+    throw new Error("Bad Credentials")
+  })
+  .catch((err) => {
+    console.log(err)
   })
 }

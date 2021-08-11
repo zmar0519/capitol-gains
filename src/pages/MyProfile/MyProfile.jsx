@@ -6,36 +6,69 @@ import CreateFollowing from "../../components/CreateComponents/CreateFollowing/C
 import { getUserSenators } from "../../services/senatorService";
 
 
-
-
 const MyProfile = (props) => {
-  
-  getUserSenators()
+
+
+  const [userData, setUserData] = useState("")
+
+
+  useEffect(() => {
+    function grabSenRepData(){
+      getUserSenators()
+      .then(data => {
+        setUserData(data)
+        console.log(data.reps)
+      })
+    }
+    grabSenRepData()
+  }, []);
   
   const { _id, avatar, handle } = props.currentUser || {};
 
   return (
     <div className="profile-page">
         <div className="profile-user-info">
-          <img src={avatar} alt="user avatar"></img>
-          <button className="home-button">
-            <Link to="/">Home</Link>
-          </button>
-          <button>Sign Out</button>
-      </div>
-      <div className="profile-watchlist">
-        <div className="profile-post-container">
-          <div className="sub-container">
-            <div className="profile-posts-header">
-              <h3>My Watchlist</h3>
+          <img className="profile-image" src={avatar} alt="user avatar"></img>
+          <div>{handle}</div>
+        </div>
+        <div className="profile-senator-rep-container">
+          <div>
+            <div>
+              Representatives You Follow
+            </div>
+            <div>
+              {userData?.reps?.map(rep => (
+                <Link to={`/representatives/` + rep.name}>
+                <div className="representative-container rep-contain">
+                  <div className="head-shot">
+                    <img
+                      className="head-shot"
+                      src={rep.image}
+                      alt={`${rep.name} head-shot`}
+                    />
+                  </div>
+                  <div className="representative-name">{rep.name}</div>
+                </div>
+              </Link>
+              ))}
             </div>
           </div>
-          <div className="user-posts">Watchlists got here!</div>
+          <div>
+            <div>
+              Senators You Follow
+            </div>
+            <div>
+              {userData?.senators?.map(senator => (
+              <Link to={`/senators/` + senator.name}>
+              <div className="senator-container senate-contain">
+                <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
+                <div className="senator-name">{senator.name}</div>
+              </div>
+              </Link>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="following-form">
-      <CreateFollowing/>
-      </div>
     </div>
   
   );

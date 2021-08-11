@@ -1,4 +1,3 @@
-export { senators }
 
 let senators = [
 	{
@@ -416,3 +415,5 @@ let senators = [
 		image: "https://theunitedstates.io/images/congress/450x550/U000039.jpg",
 	},
 ]
+
+export { senators }

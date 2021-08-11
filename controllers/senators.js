@@ -33,11 +33,10 @@ function addToWatchlist (req, res) {
 }
 
 function getUserSenators (req, res) {
-  console.log(req.user)
   User.findById(req.user._id)
   .populate("senators")
+  .populate("reps")
   .then(user => {
-    console.log(user)
-
+    res.json(user)
   })
 }
