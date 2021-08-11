@@ -48,7 +48,7 @@ const UpdateProfile = (props) => {
   };
 
   return (
-    <div className="signup-page">
+    <div className="update-page">
       {popup && (
         <AvatarSelection
           formData={formData}
@@ -62,7 +62,7 @@ const UpdateProfile = (props) => {
           <h1>Update Profile</h1>
           {authError ? <h3>{authError}</h3> : <h3>Invest Like Politicians</h3>}
         </div>
-        <form className="register-form" onSubmit={handleSubmit}>
+        <form className="update-form" onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
             value={formData.handle}
@@ -98,9 +98,14 @@ const UpdateProfile = (props) => {
         </form>
 
         <div className="redirect-container">
-          <Link className="redirect-link" to="/myProfile">
-            <p>Submit Changes</p>
-          </Link>
+
+          <button id="submit-button" type="submit">
+            <Link className="redirect-link" to="/myProfile">
+            </Link>
+            Submit Changes
+          </button>
+
+
         </div>
       </div>
     </div>
