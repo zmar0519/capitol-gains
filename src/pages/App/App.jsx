@@ -233,12 +233,11 @@ const App = () => {
 								<Redirect to="/login" />
 							)}
 						</Route>
-						<ProtectedRoute
-							authenticated={authenticated}
-							path="/myProfile/:myProfile"
-						>
-							<MyProfile currentUser={user} />
-						</ProtectedRoute>
+						<Route exact path="/myProfile/:myProfile">
+							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
+									<MyProfile currentUser={user} />
+							</ProtectedRoute>
+						</Route>
 						<Route exact path="/stocks/:ticker">
 							{user ? (
 							<StockDetails
