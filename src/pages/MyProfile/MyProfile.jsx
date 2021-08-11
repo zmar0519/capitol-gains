@@ -12,7 +12,7 @@ const MyProfile = (props) => {
 		function grabSenRepData() {
 			getUserSenators().then((data) => {
 				setUserData(data)
-				console.log(data.reps)
+				// console.log(data.reps)
 			})
 		}
 		grabSenRepData()
@@ -41,6 +41,7 @@ const MyProfile = (props) => {
 										/>
 									</div>
 									<div className="profile-senator-name">{rep.name}</div>
+									<button onClick={() => props.handleDeleteRep(props.rep._id)} className="delete-button">Delete from watchlist!</button>
 								</div>
 							</Link>
 						))}
@@ -60,6 +61,7 @@ const MyProfile = (props) => {
 										/>
 									</div>
 									<div className="profile-senator-name">{senator.name}</div>
+									<button className="delete-button">Delete from watchlist!</button>
 								</div>
 							</Link>
 						))}

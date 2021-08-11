@@ -43,10 +43,10 @@ export const updateFollowing = async (postId) => {
 	}
 }
 
-export const deleteFollowing = async (postId) => {
+export const deleteFollowing = async (repId) => {
 	try {
 		await fetch(
-			`${BASE_URL}${postId}`,
+			`${BASE_URL}${repId}`,
 			{
 				method: "DELETE",
 				headers: { Authorization: "Bearer " + tokenService.getToken() },
