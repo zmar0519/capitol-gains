@@ -32,6 +32,7 @@ const MyProfile = (props) => {
 					<div className="profile-sen-rep-txt">Representatives You Follow</div>
 					<div className="profile-inner-sen-rep-container">
 						{userData?.reps?.map((rep) => (
+							<div>
 							<Link to={`/representatives/` + rep.name}>
 								<div className="profile-senator-container profile-senate-contain">
 									<div className="profile-head-shot">
@@ -42,9 +43,10 @@ const MyProfile = (props) => {
 										/>
 									</div>
 									<div className="profile-senator-name">{rep.name}</div>
-									<button onClick={() => props.handleDeleteRep(props.rep._id)} className="delete-button">Delete from watchlist!</button>
 								</div>
 							</Link>
+									<button onClick={() => props.handleDeleteRep(props.rep._id)} className="delete-button">Delete from watchlist!</button>
+						</div>
 						))}
 					</div>
 				</div>
@@ -52,6 +54,7 @@ const MyProfile = (props) => {
 					<div className="profile-sen-rep-txt">Senators You Follow</div>
 					<div className="profile-inner-sen-rep-container">
 						{userData?.senators?.map((senator) => (
+							<div>
 							<Link to={`/senators/` + senator.name}>
 								<div className="profile-senator-container profile-senate-contain">
 									<div className="profile-head-shot">
@@ -62,9 +65,10 @@ const MyProfile = (props) => {
 										/>
 									</div>
 									<div className="profile-senator-name">{senator.name}</div>
-									<button className="delete-button">Delete from watchlist!</button>
 								</div>
 							</Link>
+							<button className="delete-button">Delete from watchlist!</button>
+						</div>
 						))}
 					</div>
 				</div>
