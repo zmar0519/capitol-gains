@@ -128,7 +128,7 @@ function StockByRep(props) {
         {percent !== "NaN%" ? (
           <div className="percent-txt">
             {" "}
-            Change Since Transaction: {percent}
+            <strong>Change Since Transaction: {percent}</strong>
           </div>
         ) : (
           ""
