@@ -15,7 +15,10 @@ function addToWatchlist(req, res) {
 			return rep._id
 		})
 		.then((repId) => {
-			User.findById(req.user._id).then((user) => {
+			User.findById(req.user._id)
+			.populate("reps")
+			.populate("senators")
+			.then((user) => {
 				if (user.reps.includes(repId) === false) {
 					user.reps.push(repId)
 					user.save()
