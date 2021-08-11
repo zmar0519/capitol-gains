@@ -1,11 +1,8 @@
-import { Router } from 'express'
-import * as stocksCtrl from '../controllers/stocks.js'
-import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
+import { Router } from "express"
+import * as stocksCtrl from "../controllers/stocks.js"
+import { decodeUserFromToken, checkAuth } from "../middleware/auth.js"
 
-
-export {
-  router
-}
+export { router }
 
 const router = Router()
 

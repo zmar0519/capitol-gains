@@ -1,58 +1,57 @@
 /* SIDE PANEL CSS */
 .side-panel {
-  height: 100%;
-  min-height: 100vh;
+	height: 100%;
+	min-height: 100vh;
 }
 .menu {
-  position: relative;
-  width: fit-content;
-  height: 100%;
-  text-align: left;
-  border-left: 1px solid rgb(246,224,179);
-  border-right: 1px solid rgb(246,224,179);
-  border-top: 1px solid rgb(246,224,179);
-  border-bottom: 1px solid rgb(246,224,179);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  background-color: rgb(32,58,95);
+	position: relative;
+	width: fit-content;
+	height: 100%;
+	text-align: left;
+	border-left: 1px solid rgb(246, 224, 179);
+	border-right: 1px solid rgb(246, 224, 179);
+	border-top: 1px solid rgb(246, 224, 179);
+	border-bottom: 1px solid rgb(246, 224, 179);
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	background-color: rgb(32, 58, 95);
 }
 
 .menu-header {
-  border-bottom: 1px solid rgb(246,224,179);
-  color: white;
-  font-family: 'Yeseva One', cursive;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background: rgb(32,58,95);
+	border-bottom: 1px solid rgb(246, 224, 179);
+	color: white;
+	font-family: "Yeseva One", cursive;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background: rgb(32, 58, 95);
 }
 
 .menu-items {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	margin-top: 10px;
 }
 
-.menu-items a, button {
-  width: 100%;
+.menu-items a,
+button {
+	width: 100%;
 }
 
 .menu-items button {
-  color: rgb(246,224,179);
-  font-family: 'Yeseva One', cursive;
-  background-color: rgb(113,37,15);
-  border: 1px solid #292934;
-  border-radius: 8px;
-  padding: 10px;
+	color: rgb(246, 224, 179);
+	font-family: "Yeseva One", cursive;
+	background-color: rgb(113, 37, 15);
+	border: 1px solid #292934;
+	border-radius: 8px;
+	padding: 10px;
 }
 
-.representatives-btn:hover, .senators-btn:hover{
-background-color: rgb(93,141,106);
+.representatives-btn:hover,
+.senators-btn:hover {
+	background-color: rgb(93, 141, 106);
 }
-
-
-

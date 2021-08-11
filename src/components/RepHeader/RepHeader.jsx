@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 
-import "./RepHeader.css";
+import "./RepHeader.css"
 
 function RepHeader() {
-  return (
-    <div className="rep-header">
-      <h1>Representatives</h1>
-    </div>
-  );
+	return (
+		<div className="rep-header">
+			<h1>Representatives</h1>
+		</div>
+	)
 }
 
-export default RepHeader;
+export default RepHeader

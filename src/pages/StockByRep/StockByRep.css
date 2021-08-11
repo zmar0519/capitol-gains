@@ -1,18 +1,18 @@
 .stock-graph-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 85%;
-  min-height: 35vh;
-  padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 85%;
+	min-height: 35vh;
+	padding-bottom: 20px;
 }
 
 .waiting-txt {
-  font-size: 40px;
-  margin: 20px 180px;
+	font-size: 40px;
+	margin: 20px 180px;
 }
 
 .stock-graph {
-  width: 85%;
-  min-height: 35vh;
+	width: 85%;
+	min-height: 35vh;
 }

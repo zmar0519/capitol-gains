@@ -1,38 +1,38 @@
 .main-container {
-  display: flex;
+	display: flex;
 }
 
-.sen-header{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.sen-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .all-senators-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 0px;
 }
 
 .senator-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 15px;
-  width: 250px;
-  height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 15px;
+	width: 250px;
+	height: 250px;
 }
 .senate-contain {
-  max-width: 300px;
-  max-height: 300px;
-  min-width: 300px;
-  min-height: 300px;
+	max-width: 300px;
+	max-height: 300px;
+	min-width: 300px;
+	min-height: 300px;
 }
 
 .head-shot {
-  width: 200px;
-  height: 200px;
+	width: 200px;
+	height: 200px;
 }

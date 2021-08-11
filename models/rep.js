@@ -1,16 +1,17 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
-const repSchema = new mongoose.Schema({
-  name: String,
-  party: String,
-  state: String,
-  image: String,
-}, {
-  timestamps: true
-})
+const repSchema = new mongoose.Schema(
+	{
+		name: String,
+		party: String,
+		state: String,
+		image: String,
+	},
+	{
+		timestamps: true,
+	}
+)
 
-const Rep = mongoose.model('Rep', repSchema)
+const Rep = mongoose.model("Rep", repSchema)
 
-export {
-  Rep
-}
+export { Rep }
