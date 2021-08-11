@@ -1,17 +1,18 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
-const transactionSchema = new mongoose.Schema({
-  ticker: String,
-  amount: Number,
-  date: Date,
-  transactionType: String,
-  repName: String,
-}, {
-  timestamps: true
-})
+const transactionSchema = new mongoose.Schema(
+	{
+		ticker: String,
+		amount: Number,
+		date: Date,
+		transactionType: String,
+		repName: String,
+	},
+	{
+		timestamps: true,
+	}
+)
 
-const Transaction = mongoose.model('Transaction', transactionSchema)
+const Transaction = mongoose.model("Transaction", transactionSchema)
 
-export {
-  Transaction
-}
+export { Transaction }

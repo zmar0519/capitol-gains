@@ -5,11 +5,10 @@ const BASE_URL =
 
 function getAllHouseApi() {
 	return fetch(BASE_URL, {
-    //     headers: {
-    //   'Authorization': `Bearer ${tokenService.getToken()}`
-    // },
-    }
-  ).then((res) => res.json())
+		//     headers: {
+		//   'Authorization': `Bearer ${tokenService.getToken()}`
+		// },
+	}).then((res) => res.json())
 }
 
 export { getAllHouseApi }

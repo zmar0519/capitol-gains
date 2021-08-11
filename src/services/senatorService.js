@@ -25,16 +25,19 @@ export function addSenToWatchlist(senData) {
 export function getUserSenators() {
 	return fetch(`${BASE_URL}watchlist`, {
 		method: "GET",
-		headers: new Headers({
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${tokenService.getToken()}`,
-		}, {mode: "cors"}),
+		headers: new Headers(
+			{
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${tokenService.getToken()}`,
+			},
+			{ mode: "cors" }
+		),
 	})
-  .then(res => {
-    if (res.ok) return res.json()
-    throw new Error("Bad Credentials")
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+		.then((res) => {
+			if (res.ok) return res.json()
+			throw new Error("Bad Credentials")
+		})
+		.catch((err) => {
+			console.log(err)
+		})
 }

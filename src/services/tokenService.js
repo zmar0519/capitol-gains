@@ -1,33 +1,28 @@
 function setToken(token) {
-  localStorage.setItem('token', token)
+	localStorage.setItem("token", token)
 }
 
 function getUserFromToken() {
-  const token = getToken()
-  return token ? JSON.parse(atob(token.split('.')[1])).user : null
+	const token = getToken()
+	return token ? JSON.parse(atob(token.split(".")[1])).user : null
 }
 
 function getToken() {
-  let token = localStorage.getItem('token')
-  if (token) {
-    // Check if token is expired
-    // remove all expired tokens!
-    const payload = JSON.parse(atob(token.split('.')[1]))
-    if (payload.exp < Date.now() / 1000) {
-      localStorage.removeItem('token')
-      token = null
-    }
-  }
-  return token
+	let token = localStorage.getItem("token")
+	if (token) {
+		// Check if token is expired
+		// remove all expired tokens!
+		const payload = JSON.parse(atob(token.split(".")[1]))
+		if (payload.exp < Date.now() / 1000) {
+			localStorage.removeItem("token")
+			token = null
+		}
+	}
+	return token
 }
 
 function removeToken() {
-  localStorage.removeItem('token')
+	localStorage.removeItem("token")
 }
 
-export {
-  setToken,
-  getUserFromToken,
-  getToken,
-  removeToken,
-}
+export { setToken, getUserFromToken, getToken, removeToken }
