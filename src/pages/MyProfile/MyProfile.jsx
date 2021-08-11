@@ -4,6 +4,7 @@ import "./MyProfile.css"
 import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import { getUserSenators } from "../../services/senatorService"
+import { deleteFollowing } from "../../services/followingService"
 
 const MyProfile = (props) => {
 	const [userData, setUserData] = useState("")
