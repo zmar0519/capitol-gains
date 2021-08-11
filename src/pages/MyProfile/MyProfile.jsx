@@ -29,40 +29,40 @@ const MyProfile = (props) => {
     <div className="profile-page">
         <div className="profile-user-info">
           <img className="profile-image" src={avatar} alt="user avatar"></img>
-          <div>{handle}</div>
+          <div className="profile-name">{handle}</div>
         </div>
         <div className="profile-senator-rep-container">
-          <div>
-            <div>
+          <div className="profile-sen-rep-container">
+            <div className="profile-sen-rep-txt">
               Representatives You Follow
             </div>
-            <div>
+            <div className="profile-inner-sen-rep-container">
               {userData?.reps?.map(rep => (
                 <Link to={`/representatives/` + rep.name}>
-                <div className="representative-container rep-contain">
-                  <div className="head-shot">
+                <div className="profile-senator-container profile-senate-contain">
+                  <div className="profile-head-shot">
                     <img
-                      className="head-shot"
+                      className="profile-head-shot"
                       src={rep.image}
                       alt={`${rep.name} head-shot`}
                     />
                   </div>
-                  <div className="representative-name">{rep.name}</div>
+                  <div className="profile-senator-name">{rep.name}</div>
                 </div>
               </Link>
               ))}
             </div>
           </div>
-          <div>
-            <div>
+          <div className="profile-sen-rep-container">
+            <div className="profile-sen-rep-txt">
               Senators You Follow
             </div>
-            <div>
+            <div className="profile-inner-sen-rep-container">
               {userData?.senators?.map(senator => (
               <Link to={`/senators/` + senator.name}>
-              <div className="senator-container senate-contain">
-                <div className="head-shot"><img className="head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
-                <div className="senator-name">{senator.name}</div>
+              <div className="profile-senator-container profile-senate-contain">
+                <div className="profile-head-shot"><img className="profile-head-shot" src={senator.image} alt={`${senator.name} head-shot`} /></div>
+                <div className="profile-senator-name">{senator.name}</div>
               </div>
               </Link>
               ))}
