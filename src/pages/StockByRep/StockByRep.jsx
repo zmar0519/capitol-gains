@@ -108,40 +108,60 @@ function StockByRep(props) {
 	}, [epoch])
 
 	return (
-		<div className="main-stock-container">
-			<div className="stock-graph-container">
-				{!stock?.chart?.result[0]?.timestamp ? (
-					<div className="waiting-txt">
-						<LoadingAnimation loadingData={loadingData} />
-					</div>
-				) : (
-					<div className="stock-graph">
-						<Graph
-							time={stockTimes}
-							price={stockPrices}
-							ticker={props?.match.params.ticker}
-						/>
-					</div>
-				)}
-			</div>
-			<div className="percent">
-				{percent !== "NaN%" ? (
-					<div>{percent} Change Since Transaction</div>
-				) : (
-					""
-				)}
-			</div>
-			<div className="transaction-container">
-				<div className="transaction">
-					<div>{currentTransactions[0]?.representative}</div>
-					<div>{currentTransactions[0]?.amount}</div>
-					<div>{currentTransactions[0]?.ticker}</div>
-					<div>{currentTransactions[0]?.type}</div>
-					<div>{currentTransactions[0]?.transaction_date}</div>
-				</div>
-			</div>
-		</div>
-	)
+    <div className="main-stock-container">
+      <div className="stock-graph-container">
+        {!stock?.chart?.result[0]?.timestamp ? (
+          <div className="waiting-txt">
+            <LoadingAnimation loadingData={loadingData} />
+          </div>
+        ) : (
+          <div className="stock-graph">
+            <Graph
+              time={stockTimes}
+              price={stockPrices}
+              ticker={props?.match.params.ticker}
+            />
+          </div>
+        )}
+      </div>
+      <div className="percent">
+        {percent !== "NaN%" ? (
+          <div className="percent-txt">
+            {" "}
+            <strong>Change Since Transaction: {percent}</strong>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="transaction-container">
+        <div className="transaction">
+          <div className="percent">
+            <div>
+              <strong>Transaction Made By: </strong>
+              {currentTransactions[0]?.representative}
+            </div>
+            <div>
+              <strong>Transaction Amount: </strong>
+              {currentTransactions[0]?.amount}
+            </div>
+            <div>
+              <strong>Ticker: </strong>
+              {currentTransactions[0]?.ticker}
+            </div>
+            <div>
+              <strong>Transaction Type: </strong>
+              {currentTransactions[0]?.type}
+            </div>
+            <div>
+              <strong>Transaction Date: </strong>
+              {currentTransactions[0]?.transaction_date}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default withRouter(StockByRep)
