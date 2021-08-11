@@ -39,7 +39,6 @@ const MyProfile = (props) => {
 											src={rep.image}
 											alt={`${rep.name} head-shot`}
 										/>
-										<button onClick={() => props.handleDeleteRep(props.rep._id)} className="delete-button">Delete!</button>
 									</div>
 									<div className="profile-senator-name">{rep.name}</div>
 								</div>
@@ -59,7 +58,6 @@ const MyProfile = (props) => {
 											src={senator.image}
 											alt={`${senator.name} head-shot`}
 										/>
-										<button className="delete-button">Delete!</button>
 									</div>
 									<div className="profile-senator-name">{senator.name}</div>
 								</div>
