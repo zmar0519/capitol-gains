@@ -12,6 +12,7 @@
 
 .all-representatives-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 0px;
 }
@@ -26,11 +27,15 @@
   height: 250px;
 }
 
+.representative-name {
+  text-align: center;
+}
+
 .rep-contain {
-  max-width: 300px;
-  max-height: 300px;
-  min-width: 300px;
-  min-height: 300px;
+  max-width: 275px;
+  max-height: 275px;
+  min-width: 275px;
+  min-height: 275px;
 
 }
 .head-shot {

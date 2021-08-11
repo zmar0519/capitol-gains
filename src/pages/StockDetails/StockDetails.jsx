@@ -89,21 +89,21 @@ const StockDetails = (props) => {
       <div className="lower-section">
         <div className="rep">
           <div className="rep-list-txt">Representatives</div>
-          <div>
+          <div className="profile-inner-sen-rep-container">
             {repsWithTrans
               ? props.representativeList.map(
                   (representative) =>
                     repsWithTrans.includes(representative.name) && (
                       <Link to={`/representatives/` + representative.name}>
-                        <div className="representative-container">
-                          <div className="head-shot">
+                        <div className="profile-senator-container profile-senate-contain">
+                          <div className="profile-head-shot">
                             <img
-                              className="head-shot"
+                              className="profile-head-shot"
                               src={representative.image}
                               alt={`${representative.name} head-shot`}
                             />
                           </div>
-                          <div className="representative-name">
+                          <div className="profile-senator-name">
                             {representative.name}
                           </div>
                         </div>
@@ -117,25 +117,26 @@ const StockDetails = (props) => {
             <div className="sen-list-txt">
               Senators 
             </div>
-            <div>
+            <div className="profile-inner-sen-rep-container">
               {senateWithTrans
                 && props.senatorList.map(
-                    (senator) =>
-                      senateWithTrans.includes(senator.name) && (
-                        <Link to={`/senators/` + senator.name}>
-                          <div className="senator-container">
-                            <div className="head-shot">
-                              <img
-                                className="head-shot"
-                                src={senator.image}
-                                alt={`${senator.name} head-shot`}
-                              />
-                            </div>
-                            <div className="senator-name">{senator.name}</div>
+                  (senator) =>
+                    senateWithTrans.includes(senator.name) && (
+                      <Link to={`/senators/` + senator.name}>
+                        <div className="profile-senator-container profile-senate-contain">
+                          <div className="profile-head-shot">
+                            <img
+                              className="profile-head-shot"
+                              src={senator.image}
+                              alt={`${senator.name} head-shot`}
+                            />
                           </div>
-                        </Link>
-                      )
-                  )}
+                          <div className="profile-senator-name">{senator.name}</div>
+                        </div>
+                      </Link>
+                    )
+                )
+              }
             </div>
         </div>
       </div>

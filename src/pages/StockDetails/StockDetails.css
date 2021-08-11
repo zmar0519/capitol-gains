@@ -26,7 +26,7 @@
   }
   
   .stock-graph {
-    width: 100%;
+    width: 80%;
     min-height: 35vh;
     transition: ease-in;
   }
@@ -41,6 +41,7 @@
 
 .rep-list-txt{
 display: flex;
+width: auto;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -50,6 +51,7 @@ color: rgb(32,58,95);
 
 .sen-list-txt{
 display: flex;
+width: auto;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -57,51 +59,37 @@ font-size: 25px;
 color: rgb(32,58,95);
 }
 
-.sen{
+.sen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%;
+    width: 50%;
     margin: 10px;
 }
 
-.rep{
+.rep {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 50%;
     margin: 10px;
 }
 
 .representative-name {
-    display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-font-size: 25px;
-color: rgb(32,58,95);
-}
-/* 
-
-
-
-
-.representative-container{
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(32,58,95);
 }
 
-.senator-container{
-
+.profile-inner-sen-rep-container {
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-.head-shot{
-
-}
-
-.representative-name{
-
-}
-
-.senator-name{
-
-} */ 
