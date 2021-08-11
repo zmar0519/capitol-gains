@@ -123,7 +123,7 @@ const App = () => {
 				<div className="app-side-menu">
 					<SideMenu />
 				</div>
-				<div>
+				<div className="app-main-content">
 					<Route exact path='/'>
 						<Landing user={user} senateTrans={senateTransactions} />
 					</Route>

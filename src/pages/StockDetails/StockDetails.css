@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .stock-graph-container {
@@ -25,7 +26,7 @@
   }
   
   .stock-graph {
-    width: 70%;
+    width: 100%;
     min-height: 35vh;
     transition: ease-in;
   }
