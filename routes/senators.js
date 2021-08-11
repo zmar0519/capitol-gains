@@ -11,6 +11,7 @@ const router = Router()
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.get("/watchlist", checkAuth, senatorsCtrl.getUserSenators)
 router.post("/watchlist", checkAuth, senatorsCtrl.addToWatchlist)
 
 
