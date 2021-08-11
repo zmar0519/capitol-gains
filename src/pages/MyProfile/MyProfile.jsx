@@ -3,12 +3,14 @@ import { Link, useHistory } from "react-router-dom";
 import "./MyProfile.css";
 import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing";
+import { getUserSenators } from "../../services/senatorService";
 
 
 
 
 const MyProfile = (props) => {
   
+  getUserSenators()
   
   const { _id, avatar, handle } = props.currentUser || {};
 

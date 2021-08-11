@@ -5,6 +5,7 @@ import { createJWT } from "./auth.js"
 
 export {
   addToWatchlist,
+  getUserSenators,
 }
 
 
@@ -21,12 +22,22 @@ function addToWatchlist (req, res) {
   .then(senId => {
     User.findById(req.user._id)
     .then(user => {
-      if (user.senators.includes(senId === false)) {
+      if (user.senators.includes(senId) === false) {
         user.senators.push(senId)
         user.save()
         const token = createJWT(user)
           res.json({ token })
       }
     })
+  })
+}
+
+function getUserSenators (req, res) {
+  console.log(req.user)
+  User.findById(req.user._id)
+  .populate("senators")
+  .then(user => {
+    console.log(user)
+
   })
 }
