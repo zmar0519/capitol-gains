@@ -161,6 +161,7 @@ const App = () => {
 							{user ? (
 								<SenatorDetails
 									senateTransactions={senateTransactions}
+									user={user}
 									senatorList={senatorList}
 									currentSenator={currentSenator}
 									setCurrentSenator={setCurrentSenator}
