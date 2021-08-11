@@ -21,18 +21,3 @@ export function addRepToWatchlist(repData) {
 			console.log(err)
 		})
 }
-
-export const deleteFollowing = async (repId) => {
-	try {
-		await fetch(
-			`${BASE_URL}${repId}`,
-			{
-				method: "DELETE",
-				headers: { Authorization: "Bearer " + tokenService.getToken() },
-			},
-			{ mode: "cors" }
-		)
-	} catch (error) {
-		throw error
-	}
-}

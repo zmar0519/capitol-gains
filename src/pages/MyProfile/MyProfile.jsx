@@ -45,7 +45,7 @@ const MyProfile = (props) => {
 									<div className="profile-senator-name">{rep.name}</div>
 								</div>
 							</Link>
-									<button onClick={() => props.handleDeleteRep(props.rep._id)} className="delete-button">Delete from watchlist!</button>
+									<button onClick={() => props.handleDeleteRep(rep._id)} className="delete-button">Delete from watchlist!</button>
 						</div>
 						))}
 					</div>

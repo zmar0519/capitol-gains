@@ -2,7 +2,17 @@ import { Rep } from "../models/rep.js"
 import { User } from "../models/user.js"
 import { createJWT } from "./auth.js"
 
-export { addToWatchlist }
+export { addToWatchlist, deleteFollowing }
+
+function deleteFollowing(req, res) {
+	User.findById(req.user._id)
+	.then((user) => {
+		user.reps.filter(repId => repId.equals(req.params.id))
+		user.save()
+		const token = createJWT(user)
+		res.json({ token })
+	})
+}
 
 function addToWatchlist(req, res) {
 	Rep.findOne({ name: req.body.name })

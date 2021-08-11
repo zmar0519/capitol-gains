@@ -9,6 +9,5 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.post("/watchlist", checkAuth, repsCtrl.addToWatchlist)
-router.delete('/ , checkAuth, repsCtrl.deleteFollowing')
 
 export { router }

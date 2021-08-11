@@ -26,6 +26,7 @@ import * as representativeDoc from "../../Senator-Rep/Reps"
 import * as senatorDoc from "../../Senator-Rep/Senators"
 import { getUser, logout } from "../../services/authService"
 import SideMenu from "../../components/SideMenu/SideMenu"
+import { deleteFollowing } from "../../services/userService"
 
 const App = () => {
 	const history = useHistory()
@@ -58,6 +59,12 @@ const App = () => {
 		}
 		return 0
 	}
+
+	const handleDeleteRep = async(repId) => {
+		await deleteFollowing(repId)
+		setUser({...user, reps: user.reps.filter(rep => rep._id !== repId)})
+	}
+
 
 	useEffect(() => {
 		async function getTransactions() {
@@ -234,7 +241,9 @@ const App = () => {
 						</Route>
 						<Route exact path={`/myProfile/:myProfile`}>
 							{user ? (
-								<MyProfile currentUser={user} />
+								<MyProfile currentUser={user}
+								handleDeleteRep={handleDeleteRep}
+								/>
 							) : (
 								<Redirect to="/login" />
 							)}
