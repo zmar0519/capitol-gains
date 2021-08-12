@@ -1,69 +1,45 @@
-# MERN Stack with OAuth Template
+# Capitol Gain
 
-This is a MERN Stack template that includes JWT Authentication.
+![Logo Below](https://i.imgur.com/LHDKP2e.jpg)
 
-Use this to go build things! 🚀
+## By Dylan Hammer, Zachary Martin, and Summer Xing
+## Getting Started
+Find the app available [here](https://capitol-gains.herokuapp.com/).
 
-## To Use This Template
+### Background
+The stock market has been around for hundreds of years and many trace its origins back to Amsterdam in the 1600s when the East India Trading Co used the idea to raise money to pay dividends to other investors (this is the definition of a ponzi scheme).
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+The stock market made its way to the US in the late 1700s but the NYSE was not founded until 1817. The United States' economy became very intertwined with the market and the first great Stock Market crash happened in August 1929 after the death of the market's creator and namesake Philip Market himself.
 
-```bash
-git clone https://github.com/SEI-Remote/mern-stack-jwt-auth-template <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
 
-Once you are in the project directory:
+### Instructions
+Capitol Gains allows you to see the publicly released disclosures that have been filed by memebers of the United States Congress. The app is broken up by Senate and House of Representatives. You can find any any active member or any member who has been in office in the previous six years (as this is the length that disclosures must be filed.) Seeing what members of Congress have invested in can be an important part of due diligence but *THIS IS  NOT FINANCIAL ADVICE*. Always do your own due diligence and be aware that investing in stocks is inherently risky and can have serious tax implications. Please seek the counsel of a professional advisor with any questions you may have about investing.
 
-```bash
-rm -rf .git
-```
+# Project Overview
+This is the Unit 3 group project that is a culmination of all the skills we have learned since the beginning of the bootcamp.
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+This application uses the following technologoy:
+* HTML
+* CSS
+* JavaScript
+* MongoDB
+* Mongoose
+* Express
+* JWT
+* Git
+* GitHub
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+# Project Roles
+Dylan Hammer - Git Commander and The Don of API
 
-Re-initialize a git repository:
+Zachary Martin - Scrum Sensei and Database Manager
 
-```bash
-git init
-```
+Summer Xing - Lead Designer and Documenter
 
-Use the GitHub CLI to create a new project repository on GitHub:
+## ERD
+Checkout the applications ERD below:
+![Application's ERD](https://i.imgur.com/uMADao5.png)
 
-```bash
-gh repo create <name-of-your-app-here> --public --confirm
-```
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-Then, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
-
-Delete this README.md
-
-You're done!
+## Icebox
+* Paywall
+* Ability to make multiple watchlists
