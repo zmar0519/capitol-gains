@@ -81,11 +81,13 @@ function StockByRep(props) {
 	useEffect(() => {
 		async function callStockApi() {
 			const dateString2 = Math.floor(new Date().getTime() / 1000)
+			let tick = props?.match?.params.ticker
+			tick = tick.replace(".", "-")
 			if (epoch) {
 				let stockResult = await findRange(
 					epoch,
 					dateString2,
-					props?.match?.params.ticker
+					tick
 				)
 				setStock(stockResult)
 				if (!stockResult?.chart?.result[0]?.timestamp) return

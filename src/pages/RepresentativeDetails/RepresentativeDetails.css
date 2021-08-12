@@ -20,14 +20,14 @@
 	justify-content: center;
 	align-items: center;
 	width: inherit;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .each-stock-ticker-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin-top: 5px;
+	margin-top: 8px;
 }
 
 .stocks-held-title-txt {
@@ -38,9 +38,11 @@
 	margin-top: 10px;
 	background-color: rgba(113, 37, 15, 0.9);
 	border: 1px solid #292934;
+	color: white;
 	border-radius: 8px;
 	padding: 10px;
 	width: 80%;
+	font-size: 16px;
 }
 
 .each-stock-ticker {
@@ -102,13 +104,17 @@ a {
 	cursor: pointer;
 	background: rgb(32, 58, 95);
 	color: white;
+	border: 1px rgba(113, 37, 15, 1) solid;
 }
 
 .watchList-button-watched {
 	margin-top: 10px;
 	background: rgb(32, 58, 95);
 	border: 1px solid #292934;
+	color: white;
 	border-radius: 8px;
 	padding: 10px;
 	width: 80%;
+	font-size: 16px;
+
 }
