@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link, withRouter } from "react-router-dom"
-import { Line } from "react-chartjs-2"
 import { findRange } from "../../services/stockApiService"
 import Graph from "../../components/StockGraph/Graph"
 import "./StockDetails.css"
-import SenHeader from "../../components/SenHeader/SenHeader"
-import RepHeader from "../../components/RepHeader/RepHeader"
 import loadingData from "../../assets/Lottie/lf30_editor_hrnlpjer.json"
 import LoadingAnimation from "../../components/Misc/LoadingAnimation"
 

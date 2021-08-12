@@ -12,23 +12,23 @@ function getAllUsers() {
 
 function updateProfile(id, newUserData) {
 	return fetch(`${BASE_URL}/${id}`, {
-    method: "PUT",
-    headers: { 
-		'content-type': 'application/json',
-		'Authorization': `Bearer ${tokenService.getToken()}` },
-    body: JSON.stringify(newUserData),
-  })
-  	.then((res) =>{
-		  return res.json()
-	  })
+		method: "PUT",
+		headers: {
+			"content-type": "application/json",
+			Authorization: `Bearer ${tokenService.getToken()}`,
+		},
+		body: JSON.stringify(newUserData),
+	})
+		.then((res) => {
+			return res.json()
+		})
 		.then(({ token }) => tokenService.setToken(token))
 
-		.catch((err)=>{
-		console.log(err)
-	})
+		.catch((err) => {
+			console.log(err)
+		})
 }
 export { getAllUsers, updateProfile }
-
 
 export const deleteFollowing = (repId) => {
 	try {
@@ -43,11 +43,11 @@ export const deleteFollowing = (repId) => {
 			},
 			{ mode: "cors" }
 		)
-		.then((res) => {
-			if (res.ok) return res.json()
-			throw new Error("Bad Credentials")
-		})
-		.then(({ token }) => tokenService.setToken(token))
+			.then((res) => {
+				if (res.ok) return res.json()
+				throw new Error("Bad Credentials")
+			})
+			.then(({ token }) => tokenService.setToken(token))
 	} catch (error) {
 		throw error
 	}
@@ -66,11 +66,11 @@ export const deleteFollowingSen = (senId) => {
 			},
 			{ mode: "cors" }
 		)
-		.then((res) => {
-			if (res.ok) return res.json()
-			throw new Error("Bad Credentials")
-		})
-		.then(({ token }) => tokenService.setToken(token))
+			.then((res) => {
+				if (res.ok) return res.json()
+				throw new Error("Bad Credentials")
+			})
+			.then(({ token }) => tokenService.setToken(token))
 	} catch (error) {
 		throw error
 	}
