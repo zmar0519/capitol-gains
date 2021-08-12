@@ -15,7 +15,7 @@
 	flex-direction: column;
 	align-items: center;
 	border-radius: 8px;
-	background: #12121b;
+	background:rgba(32,58,95, 0.95);
 	min-width: 375px;
 	min-height: 480px;
 	box-sizing: border-box;
@@ -35,12 +35,17 @@
 	padding: 14px;
 }
 
+.select-Avatar{
+	
+	color: white;
+}
+
 #close-button {
 	margin: 0;
 	width: 8px;
 	height: 8px;
 	background: none;
-	color: lightgrey;
+	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -49,24 +54,24 @@
 
 .popup-menu img {
 	width: 180px;
-	border: 1px solid #4a4a5a;
+	border: 1px solid rgb(140,36,23);
 	margin-top: 60px;
 	border-radius: 100%;
 }
 
 .popup-menu select {
 	width: 100%;
-	color: #757575;
+	color: rgb(246,224,179);
 	border: 1px solid #292934;
 	border-radius: 7px;
 	margin-bottom: 14px;
-	background: #0b0b12;
+	background:  rgb(140,36,23);
 }
 
 .popup-menu button {
-	background: #7450e9;
+	background:  rgb(140,36,23);
 	border: none;
-	color: white;
+	color: rgb(246,224,179);
 	font-weight: 600;
 	border-radius: 7px;
 	width: 100%;

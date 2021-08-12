@@ -12,7 +12,7 @@ const AvatarSelection = (props) => {
 		<div className="popup-container">
 			<div className="popup-menu">
 				<div className="popup-header">
-					<h3>Select Your Avatar</h3>
+					<h3 className="select-Avatar">Select Your Avatar</h3>
 					<button id="close-button" onClick={props.handlePopup}>
 						X
 					</button>
