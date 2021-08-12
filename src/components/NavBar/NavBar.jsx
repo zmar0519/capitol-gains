@@ -9,6 +9,7 @@ const NavBar = ({ user, handleLogout, authenticated }) => {
 			<div className="nav-ul-container">
 				{user ? (
 					<div className="nav-item-container">
+						<img className="cg-logo" src="https://i.imgur.com/QaswFqH.png" alt="Capiol Gains Logo" />
 						<Link to="/">
 							<div className="title">Capitol Gains</div>
 						</Link>
@@ -28,14 +29,12 @@ const NavBar = ({ user, handleLogout, authenticated }) => {
 					</div>
 				) : (
 					<div className="nav-item-container">
-							<img className="cg-logo" src="https://i.imgur.com/QaswFqH.png" alt="Capiol Gains Logo" />
-
+						<img className="cg-logo" src="https://i.imgur.com/QaswFqH.png" alt="Capiol Gains Logo" />
 						<div className="title">
-							<div>Capitol Gains</div>
-						<div className="cg-logo-container">
+						<Link to="/">
+							<div className="title">Capitol Gains</div>
+						</Link>
 						</div>
-						</div>
-
 						<div className="right-nav-btn-container">
 							<div className="welcome">Welcome! Please Sign-in.</div>
 							<div className="log-in">
