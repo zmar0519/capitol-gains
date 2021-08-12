@@ -5,4 +5,18 @@ function index(req, res) {
 	User.find({}).then((users) => res.json(users))
 }
 
-export { index }
+const update = async (req, res) => {
+	console.log(req.user)
+	try{
+	const updatedUser = await User.findByIdAndUpdate(
+		req.params.id,
+		req.body,
+		{ new: true }
+	)
+	return res.status(200).json(updatedUser)
+} catch (error) {
+	throw error
+}
+}
+
+export { index, update }

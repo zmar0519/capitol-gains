@@ -9,5 +9,20 @@ function getAllUsers() {
 		{ mode: "cors" }
 	).then((res) => res.json())
 }
-
-export { getAllUsers }
+function updateProfile(id, newUserData) {
+	console.log(id);
+	return fetch(`${BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: { 
+		'content-type': 'application/json',
+		'Authorization': `Bearer ${tokenService.getToken()}` },
+    body: JSON.stringify(newUserData),
+  })
+  	.then((res) =>{
+		  return res.json()
+	  })
+	.catch((err)=>{
+		console.log(err)
+	})
+}
+export { getAllUsers, updateProfile }

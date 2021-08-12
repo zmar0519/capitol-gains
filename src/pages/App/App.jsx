@@ -17,6 +17,7 @@ import Login from "../Login/Login"
 import Landing from "../Landing/Landing"
 import Users from "../Users/Users"
 import MyProfile from "../MyProfile/MyProfile"
+import UpdateProfile from "../UpdateProfile/UpdateProfile"
 
 // Services
 import * as houseApiService from "../../services/houseApiService"
@@ -119,143 +120,156 @@ const App = () => {
 	}
 
 	return (
-		<>
-			<main>
-				<NavBar
-					user={user}
-					authenticated={authenticated}
-					handleLogout={handleLogout}
-				/>
-				<div className="app-main-container">
-					<div className="app-side-menu">
-						<SideMenu />
-					</div>
-					<div className="app-main-content">
-						<Route exact path="/">
-							<Landing user={user} senateTrans={senateTransactions} />
-						</Route>
-						<Route exact path="/signup">
-							{user ? (
-								<Redirect to="/" />
-							) : (
-								<SignUp handleSignupOrLogin={handleSignupOrLogin} />
-							)}
-						</Route>
-						<Route exact path="/login">
-							{user ? (
-								<Redirect to="/" />
-							) : (
-								<Login handleSignupOrLogin={handleSignupOrLogin} />
-							)}
-						</Route>
-						<Route exact path="/users">
-							{user ? <Users /> : <Redirect to="/login" />}
-						</Route>
-						<Route exact path="/senators">
-								<Senators senatorList={senatorList} />
-						</Route>
-						<Route exact path="/representatives">
-								<Representatives representativeList={representativeList} />
-						</Route>
-						<Route exact path={`/senators/:senatorName`}>
-							{user ? (
-								<SenatorDetails
-									senateTransactions={senateTransactions}
-									senatorList={senatorList}
-									currentSenator={currentSenator}
-									setCurrentSenator={setCurrentSenator}
-									currentSenatorTransactions={currentSenatorTransactions}
-									setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-									movedStocks={movedStocks}
-									setMovedStocks={setMovedStocks}
-								/>
-							) : (
-								<Redirect to="/login" />
-							)}
-						</Route>
-						<Route exact path={`/representatives/:representativeName`}>
-							{user ? (
-								<RepresentativeDetails
-									houseTransactions={houseTransactions}
-									currentRepresentative={currentRepresentative}
-									setCurrentRepresentative={setCurrentRepresentative}
-									currentRepresentativeTransactions={
-										currentRepresentativeTransactions
-									}
-									setCurrentRepresentativeTransactions={
-										setCurrentRepresentativeTransactions
-									}
-									movedStocks={movedStocks}
-									setMovedStocks={setMovedStocks}
-									representativeList={representativeList}
-								/>
-							) : (
-								<Redirect to="/login" />
-							)}
-						</Route>
-						<Route
-							exact
-							path="/representatives/:representativeName/:ticker/:date"
-						>
-							{user ? (
-							<StockByRep
-								houseTransactions={houseTransactions}
-								currentRepresentative={currentRepresentative}
-								setCurrentRepresentative={setCurrentRepresentative}
-								currentRepresentativeTransactions={
-									currentRepresentativeTransactions
-								}
-								setCurrentRepresentativeTransactions={
-									setCurrentRepresentativeTransactions
-								}
-								// movedStocks={moverStocks}
-								// setMovedStocks={setMoverStocks}
-								representativeList={representativeList}
-							/>
-							) : (
-								<Redirect to="/login" />
-							)}
-						</Route>
-						<Route
-							exact
-							path="/senators/:senatorName/:ticker/:month/:day/:year"
-						>
-							{user ? (
-							<StockBySenator
-								senateTransactions={senateTransactions}
-								senatorList={senatorList}
-								currentSenator={currentSenator}
-								setCurrentSenator={setCurrentSenator}
-								currentSenatorTransactions={currentSenatorTransactions}
-								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-							/>
-							) : (
-								<Redirect to="/login" />
-							)}
-						</Route>
-						<Route exact path="/myProfile/:myProfile">
-							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
-									<MyProfile currentUser={user} />
-							</ProtectedRoute>
-						</Route>
-						<Route exact path="/stocks/:ticker">
-							{user ? (
-							<StockDetails
-								senateTransactions={senateTransactions}
-								senatorList={senatorList}
-								houseTransactions={houseTransactions}
-								representativeList={representativeList}
-							/>
-							) : (
-								<Redirect to="/login" />
-							)}
-
-						</Route>
-					</div>
-				</div>
-			</main>
-		</>
-	)
+    <>
+      <main>
+        <NavBar
+          user={user}
+          authenticated={authenticated}
+          handleLogout={handleLogout}
+        />
+        <div className="app-main-container">
+          <div className="app-side-menu">
+            <SideMenu />
+          </div>
+          <div className="app-main-content">
+            <Route exact path="/">
+              <Landing user={user} senateTrans={senateTransactions} />
+            </Route>
+            <Route exact path="/signup">
+              {user ? (
+                <Redirect to="/" />
+              ) : (
+                <SignUp handleSignupOrLogin={handleSignupOrLogin} />
+              )}
+            </Route>
+            <Route exact path="/login">
+              {user ? (
+                <Redirect to="/" />
+              ) : (
+                <Login handleSignupOrLogin={handleSignupOrLogin} />
+              )}
+            </Route>
+            <Route exact path="/users">
+              {user ? <Users /> : <Redirect to="/login" />}
+            </Route>
+            <Route exact path="/senators">
+              <Senators senatorList={senatorList} />
+            </Route>
+            <Route exact path="/representatives">
+              <Representatives representativeList={representativeList} />
+            </Route>
+            <Route exact path={`/senators/:senatorName`}>
+              {user ? (
+                <SenatorDetails
+                  senateTransactions={senateTransactions}
+                  senatorList={senatorList}
+                  currentSenator={currentSenator}
+                  setCurrentSenator={setCurrentSenator}
+                  currentSenatorTransactions={currentSenatorTransactions}
+                  setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+                  movedStocks={movedStocks}
+                  setMovedStocks={setMovedStocks}
+                />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route exact path={`/representatives/:representativeName`}>
+              {user ? (
+                <RepresentativeDetails
+                  houseTransactions={houseTransactions}
+                  currentRepresentative={currentRepresentative}
+                  setCurrentRepresentative={setCurrentRepresentative}
+                  currentRepresentativeTransactions={
+                    currentRepresentativeTransactions
+                  }
+                  setCurrentRepresentativeTransactions={
+                    setCurrentRepresentativeTransactions
+                  }
+                  movedStocks={movedStocks}
+                  setMovedStocks={setMovedStocks}
+                  representativeList={representativeList}
+                />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route
+              exact
+              path="/representatives/:representativeName/:ticker/:date"
+            >
+              {user ? (
+                <StockByRep
+                  houseTransactions={houseTransactions}
+                  currentRepresentative={currentRepresentative}
+                  setCurrentRepresentative={setCurrentRepresentative}
+                  currentRepresentativeTransactions={
+                    currentRepresentativeTransactions
+                  }
+                  setCurrentRepresentativeTransactions={
+                    setCurrentRepresentativeTransactions
+                  }
+                  // movedStocks={moverStocks}
+                  // setMovedStocks={setMoverStocks}
+                  representativeList={representativeList}
+                />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route
+              exact
+              path="/senators/:senatorName/:ticker/:month/:day/:year"
+            >
+              {user ? (
+                <StockBySenator
+                  senateTransactions={senateTransactions}
+                  senatorList={senatorList}
+                  currentSenator={currentSenator}
+                  setCurrentSenator={setCurrentSenator}
+                  currentSenatorTransactions={currentSenatorTransactions}
+                  setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+                />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route exact path="/myProfile/:myProfile">
+              <ProtectedRoute
+                authenticated={authenticated}
+                exact
+                path="/myProfile/:myProfile"
+              >
+                <MyProfile currentUser={user} />
+              </ProtectedRoute>
+            </Route>
+            
+              <Route
+                authenticated={authenticated}
+                exact
+                path="/UpdateProfile/Profile"
+              >
+				{user &&
+			<UpdateProfile currentUser={user} />}
+              </Route>
+        
+            <Route exact path="/stocks/:ticker">
+              {user ? (
+                <StockDetails
+                  senateTransactions={senateTransactions}
+                  senatorList={senatorList}
+                  houseTransactions={houseTransactions}
+                  representativeList={representativeList}
+                />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+          </div>
+        </div>
+      </main>
+    </>
+  );
 }
 
 export default App

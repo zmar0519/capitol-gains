@@ -6,19 +6,18 @@ import moon from "../../assets/Avatars/moon.png";
 // Assets
 
 // Services
-import { signup } from "../../services/userService";
+import { updateProfile } from "../../services/userService";
 
 // Components
 import AvatarSelection from "../AvatarSelection/AvatarSelection";
 
 const UpdateProfile = (props) => {
+    console.log(props)
   const [popup, setPopup] = useState(false);
   const history = useHistory();
   const [authError, setAuthError] = useState(false);
   const [formData, setFormData] = useState({
-    handle: "",
-    email: "",
-    password: "",
+    handle: props.currentUser.handle,
     avatar: moon,
   });
 
@@ -33,17 +32,11 @@ const UpdateProfile = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signup(formData);
-      props.handleSignupOrLogin();
+      await updateProfile(props.currentUser._id,formData); // created in userService.js
+      //props.handleSignupOrLogin();
       history.push("/");
     } catch (error) {
       setAuthError(error.message);
-      setFormData({
-        handle: "",
-        email: "",
-        password: "",
-        avatar: moon,
-      });
     }
   };
 
@@ -70,43 +63,18 @@ const UpdateProfile = (props) => {
             required
             name="handle"
             type="text"
-            placeholder="New Username"
           />
-          <input
-            onChange={handleChange}
-            value={formData.email}
-            autoComplete="off"
-            required
-            name="email"
-            type="email"
-            placeholder="Email"
-          />
-
-          <input
-            onChange={handleChange}
-            value={formData.password}
-            autoComplete="off"
-            required
-            name="password"
-            type="password"
-            placeholder="Password"
-          />
-
           <button id="profilePic-button" type="button" onClick={handlePopup}>
             Change Profile Picture
           </button>
+
+          <div className="redirect-container">
+            {/* <className="redirect-link" to="/myProfile"> */}
+              <button id="submit-button" type="submit">
+                Submit Changes
+              </button>
+          </div>
         </form>
-
-        <div className="redirect-container">
-
-          <button id="submit-button" type="submit">
-            <Link className="redirect-link" to="/myProfile">
-            </Link>
-            Submit Changes
-          </button>
-
-
-        </div>
       </div>
     </div>
   );
