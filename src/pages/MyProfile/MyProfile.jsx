@@ -62,7 +62,16 @@ const MyProfile = (props) => {
 					<div className="profile-sen-rep-txt">Senators You Follow</div>
 					<div className="profile-inner-sen-rep-container">
 						{senators?.map((senator) => (
-							<div>
+							<div className="profile-each-rep-container">
+								<div className="profile-delete-container">
+									<button
+										onClick={() => props.handleDeleteSenator(senator._id)}
+										className="delete-button"
+									>
+										X
+									</button>
+								</div>
+
 								<Link to={`/senators/` + senator.name}>
 									<div className="profile-senator-container profile-senate-contain">
 										<div className="profile-head-shot">
@@ -75,12 +84,6 @@ const MyProfile = (props) => {
 										<div className="profile-senator-name">{senator.name}</div>
 									</div>
 								</Link>
-								<button
-									onClick={() => props.handleDeleteSenator(senator._id)}
-									className="delete-button"
-								>
-									Delete from watchlist!
-								</button>
 							</div>
 						))}
 					</div>
