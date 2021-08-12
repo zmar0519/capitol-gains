@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import React from "react"
 import { Line } from "react-chartjs-2"
-import { findRange } from "../../services/stockApiService"
 import "../../pages/StockByRep/StockByRep.css"
 
 function Graph(props) {
