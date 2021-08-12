@@ -29,6 +29,12 @@ This application uses the following technologoy:
 * Git
 * GitHub
 
+## Screenshots
+|![Home Page](https://picsum.photos/750/500?grayscale
+) | ![Reps/Senators Page](https://i.imgur.com/ZvIy809.png)|
+|![Senator/Rep Portfolio Page](https://i.imgur.com/GByxvh7.png) | ![Individual Stock Graph](https://i.imgur.com/zXLVhuu.png) |
+|![Stock Page](https://i.imgur.com/DJQ12zK.png) | ![Sign Up Page](https://i.imgur.com/aWLNNk8.png) |
+
 # Project Roles
 Dylan Hammer - Git Commander and The Don of API
 
