@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Link, useHistory, withRouter } from "react-router-dom"
-import SideMenu from "../../components/SideMenu/SideMenu"
+import { Link, withRouter } from "react-router-dom"
 import { addSenToWatchlist, getUserSenators } from "../../services/senatorService"
 import "./SenatorDetails.css"
 
@@ -102,7 +101,7 @@ const SenatorDetails = (props) => {
 							})
 							setTimeout(() => {
 								getOwnership()
-							}, 1000); 
+							}, 300); 
 						}}
 					>
 						Add To WatchList
