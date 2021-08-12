@@ -37,3 +37,20 @@
 	width: 200px;
 	height: 200px;
 }
+
+.rep-link:hover {
+	background-image: url(../../assets/Flag/USA-Flag.svg.png);
+	background-size: cover;
+	opacity: 1;
+	margin: 0;
+}
+
+.rep-link:hover .rep-contain{
+	background-color: rgba(235, 224, 205, 0.7);
+	margin: 0;
+	padding: 25px;
+}
+.rep-link:hover .representative-name, .rep-link:hover .head-shot {
+	color: black;
+	opacity: 1;
+}

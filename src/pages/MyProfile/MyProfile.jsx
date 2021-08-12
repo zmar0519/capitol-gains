@@ -46,7 +46,7 @@ const MyProfile = (props) => {
 									</button>
 								</div>
 
-								<Link to={`/representatives/` + rep.name}>
+								<Link to={`/representatives/` + rep.name} className="rep-link">
 									<div className="profile-senator-container profile-senate-contain">
 										<div className="profile-head-shot">
 											<img
@@ -76,7 +76,7 @@ const MyProfile = (props) => {
 									</button>
 								</div>
 
-								<Link to={`/senators/` + senator.name}>
+								<Link to={`/senators/` + senator.name} className="rep-link">
 									<div className="profile-senator-container profile-senate-contain">
 										<div className="profile-head-shot">
 											<img

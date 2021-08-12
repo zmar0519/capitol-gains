@@ -91,7 +91,7 @@ const StockDetails = (props) => {
 							? props.representativeList.map(
 									(representative) =>
 										repsWithTrans.includes(representative.name) && (
-											<Link to={`/representatives/` + representative.name}>
+											<Link to={`/representatives/` + representative.name} className="rep-link">
 												<div className="profile-senator-container profile-senate-contain">
 													<div className="profile-head-shot">
 														<img
@@ -117,7 +117,7 @@ const StockDetails = (props) => {
 							props.senatorList.map(
 								(senator) =>
 									senateWithTrans.includes(senator.name) && (
-										<Link to={`/senators/` + senator.name}>
+										<Link to={`/senators/` + senator.name} className="rep-link">
 											<div className="profile-senator-container profile-senate-contain">
 												<div className="profile-head-shot">
 													<img
