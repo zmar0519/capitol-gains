@@ -18,7 +18,8 @@ function signup(user) {
 		.then((token) => {
 			tokenService.setToken(token)
 		})
-		.catch((err) => {})
+		.catch((err) => {
+		})
 }
 
 function getUser() {
@@ -41,7 +42,8 @@ function login(credentials) {
 			throw new Error("Bad Credentials")
 		})
 		.then(({ token }) => tokenService.setToken(token))
-		.catch((err) => {})
+		.catch((err) => {
+		})
 }
 
 export { signup, getUser, logout, login }

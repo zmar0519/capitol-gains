@@ -48,73 +48,73 @@ const SignUp = (props) => {
 	}
 
 	return (
-		<div className="signup-page">
-			{popup && (
-				<AvatarSelection
-					formData={formData}
-					handleChange={handleChange}
-					handlePopup={handlePopup}
-				/>
-			)}
+    <div className="signup-page">
+      {popup && (
+        <AvatarSelection
+          formData={formData}
+          handleChange={handleChange}
+          handlePopup={handlePopup}
+        />
+      )}
 
-			<div className="sign-upform-container">
-				<div className="signup-title-container">
-					<h1>Create an Account</h1>
-					{authError ? <h3>{authError}</h3> : <h3>Invest Like Politicians</h3>}
-				</div>
-				<form className="register-form" onSubmit={handleSubmit}>
-					<input
-						id="input-Username"
-						onChange={handleChange}
-						value={formData.handle}
-						autoComplete="off"
-						required
-						name="handle"
-						type="text"
-						placeholder="Username"
-					/>
-					<input
-						id="input-Email"
-						onChange={handleChange}
-						value={formData.email}
-						autoComplete="off"
-						required
-						name="email"
-						type="email"
-						placeholder="Email"
-					/>
+      <div className="sign-upform-container">
+        <div className="signup-title-container">
+          <h1>Create an Account</h1>
+          {authError ? <h3>{authError}</h3> : <h3>Invest Like Politicians</h3>}
+        </div>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <input
+            id="input-Username"
+            onChange={handleChange}
+            value={formData.handle}
+            autoComplete="off"
+            required
+            name="handle"
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            id="input-Email"
+            onChange={handleChange}
+            value={formData.email}
+            autoComplete="off"
+            required
+            name="email"
+            type="email"
+            placeholder="Email"
+          />
 
-					<input
-						id="input-Password"
-						onChange={handleChange}
-						value={formData.password}
-						autoComplete="off"
-						required
-						name="password"
-						type="password"
-						placeholder="Password"
-					/>
+          <input
+            id="input-Password"
+            onChange={handleChange}
+            value={formData.password}
+            autoComplete="off"
+            required
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
 
-					<button id="profilePic-button" type="button" onClick={handlePopup}>
-						Select a Profile Picture
-					</button>
+          <button id="profilePic-button" type="button" onClick={handlePopup}>
+            Select a Profile Picture
+          </button>
 
-					<button id="submit-signup-btn" type="submit">
-						SIGN UP
-					</button>
-				</form>
+          <button id="submit-signup-btn" type="submit">
+            SIGN UP
+          </button>
+        </form>
 
-				<div className="redirect-container">
-					<p>Already Signed Up?</p>
-					<Link className="redirect-link" to="/signin">
-						<p>
-							<strong>Sign In</strong>
-						</p>
-					</Link>
-				</div>
-			</div>
-		</div>
-	)
+        <div className="redirect-container">
+          <p>Already Signed Up?</p>
+          <Link className="redirect-link" to="/signin">
+            <p>
+              <strong>Sign In</strong>
+            </p>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SignUp

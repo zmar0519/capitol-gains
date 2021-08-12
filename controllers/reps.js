@@ -6,14 +6,14 @@ export { addToWatchlist, deleteFollowing }
 
 function deleteFollowing(req, res) {
 	User.findById(req.user._id)
-		.populate("reps")
-		.populate("senators")
-		.then((user) => {
-			user.reps = user.reps.filter((rep) => !rep._id.equals(req.params.id))
-			user.save()
-			const token = createJWT(user)
-			res.json({ token })
-		})
+	.populate("reps")
+	.populate("senators")
+	.then((user) => {
+		user.reps = user.reps.filter(rep => !rep._id.equals(req.params.id))
+		user.save()
+		const token = createJWT(user)
+		res.json({ token })
+	})
 }
 
 function addToWatchlist(req, res) {
@@ -27,17 +27,18 @@ function addToWatchlist(req, res) {
 			return rep._id
 		})
 		.then((repId) => {
-			User.findById(req.user._id).then((user) => {
+			User.findById(req.user._id)
+			.then((user) => {
 				if (user.reps.includes(repId) === false) {
 					user.reps.push(repId)
 					user.save()
 					User.findById(req.user._id)
-						.populate("senators")
-						.populate("reps")
-						.then((finalUser) => {
-							const token = createJWT(finalUser)
-							res.json({ token })
-						})
+					.populate("senators")
+					.populate("reps")
+					.then(finalUser => {
+						const token = createJWT(finalUser)
+						res.json({ token })
+					})
 				}
 				return
 			})
