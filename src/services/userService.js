@@ -9,6 +9,7 @@ function getAllUsers() {
 		{ mode: "cors" }
 	).then((res) => res.json())
 }
+
 function updateProfile(id, newUserData) {
 	console.log(id);
 	return fetch(`${BASE_URL}/${id}`, {
@@ -26,3 +27,27 @@ function updateProfile(id, newUserData) {
 	})
 }
 export { getAllUsers, updateProfile }
+
+
+export const deleteFollowing = (repId) => {
+	try {
+		return fetch(
+			`${BASE_URL}/${repId}`,
+			{
+				method: "DELETE",
+				headers: new Headers({
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${tokenService.getToken()}`,
+				}),
+			},
+			{ mode: "cors" }
+		)
+		.then((res) => {
+			if (res.ok) return res.json()
+			throw new Error("Bad Credentials")
+		})
+		.then(({ token }) => tokenService.setToken(token))
+	} catch (error) {
+		throw error
+	}
+}

@@ -42,18 +42,3 @@ export const updateFollowing = async (postId) => {
 		throw error
 	}
 }
-
-export const deleteFollowing = async (postId) => {
-	try {
-		await fetch(
-			`${BASE_URL}${postId}`,
-			{
-				method: "DELETE",
-				headers: { Authorization: "Bearer " + tokenService.getToken() },
-			},
-			{ mode: "cors" }
-		)
-	} catch (error) {
-		throw error
-	}
-}

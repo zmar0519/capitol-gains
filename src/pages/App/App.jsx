@@ -27,6 +27,7 @@ import * as representativeDoc from "../../Senator-Rep/Reps"
 import * as senatorDoc from "../../Senator-Rep/Senators"
 import { getUser, logout } from "../../services/authService"
 import SideMenu from "../../components/SideMenu/SideMenu"
+import { deleteFollowing } from "../../services/userService"
 import ProtectedRoute from "../../components/Misc/ProtectedRoute"
 
 const App = () => {
@@ -60,6 +61,12 @@ const App = () => {
 		}
 		return 0
 	}
+
+	const handleDeleteRep = async(repId) => {
+		await deleteFollowing(repId)
+		setUser({...user, reps: user.reps.filter(rep => rep._id !== repId)})
+	}
+
 
 	useEffect(() => {
 		async function getTransactions() {
@@ -120,156 +127,142 @@ const App = () => {
 	}
 
 	return (
-    <>
-      <main>
-        <NavBar
-          user={user}
-          authenticated={authenticated}
-          handleLogout={handleLogout}
-        />
-        <div className="app-main-container">
-          <div className="app-side-menu">
-            <SideMenu />
-          </div>
-          <div className="app-main-content">
-            <Route exact path="/">
-              <Landing user={user} senateTrans={senateTransactions} />
-            </Route>
-            <Route exact path="/signup">
-              {user ? (
-                <Redirect to="/" />
-              ) : (
-                <SignUp handleSignupOrLogin={handleSignupOrLogin} />
-              )}
-            </Route>
-            <Route exact path="/login">
-              {user ? (
-                <Redirect to="/" />
-              ) : (
-                <Login handleSignupOrLogin={handleSignupOrLogin} />
-              )}
-            </Route>
-            <Route exact path="/users">
-              {user ? <Users /> : <Redirect to="/login" />}
-            </Route>
-            <Route exact path="/senators">
-              <Senators senatorList={senatorList} />
-            </Route>
-            <Route exact path="/representatives">
-              <Representatives representativeList={representativeList} />
-            </Route>
-            <Route exact path={`/senators/:senatorName`}>
-              {user ? (
-                <SenatorDetails
-                  senateTransactions={senateTransactions}
-                  senatorList={senatorList}
-                  currentSenator={currentSenator}
-                  setCurrentSenator={setCurrentSenator}
-                  currentSenatorTransactions={currentSenatorTransactions}
-                  setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-                  movedStocks={movedStocks}
-                  setMovedStocks={setMovedStocks}
-                />
-              ) : (
-                <Redirect to="/login" />
-              )}
-            </Route>
-            <Route exact path={`/representatives/:representativeName`}>
-              {user ? (
-                <RepresentativeDetails
-                  houseTransactions={houseTransactions}
-                  currentRepresentative={currentRepresentative}
-                  setCurrentRepresentative={setCurrentRepresentative}
-                  currentRepresentativeTransactions={
-                    currentRepresentativeTransactions
-                  }
-                  setCurrentRepresentativeTransactions={
-                    setCurrentRepresentativeTransactions
-                  }
-                  movedStocks={movedStocks}
-                  setMovedStocks={setMovedStocks}
-                  representativeList={representativeList}
-                />
-              ) : (
-                <Redirect to="/login" />
-              )}
-            </Route>
+		<>
+			<main>
+				<NavBar
+					user={user}
+					authenticated={authenticated}
+					handleLogout={handleLogout}
+				/>
+				<div className="app-main-container">
+					<div className="app-side-menu">
+						<SideMenu />
+					</div>
+					<div className="app-main-content">
+						<Route exact path="/">
+							<Landing user={user} senateTrans={senateTransactions} />
+						</Route>
+						<Route exact path="/signup">
+							{user ? (
+								<Redirect to="/" />
+							) : (
+								<SignUp handleSignupOrLogin={handleSignupOrLogin} />
+							)}
+						</Route>
+						<Route exact path="/login">
+							{user ? (
+								<Redirect to="/" />
+							) : (
+								<Login handleSignupOrLogin={handleSignupOrLogin} />
+							)}
+						</Route>
+						<Route exact path="/users">
+							{user ? <Users /> : <Redirect to="/login" />}
+						</Route>
+						<Route exact path="/senators">
+								<Senators senatorList={senatorList} />
+						</Route>
+						<Route exact path="/representatives">
+								<Representatives representativeList={representativeList} />
+						</Route>
+						<Route exact path={`/senators/:senatorName`}>
+							{user && (
+								<SenatorDetails
+									senateTransactions={senateTransactions}
+									user={user}
+									senatorList={senatorList}
+									currentSenator={currentSenator}
+									setCurrentSenator={setCurrentSenator}
+									currentSenatorTransactions={currentSenatorTransactions}
+									setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+									movedStocks={movedStocks}
+									setMovedStocks={setMovedStocks}
+								/>
+							)}
+						</Route>
+						<Route exact path={`/representatives/:representativeName`}>
+							{authenticated && (
+								<RepresentativeDetails
+									houseTransactions={houseTransactions}
+									currentRepresentative={currentRepresentative}
+									setCurrentRepresentative={setCurrentRepresentative}
+									currentRepresentativeTransactions={
+										currentRepresentativeTransactions
+									}
+									setCurrentRepresentativeTransactions={
+										setCurrentRepresentativeTransactions
+									}
+									movedStocks={movedStocks}
+									setMovedStocks={setMovedStocks}
+									representativeList={representativeList}
+								/>
+							)}
+						</Route>
+						<Route
+							exact
+							path="/representatives/:representativeName/:ticker/:date"
+						>
+							{user && (
+							<StockByRep
+								houseTransactions={houseTransactions}
+								currentRepresentative={currentRepresentative}
+								setCurrentRepresentative={setCurrentRepresentative}
+								currentRepresentativeTransactions={
+									currentRepresentativeTransactions
+								}
+								setCurrentRepresentativeTransactions={
+									setCurrentRepresentativeTransactions
+								}
+								// movedStocks={moverStocks}
+								// setMovedStocks={setMoverStocks}
+								representativeList={representativeList}
+							/>
+							)}
+						</Route>
+						<Route
+							exact
+							path="/senators/:senatorName/:ticker/:month/:day/:year"
+						>
+							{user && (
+							<StockBySenator
+								senateTransactions={senateTransactions}
+								senatorList={senatorList}
+								currentSenator={currentSenator}
+								setCurrentSenator={setCurrentSenator}
+								currentSenatorTransactions={currentSenatorTransactions}
+								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+							/>)}
+						</Route>
+						<Route exact path="/myProfile/:myProfile">
+							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
+								<MyProfile currentUser={user}
+									handleDeleteRep={handleDeleteRep}
+								/>
+							</ProtectedRoute>
+						</Route>
             <Route
-              exact
-              path="/representatives/:representativeName/:ticker/:date"
-            >
-              {user ? (
-                <StockByRep
-                  houseTransactions={houseTransactions}
-                  currentRepresentative={currentRepresentative}
-                  setCurrentRepresentative={setCurrentRepresentative}
-                  currentRepresentativeTransactions={
-                    currentRepresentativeTransactions
-                  }
-                  setCurrentRepresentativeTransactions={
-                    setCurrentRepresentativeTransactions
-                  }
-                  // movedStocks={moverStocks}
-                  // setMovedStocks={setMoverStocks}
-                  representativeList={representativeList}
-                />
-              ) : (
-                <Redirect to="/login" />
-              )}
-            </Route>
-            <Route
-              exact
-              path="/senators/:senatorName/:ticker/:month/:day/:year"
-            >
-              {user ? (
-                <StockBySenator
-                  senateTransactions={senateTransactions}
-                  senatorList={senatorList}
-                  currentSenator={currentSenator}
-                  setCurrentSenator={setCurrentSenator}
-                  currentSenatorTransactions={currentSenatorTransactions}
-                  setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-                />
-              ) : (
-                <Redirect to="/login" />
-              )}
-            </Route>
-            <Route exact path="/myProfile/:myProfile">
-              <ProtectedRoute
-                authenticated={authenticated}
-                exact
-                path="/myProfile/:myProfile"
-              >
-                <MyProfile currentUser={user} />
-              </ProtectedRoute>
-            </Route>
-            
-              <Route
                 authenticated={authenticated}
                 exact
                 path="/UpdateProfile/Profile"
               >
 				{user &&
-			<UpdateProfile currentUser={user} />}
+			    <UpdateProfile currentUser={user} />}
               </Route>
-        
-            <Route exact path="/stocks/:ticker">
-              {user ? (
-                <StockDetails
-                  senateTransactions={senateTransactions}
-                  senatorList={senatorList}
-                  houseTransactions={houseTransactions}
-                  representativeList={representativeList}
-                />
-              ) : (
-                <Redirect to="/login" />
-              )}
-            </Route>
-          </div>
-        </div>
-      </main>
-    </>
-  );
+						<Route exact path="/stocks/:ticker">
+							{user && (
+							<StockDetails
+								senateTransactions={senateTransactions}
+								senatorList={senatorList}
+								houseTransactions={houseTransactions}
+								representativeList={representativeList}
+							/>
+							)}
+
+						</Route>
+					</div>
+				</div>
+			</main>
+		</>
 }
 
 export default App

@@ -15,6 +15,7 @@
 	width: 100px;
 	height: 100px;
 }
+
 .profile-senator-container {
 	display: flex;
 	flex-direction: column;
@@ -23,12 +24,14 @@
 	width: 150px;
 	height: 150px;
 }
+
 .profile-senate-contain {
 	max-width: 200px;
 	max-height: 200px;
 	min-width: 200px;
 	min-height: 200px;
 }
+
 .profile-senator-name {
 	font-size: 15px;
 	margin: 10px;
@@ -48,9 +51,6 @@ img {
 
 .profile-image {
 	width: 200px;
-}
-
-.profile-user-info {
 }
 
 .profile-senator-rep-container {
