@@ -32,6 +32,11 @@
 	margin-bottom: 15px;
 }
 
+#profilePic-button{
+	font-size: 14px;
+	background-color: white;
+}
+
 #login-btn{
 	padding: 6px;
 	font-family: "Yeseva One", cursive;
@@ -55,9 +60,11 @@
 #need-an-account{
 	padding:5px;
 	margin: 5px;
+	font-size: 15px;
 }
 
 #sign-up{
 	padding:5px;
 	margin: 0px;
+	font-size: 15px;
 }
