@@ -86,6 +86,10 @@
 	border-radius: 3px;
 }
 
+#purchase-ticker, #purchase-amount, #purchase-date, #purchase-type{
+	margin-bottom: 3px;
+}
+
 .transaction-container-purchase:hover {
 	background-color: rgb(66, 179, 96);
 }
