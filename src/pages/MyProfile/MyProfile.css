@@ -81,4 +81,36 @@ img {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 30px;
+}
+
+.profile-each-rep-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-delete-container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100%;
+	justify-content: right;
+	align-items: flex-end;
+	text-align: right;
+	margin: 0 0 -30px -30px;
+}
+
+.profile-delete-container button {
+	z-index: 100;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	text-align: center;
+	background-color: red;
+	color: white;
+}
+
+.profile-delete-container button:hover{
+	cursor: pointer;
+	background-color: white;
+	color: red;
 }
