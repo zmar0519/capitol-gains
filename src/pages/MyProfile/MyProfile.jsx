@@ -21,11 +21,15 @@ const MyProfile = (props) => {
 	return (
 		<div className="profile-page">
 			<div className="profile-user-info">
-				<img className="profile-image" src={avatar} alt="user avatar"></img>
-				<div className="profile-name">{handle}</div>
-				<Link to="/UpdateProfile/Profile">
-					<button classname="update-btn">Update Profile</button>
-				</Link>
+				<div className="profile-update-container">
+					<Link to="/UpdateProfile/Profile">
+						<button id="profile-update-btn">Edit</button>
+					</Link>
+				</div>
+				<div>
+					<img className="profile-image" src={avatar} alt="user avatar"></img>
+					<div className="profile-name">{handle}</div>
+				</div>
 			</div>
 			<div className="profile-senator-rep-container">
 				<div className="profile-sen-rep-container">
