@@ -158,7 +158,7 @@ const App = () => {
 								<Representatives representativeList={representativeList} />
 						</Route>
 						<Route exact path={`/senators/:senatorName`}>
-							{user ? (
+							{user && (
 								<SenatorDetails
 									senateTransactions={senateTransactions}
 									user={user}
@@ -170,8 +170,6 @@ const App = () => {
 									movedStocks={movedStocks}
 									setMovedStocks={setMovedStocks}
 								/>
-							) : (
-								<Redirect to="/login" />
 							)}
 						</Route>
 						<Route exact path={`/representatives/:representativeName`}>
@@ -234,15 +232,13 @@ const App = () => {
 							</ProtectedRoute>
 						</Route>
 						<Route exact path="/stocks/:ticker">
-							{user ? (
+							{user && (
 							<StockDetails
 								senateTransactions={senateTransactions}
 								senatorList={senatorList}
 								houseTransactions={houseTransactions}
 								representativeList={representativeList}
 							/>
-							) : (
-								<Redirect to="/login" />
 							)}
 
 						</Route>
