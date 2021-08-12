@@ -110,7 +110,7 @@ img {
 	justify-content: right;
 	align-items: flex-end;
 	text-align: right;
-	margin: 0 0 -30px -30px;
+	margin: 0 0 -35px 0;
 	border-color: rgb(32, 58, 95);
 }
 
@@ -152,5 +152,21 @@ img {
 
 #profile-update-btn:hover {
 	background-color: rgb(160, 54, 25);
+	opacity: 1;
+}
+
+.rep-link:hover {
+	background-image: url(../../assets/Flag/USA-Flag.svg.png);
+	background-size: cover;
+	opacity: 1;
+	margin: 0;
+}
+
+.rep-link:hover .profile-senate-contain{
+	background-color: rgba(235, 224, 205, 0.7);
+	margin: 0;
+}
+.rep-link:hover .profile-senator-name, .rep-link:hover .profile-head-shot {
+	color: black;
 	opacity: 1;
 }
