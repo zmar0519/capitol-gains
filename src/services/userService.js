@@ -51,3 +51,26 @@ export const deleteFollowing = (repId) => {
 		throw error
 	}
 }
+
+export const deleteFollowingSen = (senId) => {
+	try {
+		return fetch(
+			`${BASE_URL}/${senId}`,
+			{
+				method: "DELETE",
+				headers: new Headers({
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${tokenService.getToken()}`,
+				}),
+			},
+			{ mode: "cors" }
+		)
+		.then((res) => {
+			if (res.ok) return res.json()
+			throw new Error("Bad Credentials")
+		})
+		.then(({ token }) => tokenService.setToken(token))
+	} catch (error) {
+		throw error
+	}
+}
