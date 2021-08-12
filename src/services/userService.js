@@ -32,7 +32,30 @@ export { getAllUsers, updateProfile }
 export const deleteFollowing = (repId) => {
 	try {
 		return fetch(
-			`${BASE_URL}/${repId}`,
+			`${BASE_URL}/reps/${repId}`,
+			{
+				method: "DELETE",
+				headers: new Headers({
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${tokenService.getToken()}`,
+				}),
+			},
+			{ mode: "cors" }
+		)
+		.then((res) => {
+			if (res.ok) return res.json()
+			throw new Error("Bad Credentials")
+		})
+		.then(({ token }) => tokenService.setToken(token))
+	} catch (error) {
+		throw error
+	}
+}
+
+export const deleteFollowingSen = (senId) => {
+	try {
+		return fetch(
+			`${BASE_URL}/senators/${senId}`,
 			{
 				method: "DELETE",
 				headers: new Headers({

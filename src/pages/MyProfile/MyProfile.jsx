@@ -4,7 +4,6 @@ import "./MyProfile.css"
 import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import { getUserSenators } from "../../services/senatorService"
-import { deleteFollowing } from "../../services/followingService"
 
 const MyProfile = (props) => {
 	console.log(props.currentUser)
@@ -71,7 +70,7 @@ const MyProfile = (props) => {
 									<div className="profile-senator-name">{senator.name}</div>
 								</div>
 							</Link>
-							<button className="delete-button">Delete from watchlist!</button>
+							<button onClick={() => props.handleDeleteSenator(senator._id)} className="delete-button">Delete from watchlist!</button>
 						</div>
 						))}
 					</div>
