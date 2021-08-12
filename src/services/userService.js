@@ -11,7 +11,6 @@ function getAllUsers() {
 }
 
 function updateProfile(id, newUserData) {
-	console.log(id);
 	return fetch(`${BASE_URL}/${id}`, {
     method: "PUT",
     headers: { 
@@ -20,7 +19,6 @@ function updateProfile(id, newUserData) {
     body: JSON.stringify(newUserData),
   })
   	.then((res) =>{
-			console.log("res in the service", res)
 		  return res.json()
 	  })
 		.then(({ token }) => tokenService.setToken(token))

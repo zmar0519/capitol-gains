@@ -8,15 +8,14 @@ import { getUserSenators } from "../../services/senatorService"
 const MyProfile = (props) => {
 	// const [userData, setUserData] = useState("")
 
-	// useEffect(() => {
-	// 	function grabSenRepData() {
-	// 		getUserSenators().then((data) => {
-	// 			setUserData(data)
-	// 			console.log(data.reps)
-	// 		})
-	// 	}
-	// 	grabSenRepData()
-	// }, [])
+	useEffect(() => {
+		function grabSenRepData() {
+			getUserSenators().then((data) => {
+				props.setUser(data)
+			})
+		}
+		grabSenRepData()
+	}, [])
 
 	const { _id, avatar, handle, reps, senators} = props.currentUser || {}
 

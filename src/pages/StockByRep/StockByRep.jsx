@@ -53,7 +53,6 @@ function StockByRep(props) {
 					allRepresentativesTransactions.push(transaction)
 			})
 			if (allRepresentativesTransactions) {
-				console.log(allRepresentativesTransactions)
 				await setCurrentTransactions(allRepresentativesTransactions)
 			}
 		}
@@ -62,7 +61,6 @@ function StockByRep(props) {
 
 	useEffect(() => {
 		async function getCurrentTransactionsDates() {
-			console.log("im the current transaction", currentTransactions)
 			let transactionDates = await currentTransactions?.map((transaction) => {
 				let date = transaction.transaction_date
 				let unfixed = date.split("-")
@@ -90,7 +88,6 @@ function StockByRep(props) {
 					dateString2,
 					props?.match?.params.ticker
 				)
-				console.log(stockResult)
 				setStock(stockResult)
 				if (!stockResult?.chart?.result[0]?.timestamp) return
 				const adjustStockTimes =

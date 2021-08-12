@@ -19,7 +19,6 @@ function signup(user) {
 			tokenService.setToken(token)
 		})
 		.catch((err) => {
-			console.log(err)
 		})
 }
 
@@ -44,7 +43,6 @@ function login(credentials) {
 		})
 		.then(({ token }) => tokenService.setToken(token))
 		.catch((err) => {
-			console.log(err)
 		})
 }
 
