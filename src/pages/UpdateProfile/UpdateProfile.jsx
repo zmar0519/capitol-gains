@@ -12,7 +12,6 @@ import { updateProfile } from "../../services/userService";
 import AvatarSelection from "../AvatarSelection/AvatarSelection";
 
 const UpdateProfile = (props) => {
-    console.log(props)
   const [popup, setPopup] = useState(false);
   const history = useHistory();
   const [authError, setAuthError] = useState(false);

@@ -10,7 +10,6 @@ import loadingData from "../../assets/Lottie/lf30_editor_hrnlpjer.json"
 import LoadingAnimation from "../../components/Misc/LoadingAnimation"
 
 const StockDetails = (props) => {
-	console.log(props)
 	const [stock, setStock] = useState([])
 	const [stockTimes, setStockTimes] = useState([])
 	const [stockPrices, setStockPrices] = useState([])
@@ -26,7 +25,6 @@ const StockDetails = (props) => {
 					dateString2,
 					props?.match?.params.ticker
 				)
-				console.log(stockResult)
 				setStock(stockResult)
 				if (!stockResult?.chart?.result[0]?.timestamp) return
 				const adjustStockTimes =
@@ -51,7 +49,6 @@ const StockDetails = (props) => {
 					!sortReps.includes(transaction.representative)
 				) {
 					sortReps.push(transaction.representative)
-					console.log(sortReps)
 				}
 			})
 			setRepsWithTrans(sortReps)
@@ -64,7 +61,6 @@ const StockDetails = (props) => {
 					!sortSenate.includes(transaction.representative)
 				) {
 					sortSenate.push(transaction.senator)
-					console.log(sortSenate)
 				}
 			})
 			setSenateWithTrans(sortSenate)

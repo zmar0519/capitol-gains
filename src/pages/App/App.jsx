@@ -248,6 +248,7 @@ const App = () => {
 						<Route exact path="/myProfile/:myProfile">
 							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
 								<MyProfile currentUser={user}
+									setUser={setUser}
 									handleDeleteRep={handleDeleteRep}
 									handleDeleteSenator={handleDeleteSenator}
 								/>

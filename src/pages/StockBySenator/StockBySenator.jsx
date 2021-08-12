@@ -17,7 +17,6 @@ function StockBySenator(props) {
 	const [percent, setPercent] = useState(null)
 	const [epoch, setEpoch] = useState("")
 
-	console.log(props)
 	useEffect(() => {
 		async function getPercent() {
 			if (stockPrices) {
@@ -56,7 +55,6 @@ function StockBySenator(props) {
 					allSenatorsTransactions.push(transaction)
 			})
 			if (allSenatorsTransactions) {
-				console.log(allSenatorsTransactions)
 				setCurrentTransactions(allSenatorsTransactions)
 			}
 		}
@@ -72,7 +70,6 @@ function StockBySenator(props) {
 				new Date(transactionDates).getTime() / 1000
 			)
 
-			console.log(newDate)
 			await setEpoch(newDate)
 			await setCurrentTransactionsDates(newDate)
 		}
@@ -88,7 +85,6 @@ function StockBySenator(props) {
 					dateString2,
 					props?.match?.params.ticker
 				)
-				console.log(stockResult)
 				setStock(stockResult)
 				if (!stockResult?.chart?.result[0]?.timestamp) return
 				const adjustStockTimes =

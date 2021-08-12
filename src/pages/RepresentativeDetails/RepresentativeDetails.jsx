@@ -16,8 +16,6 @@ const RepresentativeDetails = (props) => {
 				party: props.currentRepresentative[0].party,
 				state: props.currentRepresentative[0].state,
 				image: props.currentRepresentative[0].image,
-			}).then(() => {
-				props.updateUser()
 			})
 		}
 		function getOwnership() {
@@ -29,6 +27,7 @@ const RepresentativeDetails = (props) => {
 					}
 				})
 				setOwns(ownership)
+				props.updateUser()
 			})
 		}
 
