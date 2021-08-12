@@ -33,7 +33,7 @@
 	color: rgb(234, 188, 86);
 	font-family: "Yeseva One", cursive;
 	display: flex;
-	margin-left: 140px;
+	margin-left: 165px;
 }
 
 .my-profile,
@@ -105,7 +105,7 @@ a {
 
 .cg-logo {
 	position: absolute;
-	margin-left: -115px;
+	margin-left: -106px;
 	height: 200px;
 
 }
