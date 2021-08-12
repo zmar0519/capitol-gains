@@ -1,3 +1,14 @@
+.signup-page {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.title-container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
 .container {
 	display: flex;
 	flex-flow: column;
