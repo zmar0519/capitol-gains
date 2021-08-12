@@ -4,10 +4,11 @@ import "./MyProfile.css"
 import "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import CreateFollowing from "../../components/CreateComponents/CreateFollowing/CreateFollowing"
 import { getUserSenators } from "../../services/senatorService"
+import { deleteFollowing } from "../../services/followingService"
 
 const MyProfile = (props) => {
 	console.log(props.currentUser)
-	const [userData, setUserData] = useState("")
+	// const [userData, setUserData] = useState("")
 
 	// useEffect(() => {
 	// 	function grabSenRepData() {
@@ -32,6 +33,7 @@ const MyProfile = (props) => {
 					<div className="profile-sen-rep-txt">Representatives You Follow</div>
 					<div className="profile-inner-sen-rep-container">
 						{reps?.map((rep) => (
+							<div>
 							<Link to={`/representatives/` + rep.name}>
 								<div className="profile-senator-container profile-senate-contain">
 									<div className="profile-head-shot">
@@ -44,6 +46,8 @@ const MyProfile = (props) => {
 									<div className="profile-senator-name">{rep.name}</div>
 								</div>
 							</Link>
+									<button onClick={() => props.handleDeleteRep(rep._id)} className="delete-button">Delete from watchlist!</button>
+						</div>
 						))}
 					</div>
 				</div>
@@ -51,6 +55,7 @@ const MyProfile = (props) => {
 					<div className="profile-sen-rep-txt">Senators You Follow</div>
 					<div className="profile-inner-sen-rep-container">
 						{senators?.map((senator) => (
+							<div>
 							<Link to={`/senators/` + senator.name}>
 								<div className="profile-senator-container profile-senate-contain">
 									<div className="profile-head-shot">
@@ -63,6 +68,8 @@ const MyProfile = (props) => {
 									<div className="profile-senator-name">{senator.name}</div>
 								</div>
 							</Link>
+							<button className="delete-button">Delete from watchlist!</button>
+						</div>
 						))}
 					</div>
 				</div>
