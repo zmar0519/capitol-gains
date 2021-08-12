@@ -59,7 +59,7 @@ const SignUp = (props) => {
 
       <div className="sign-upform-container">
         <div className="signup-title-container">
-          <div>
+          <div id="two-titles">
             <h1 id="create-an-account">Create an Account</h1>
             {authError ? (
               <h3>{authError}</h3>
