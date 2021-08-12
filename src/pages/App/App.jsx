@@ -139,11 +139,14 @@ const App = () => {
 	return (
 		<>
 			<main>
-				<NavBar
-					user={user}
-					authenticated={authenticated}
-					handleLogout={handleLogout}
-				/>
+				<div className="app-nav">
+					<NavBar
+						user={user}
+						authenticated={authenticated}
+						handleLogout={handleLogout}
+					/>
+
+				</div>
 				<div className="app-main-container">
 					<div className="app-side-menu">
 						<SideMenu />
