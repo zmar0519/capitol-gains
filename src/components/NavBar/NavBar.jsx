@@ -30,11 +30,9 @@ const NavBar = ({ user, handleLogout, authenticated }) => {
 				) : (
 					<div className="nav-item-container">
 						<img className="cg-logo" src="https://i.imgur.com/QaswFqH.png" alt="Capiol Gains Logo" />
-						<div className="title">
 						<Link to="/">
-							<div className="title">Capitol Gains</div>
+							<div className="title-not-signed">Capitol Gains</div>
 						</Link>
-						</div>
 						<div className="right-nav-btn-container">
 							<div className="welcome">Welcome! Please Sign-in.</div>
 							<div className="log-in">

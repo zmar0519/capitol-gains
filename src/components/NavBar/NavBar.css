@@ -35,6 +35,14 @@
 	display: flex;
 	margin-left: 165px;
 }
+.title-not-signed {
+	font-size: 35px;
+	color: rgb(234, 188, 86);
+	font-family: "Yeseva One", cursive;
+	display: flex;
+	margin-left: 165px;
+
+}
 
 .my-profile,
 .log-out,
