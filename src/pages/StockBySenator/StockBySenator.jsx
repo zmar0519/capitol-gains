@@ -105,42 +105,59 @@ function StockBySenator(props) {
 	}, [epoch])
 
 	return (
-		<div className="main-stock-container">
-			<div className="stock-graph-container">
-				{!stock?.chart?.result[0]?.timestamp ? (
-					<div className="waiting-txt">
-						<LoadingAnimation loadingData={loadingData} />
-					</div>
-				) : (
-					<div className="stock-graph">
-						<Graph
-							time={stockTimes}
-							price={stockPrices}
-							ticker={props?.match.params.ticker}
-						/>
-					</div>
-				)}
-			</div>
-			<div className="percent">
-				{percent !== "NaN%" ? (
-					<div>{percent} Change Since Transaction</div>
-				) : (
-					""
-				)}
-			</div>
-			<div className="transaction-container">
-				{currentTransactions?.map((transaction) => (
-					<div key={transaction._id} className="transaction">
-						<div>{transaction?.senator}</div>
-						<div>{transaction.amount}</div>
-						<div>{transaction.ticker}</div>
-						<div>{transaction.type}</div>
-						<div>{transaction.transaction_date}</div>
-					</div>
-				))}
-			</div>
-		</div>
-	)
+    <div className="main-stock-container">
+      <div className="stock-graph-container">
+        {!stock?.chart?.result[0]?.timestamp ? (
+          <div className="waiting-txt">
+            <LoadingAnimation loadingData={loadingData} />
+          </div>
+        ) : (
+          <div className="stock-graph">
+            <Graph
+              time={stockTimes}
+              price={stockPrices}
+              ticker={props?.match.params.ticker}
+            />
+          </div>
+        )}
+      </div>
+      <div className="percent">
+        {percent !== "NaN%" ? (
+          <div className="percent-txt">
+            <strong>Change Since Transaction: {percent} </strong>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="transaction-container">
+        {currentTransactions?.map((transaction) => (
+          <div key={transaction._id} className="transaction">
+            <div>
+              <strong>Transaction Made By: </strong>
+              {transaction?.senator}
+            </div>
+            <div>
+              <strong>Transaction Amount: </strong>
+              {transaction.amount}
+            </div>
+            <div>
+              <strong>Ticker: </strong>
+              {transaction.ticker}
+            </div>
+            <div>
+              <strong>Transaction Type: </strong>
+              {transaction.type}
+            </div>
+            <div>
+              <strong>Transaction Date: </strong>
+              {transaction.transaction_date}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default withRouter(StockBySenator)

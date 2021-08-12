@@ -74,12 +74,14 @@
 .my-profile-btn:hover,
 .log-in-btn:hover,
 .sign-up-btn:hover {
+	cursor: pointer;
 	color: rgba(0, 40, 104, 1);
 	border-color: rgba(0, 40, 104, 1);
 	background-color: rgb(93, 141, 106);
 }
 
 .log-out-btn:hover {
+	cursor: pointer;
 	background-color: rgb(93, 141, 106);
 	border-color: rgba(0, 40, 104, 1);
 	color: rgba(0, 40, 104, 1);

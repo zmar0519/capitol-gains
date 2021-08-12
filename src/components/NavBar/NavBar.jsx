@@ -20,7 +20,7 @@ const NavBar = ({ user, handleLogout, authenticated }) => {
 								</NavLink>
 							</div>
 							<div>
-								<NavLink to="" onClick={handleLogout} className="log-out">
+								<NavLink to="/" onClick={handleLogout} className="log-out">
 									<button className="log-out-btn">Log out</button>
 								</NavLink>
 							</div>

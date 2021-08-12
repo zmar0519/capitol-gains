@@ -28,7 +28,8 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
 	try {
-		const user = await User.findOne({ email: req.body.email })
+		const user = await User.findOne({ email: req.body.email }).populate("senators").populate("reps")
+	
 		if (!user) return res.status(401).json({ error: "bad credentials" })
 		user.comparePassword(req.body.password, (error, isMatch) => {
 			if (isMatch) {

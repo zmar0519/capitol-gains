@@ -104,6 +104,16 @@ a {
 }
 
 .watchList-button:hover {
+	cursor: pointer;
 	background: rgb(32, 58, 95);
 	color: white;
+}
+
+.watchList-button-watched {
+	margin-top: 10px;
+	background: rgb(32, 58, 95);
+	border: 1px solid #292934;
+	border-radius: 8px;
+	padding: 10px;
+	width: 80%;
 }

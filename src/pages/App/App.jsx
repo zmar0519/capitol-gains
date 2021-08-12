@@ -27,10 +27,11 @@ import * as senatorDoc from "../../Senator-Rep/Senators"
 import { getUser, logout } from "../../services/authService"
 import SideMenu from "../../components/SideMenu/SideMenu"
 import { deleteFollowing } from "../../services/userService"
+import ProtectedRoute from "../../components/Misc/ProtectedRoute"
 
 const App = () => {
 	const history = useHistory()
-	const [user, setUser] = useState(authService.getUser())
+	const [user, setUser] = useState()
 
 	// const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
@@ -158,23 +159,16 @@ const App = () => {
 							{user ? <Users /> : <Redirect to="/login" />}
 						</Route>
 						<Route exact path="/senators">
-							{user ? (
 								<Senators senatorList={senatorList} />
-							) : (
-								<Redirect to="/login" />
-							)}
 						</Route>
 						<Route exact path="/representatives">
-							{user ? (
 								<Representatives representativeList={representativeList} />
-							) : (
-								<Redirect to="/login" />
-							)}
 						</Route>
 						<Route exact path={`/senators/:senatorName`}>
 							{user ? (
 								<SenatorDetails
 									senateTransactions={senateTransactions}
+									user={user}
 									senatorList={senatorList}
 									currentSenator={currentSenator}
 									setCurrentSenator={setCurrentSenator}
@@ -188,7 +182,7 @@ const App = () => {
 							)}
 						</Route>
 						<Route exact path={`/representatives/:representativeName`}>
-							{user ? (
+							{authenticated && (
 								<RepresentativeDetails
 									houseTransactions={houseTransactions}
 									currentRepresentative={currentRepresentative}
@@ -203,14 +197,13 @@ const App = () => {
 									setMovedStocks={setMovedStocks}
 									representativeList={representativeList}
 								/>
-							) : (
-								<Redirect to="/login" />
 							)}
 						</Route>
 						<Route
 							exact
 							path="/representatives/:representativeName/:ticker/:date"
 						>
+							{user && (
 							<StockByRep
 								houseTransactions={houseTransactions}
 								currentRepresentative={currentRepresentative}
@@ -225,11 +218,13 @@ const App = () => {
 								// setMovedStocks={setMoverStocks}
 								representativeList={representativeList}
 							/>
+							)}
 						</Route>
 						<Route
 							exact
 							path="/senators/:senatorName/:ticker/:month/:day/:year"
 						>
+							{user && (
 							<StockBySenator
 								senateTransactions={senateTransactions}
 								senatorList={senatorList}
@@ -237,24 +232,27 @@ const App = () => {
 								setCurrentSenator={setCurrentSenator}
 								currentSenatorTransactions={currentSenatorTransactions}
 								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-							/>
+							/>)}
 						</Route>
-						<Route exact path={`/myProfile/:myProfile`}>
-							{user ? (
+						<Route exact path="/myProfile/:myProfile">
+							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
 								<MyProfile currentUser={user}
-								handleDeleteRep={handleDeleteRep}
+									handleDeleteRep={handleDeleteRep}
 								/>
-							) : (
-								<Redirect to="/login" />
-							)}
+							</ProtectedRoute>
 						</Route>
 						<Route exact path="/stocks/:ticker">
+							{user ? (
 							<StockDetails
 								senateTransactions={senateTransactions}
 								senatorList={senatorList}
 								houseTransactions={houseTransactions}
 								representativeList={representativeList}
 							/>
+							) : (
+								<Redirect to="/login" />
+							)}
+
 						</Route>
 					</div>
 				</div>

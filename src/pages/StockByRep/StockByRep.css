@@ -4,7 +4,7 @@
 	align-items: center;
 	width: 85%;
 	min-height: 35vh;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .waiting-txt {
@@ -15,4 +15,22 @@
 .stock-graph {
 	width: 85%;
 	min-height: 35vh;
+}
+
+.lower-section{
+	display:flex;
+	flex-direction:column;
+}
+
+
+.percent-txt{
+	color: rgb(32,58,95);
+	margin-bottom: 25px;
+}
+
+.transaction-container{
+	display: flex;
+	flex-direction: column;
+	color: rgb(32,58,95);
+	font: 20px;
 }

@@ -7,19 +7,20 @@ import { getUserSenators } from "../../services/senatorService"
 import { deleteFollowing } from "../../services/followingService"
 
 const MyProfile = (props) => {
-	const [userData, setUserData] = useState("")
+	console.log(props.currentUser)
+	// const [userData, setUserData] = useState("")
 
-	useEffect(() => {
-		function grabSenRepData() {
-			getUserSenators().then((data) => {
-				setUserData(data)
-				// console.log(data.reps)
-			})
-		}
-		grabSenRepData()
-	}, [])
+	// useEffect(() => {
+	// 	function grabSenRepData() {
+	// 		getUserSenators().then((data) => {
+	// 			setUserData(data)
+	// 			console.log(data.reps)
+	// 		})
+	// 	}
+	// 	grabSenRepData()
+	// }, [])
 
-	const { _id, avatar, handle } = props.currentUser || {}
+	const { _id, avatar, handle, reps, senators} = props.currentUser || {}
 
 	return (
 		<div className="profile-page">
@@ -31,7 +32,7 @@ const MyProfile = (props) => {
 				<div className="profile-sen-rep-container">
 					<div className="profile-sen-rep-txt">Representatives You Follow</div>
 					<div className="profile-inner-sen-rep-container">
-						{userData?.reps?.map((rep) => (
+						{reps?.map((rep) => (
 							<div>
 							<Link to={`/representatives/` + rep.name}>
 								<div className="profile-senator-container profile-senate-contain">
@@ -53,7 +54,7 @@ const MyProfile = (props) => {
 				<div className="profile-sen-rep-container">
 					<div className="profile-sen-rep-txt">Senators You Follow</div>
 					<div className="profile-inner-sen-rep-container">
-						{userData?.senators?.map((senator) => (
+						{senators?.map((senator) => (
 							<div>
 							<Link to={`/senators/` + senator.name}>
 								<div className="profile-senator-container profile-senate-contain">

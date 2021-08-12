@@ -2,12 +2,27 @@ import React, { useState, useEffect } from "react"
 import { Link, useHistory, withRouter } from "react-router-dom"
 import SideMenu from "../../components/SideMenu/SideMenu"
 import { addRepToWatchlist } from "../../services/repService"
+import { getUserSenators } from "../../services/senatorService"
 import "./RepresentativeDetails.css"
 
 const RepresentativeDetails = (props) => {
 	// const [currentRepresentative, setCurrentRepresentative] = useState([])
 	// const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
 	// const [movedStocks, setMovedStocks] = useState([])
+	const [owns, setOwns] = useState(false)
+
+		function getOwnership() {
+			getUserSenators().then((data) => {
+				console.log(data)
+				let ownership = false
+				data.reps.forEach(rep => {
+					if(rep.name === props.match.params.representativeName) {
+						ownership = true
+					}
+				})
+				setOwns(ownership)
+			})
+		}
 
 	function compareDates(a, b) {
 		if (b.transaction_date < a.transaction_date) {
@@ -45,6 +60,7 @@ const RepresentativeDetails = (props) => {
 		if (allRepresentativesTransactions) {
 			allRepresentativesTransactions.sort(compareDates)
 			props.setCurrentRepresentativeTransactions(allRepresentativesTransactions)
+			getOwnership()
 		}
 	}
 	useEffect(() => {
@@ -74,20 +90,26 @@ const RepresentativeDetails = (props) => {
 				<div className="representative-name">
 					{props.currentRepresentative[0]?.name}
 				</div>
-				<button
-					type="button"
-					className="watchList-button"
-					onClick={() =>
-						addRepToWatchlist({
-							name: props.currentRepresentative[0].name,
-							party: props.currentRepresentative[0].party,
-							state: props.currentRepresentative[0].state,
-							image: props.currentRepresentative[0].image,
-						})
-					}
-				>
-					Add To WatchList
-				</button>
+				{!owns ?
+					<button
+						type="button"
+						className="watchList-button"
+						onClick={() => {
+							addRepToWatchlist({
+								name: props.currentRepresentative[0].name,
+								party: props.currentRepresentative[0].party,
+								state: props.currentRepresentative[0].state,
+								image: props.currentRepresentative[0].image,
+							})
+							setTimeout(() => {
+								getOwnership()
+							}, 1000); 
+						}}
+					>
+						Add To WatchList
+					</button>
+					: <button className="watchList-button-watched">Watching</button>	
+				}
 				<div className="stocks-held-container">
 					<div className="stocks-held-title-txt">Stocks Held</div>
 					<div className="each-stock-ticker-container">
