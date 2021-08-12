@@ -5,3 +5,6 @@
 	background-color: white;
 	height: 100%;
 }
+.pic {
+	background-image: url("../../assets/LandingPage/LandingPage.png")
+}

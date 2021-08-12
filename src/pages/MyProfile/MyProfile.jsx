@@ -26,7 +26,7 @@ const MyProfile = (props) => {
 				<img className="profile-image" src={avatar} alt="user avatar"></img>
 				<div className="profile-name">{handle}</div>
         <Link to="/UpdateProfile/Profile">
-          <button>Update Profile</button>
+          <button classname="update-btn">Update Profile</button>
         </Link>
 			</div>
 			<div className="profile-senator-rep-container">

@@ -1,14 +1,24 @@
+.login-page {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.login-title-container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
 .container {
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 }
 
-.label,
-.button {
+#login-Email, #login-Password{
 	margin-right: 0.5rem;
 }
 
-.inputContainer {
+#login-btn{
 	margin-bottom: 1rem;
 }

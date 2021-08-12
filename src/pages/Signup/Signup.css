@@ -1,6 +1,7 @@
 .signup-page {
 	display: flex;
 	height: 94vh;
+	font-family: "Yeseva One", cursive;
 }
 
 .form-container {
@@ -9,26 +10,25 @@
 	flex-direction: column;
 	align-items: center;
 	max-width: 450px;
+	font-family: "Yeseva One", cursive;
 }
 
-.form-container input,
-select,
-button {
-	padding: 16px;
-	font-size: 16px;
-	margin-bottom: 16px;
-	color: rgb(200, 200, 200);
-}
-
-.form-container input {
-	border: 1px solid #292934;
-	border-radius: 7px;
-	background: #0b0b12;
-}
-
-.title-container {
+#input-Username, #input-Email, 
+#input-Password, #profilePic-button{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 16px;
+	color: rgb(230,174,125);
+	border-radius: 8px;
+}
+
+.signup-title-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	align-items: flex-start;
 }
@@ -36,22 +36,25 @@ button {
 .register-form {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
 }
 
-#submit-button {
-	margin-top: 22px;
-	background: #7450e9;
-	border: none;
-	color: white;
-	font-weight: 600;
-	border-radius: 7px;
+#submit-signup-btn {
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 16px;
+	color: rgb(230,174,125);
+	border-radius: 8px;
+	width: 70%;
+	text-align: center;
+	font-family: "Yeseva One", cursive;
 }
 
 #profilePic-button {
 	border: 1px solid #292934;
 	border-radius: 7px;
-	background: #0b0b12;
+	background: rgb(230,174,125);
 	color: #757575;
 	text-align: left;
 }
