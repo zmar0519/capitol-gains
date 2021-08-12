@@ -6,7 +6,6 @@ import CreateFollowing from "../../components/CreateComponents/CreateFollowing/C
 import { getUserSenators } from "../../services/senatorService"
 
 const MyProfile = (props) => {
-	console.log(props.currentUser)
 	// const [userData, setUserData] = useState("")
 
 	// useEffect(() => {

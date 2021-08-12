@@ -1,7 +1,8 @@
 import { User } from "../models/user.js"
+import { createJWT } from "./auth.js"
+
 
 function index(req, res) {
-	console.log(req.user)
 	User.find({})
 	.populate("senators")
 	.populate("reps")
@@ -9,14 +10,15 @@ function index(req, res) {
 }
 
 const update = async (req, res) => {
-	console.log(req.user)
 	try{
 	const updatedUser = await User.findByIdAndUpdate(
 		req.params.id,
 		req.body,
 		{ new: true }
-	)
-	return res.status(200).json(updatedUser)
+		).populate("reps").populate("senators")
+		updatedUser.save()
+		const token = createJWT(updatedUser)
+		return res.status(200).json({token})
 } catch (error) {
 	throw error
 }

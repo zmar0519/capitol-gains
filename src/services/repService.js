@@ -13,6 +13,7 @@ export function addRepToWatchlist(repData) {
 	})
 		.then((res) => {
 			// Valid login if res.ok
+			console.log("this is in the service", res.json())
 			if (res.ok) return res.json()
 			throw new Error("Bad Credentials")
 		})

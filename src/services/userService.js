@@ -20,9 +20,12 @@ function updateProfile(id, newUserData) {
     body: JSON.stringify(newUserData),
   })
   	.then((res) =>{
+			console.log("res in the service", res)
 		  return res.json()
 	  })
-	.catch((err)=>{
+		.then(({ token }) => tokenService.setToken(token))
+
+		.catch((err)=>{
 		console.log(err)
 	})
 }

@@ -10,10 +10,18 @@ const RepresentativeDetails = (props) => {
 	// const [currentRepresentativeTransactions, setCurrentRepresentativeTransactions] = useState([])
 	// const [movedStocks, setMovedStocks] = useState([])
 	const [owns, setOwns] = useState(false)
-
+		function addRep(){
+			addRepToWatchlist({
+				name: props.currentRepresentative[0].name,
+				party: props.currentRepresentative[0].party,
+				state: props.currentRepresentative[0].state,
+				image: props.currentRepresentative[0].image,
+			}).then(() => {
+				props.updateUser()
+			})
+		}
 		function getOwnership() {
 			getUserSenators().then((data) => {
-				console.log(data)
 				let ownership = false
 				data.reps.forEach(rep => {
 					if(rep.name === props.match.params.representativeName) {
@@ -95,15 +103,10 @@ const RepresentativeDetails = (props) => {
 						type="button"
 						className="watchList-button"
 						onClick={() => {
-							addRepToWatchlist({
-								name: props.currentRepresentative[0].name,
-								party: props.currentRepresentative[0].party,
-								state: props.currentRepresentative[0].state,
-								image: props.currentRepresentative[0].image,
-							})
+							addRep()
 							setTimeout(() => {
 								getOwnership()
-							}, 1000); 
+							}, 300); 
 						}}
 					>
 						Add To WatchList
