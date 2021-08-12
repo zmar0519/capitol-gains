@@ -263,6 +263,7 @@ const App = () => {
 				</div>
 			</main>
 		</>
+	)
 }
 
 export default App
