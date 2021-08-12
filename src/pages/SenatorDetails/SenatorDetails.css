@@ -86,9 +86,16 @@
 	border-radius: 3px;
 }
 
-#purchase-ticker, #purchase-amount, #purchase-date, #purchase-type{
-	margin-bottom: 3px;
+.purchase-ticker, .purchase-amount, .purchase-date, .purchase-type{
+	margin-bottom: 5px;
+	color: rgb(26,28,47);
 }
+
+.purchase-ticker {
+	font-style: italic;
+	font-weight: 500;
+}
+
 
 .transaction-container-purchase:hover {
 	background-color: rgb(66, 179, 96);
@@ -107,6 +114,17 @@
 	background-color: rgba(204, 79, 52, 0.7);
 	border-radius: 3px;
 }
+
+.sale-ticker, .sale-amount, .sale-date, .sale-type{
+	margin-bottom: 5px;
+	color: rgb(26,28,47);
+}
+
+.sale-ticker {
+	font-style: italic;
+	font-weight: 500;
+}
+
 
 .transaction-container-sale:hover {
 	background-color: rgb(224, 95, 66);

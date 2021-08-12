@@ -139,12 +139,16 @@ const SenatorDetails = (props) => {
                     className="transaction-container-purchase"
                     key={eachTransaction._id}
                   >
-                    <div id="purchase-ticker">{eachTransaction.ticker}</div>
-                    <div id="purchase-amount">{eachTransaction.amount}</div>
-                    <div id="purchase-date">
+                    <div className="purchase-ticker">
+                      {eachTransaction.ticker}
+                    </div>
+                    <div className="purchase-amount">
+                      {eachTransaction.amount}
+                    </div>
+                    <div className="purchase-date">
                       {eachTransaction.transaction_date}
                     </div>
-                    <div id="purchase-type">{eachTransaction.type}</div>
+                    <div className="purchase-type">{eachTransaction.type}</div>
                   </div>
                 </Link>
               )
@@ -168,10 +172,12 @@ const SenatorDetails = (props) => {
                   }
                 >
                   <div className="transaction-container-sale">
-                    <div>{eachTransaction.ticker}</div>
-                    <div>{eachTransaction.amount}</div>
-                    <div>{eachTransaction.transaction_date}</div>
-                    <div>{eachTransaction.type}</div>
+                    <div className="sale-ticker">{eachTransaction.ticker}</div>
+                    <div className="sale-amount">{eachTransaction.amount}</div>
+                    <div className="sale-date">
+                      {eachTransaction.transaction_date}
+                    </div>
+                    <div className="sale-type">{eachTransaction.type}</div>
                   </div>
                 </Link>
               )
