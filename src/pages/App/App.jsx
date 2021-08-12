@@ -68,8 +68,8 @@ const App = () => {
 	}
 
 	const handleDeleteSenator = async(senId) => {
-		await deleteFollowing(senId)
-		setUser({...user, senator: user.senators.filter(senator => senator._id !== senId)})
+		await deleteFollowingSen(senId)
+		setUser({...user, senators: user.senators.filter(senator => senator._id !== senId)})
 	}
 
 	useEffect(() => {

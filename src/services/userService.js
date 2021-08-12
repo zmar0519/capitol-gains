@@ -32,7 +32,7 @@ export { getAllUsers, updateProfile }
 export const deleteFollowing = (repId) => {
 	try {
 		return fetch(
-			`${BASE_URL}/${repId}`,
+			`${BASE_URL}/reps/${repId}`,
 			{
 				method: "DELETE",
 				headers: new Headers({
@@ -55,7 +55,7 @@ export const deleteFollowing = (repId) => {
 export const deleteFollowingSen = (senId) => {
 	try {
 		return fetch(
-			`${BASE_URL}/${senId}`,
+			`${BASE_URL}/senators/${senId}`,
 			{
 				method: "DELETE",
 				headers: new Headers({

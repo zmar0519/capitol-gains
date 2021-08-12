@@ -12,8 +12,8 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.get("/", checkAuth, usersCtrl.index)
 router.put("/:id", checkAuth, usersCtrl.update)
-router.delete('/:id', checkAuth, repsCtrl.deleteFollowing)
-router.delete("/:id", checkAuth, senatorCtrl.deleteFollowingSen)
+router.delete('/senators/:id', checkAuth, senatorCtrl.deleteFollowingSen)
+router.delete('/reps/:id', checkAuth, repsCtrl.deleteFollowing)
 
 
 export { router }
