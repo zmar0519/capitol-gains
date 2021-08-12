@@ -73,9 +73,9 @@ const LogIn = (props) => {
 				</form>
 
 				<div className="redirect-container">
-					<p>Need an account?</p>
+					<p id="need-an-account">Need an account?</p>
 					<Link className="redirect-link" to="/signup">
-						<p>Sign Up</p>
+						<p id="sign-up">Sign Up</p>
 					</Link>
 				</div>
 			</div>
@@ -84,15 +84,3 @@ const LogIn = (props) => {
 }
 export default LogIn
 
-// import React from 'react'
-// import LoginForm from '../../components/Login/Login'
-// import styles from './Login.css'
-
-// const LoginPage = (props) => {
-//   return (
-//     <main className={styles.container}>
-//       <h1>Log In</h1>
-//       <LoginForm handleSignupOrLogin={props.handleSignupOrLogin}/>
-//     </main>
-//   )
-// }

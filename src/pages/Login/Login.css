@@ -8,6 +8,8 @@
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+	font-family: "Yeseva One", cursive;
+	color: rgb(32,58,95)
 }
 .container {
 	display: flex;
@@ -16,9 +18,53 @@
 }
 
 #login-Email, #login-Password{
-	margin-right: 0.5rem;
+	padding: 8px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: rgb(32,58,95);
+}
+
+#login-Email{
+	margin-bottom: 15px;
+}
+
+#login-Password{
+	margin-bottom: 15px;
+}
+
+#profilePic-button{
+	font-size: 14px;
+	background-color: white;
 }
 
 #login-btn{
-	margin-bottom: 1rem;
+	padding: 6px;
+	font-family: "Yeseva One", cursive;
+	color: rgb(32,58,95);
+	width: 40%;
+	border-radius: 5px;
+}
+
+.redirect-container, .redirect-link{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	font-family: "Yeseva One", cursive;
+	color: rgb(32,58,95);
+}
+
+.redirect-container{
+	padding:5px;
+}
+
+#need-an-account{
+	padding:5px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+#sign-up{
+	padding:5px;
+	margin: 0px;
+	font-size: 15px;
 }
