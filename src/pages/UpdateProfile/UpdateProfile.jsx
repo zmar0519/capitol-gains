@@ -54,7 +54,7 @@ const UpdateProfile = (props) => {
 			<div className="update-form-container">
 				<div className="update-title-container">
 					<h1 id="update-profile">Update Profile</h1>
-					{authError ? <h3>{authError}</h3> : <h3 id="sub2">Invest Like Politicians</h3>}
+					{authError ? <h3>{authError}</h3> : <h3 id="sub2"></h3>}
 				</div>
 				<form className="update-form" onSubmit={handleSubmit}>
 					<input id="update-name"
@@ -64,6 +64,7 @@ const UpdateProfile = (props) => {
 						required
 						name="handle"
 						type="text"
+						placeholder="Enter a New Handle"
 					/>
 					<button id="update-profilePic-button" type="button" onClick={handlePopup}>
 						Change Profile Picture
