@@ -12,7 +12,7 @@ const Representatives = (props) => {
 				</div>
 				<div className="all-representatives-container">
 					{props.representativeList.map((representative) => (
-						<Link to={`/representatives/` + representative.name}>
+						<Link to={`/representatives/` + representative.name} className="test">
 							<div className="representative-container rep-contain">
 								<div className="head-shot">
 									<img
