@@ -139,19 +139,22 @@ const App = () => {
 	return (
 		<>
 			<main>
-				<NavBar
-					user={user}
-					authenticated={authenticated}
-					handleLogout={handleLogout}
-				/>
+				<div className="app-nav">
+					<NavBar
+						user={user}
+						authenticated={authenticated}
+						handleLogout={handleLogout}
+					/>
+
+				</div>
 				<div className="app-main-container">
 					<div className="app-side-menu">
 						<SideMenu />
 					</div>
 					<div className="app-main-content">
-						<Route exact path="/">
-							<Landing user={user} senateTrans={senateTransactions} />
-						</Route>
+							<Route exact path="/">
+								<Landing user={user} senateTrans={senateTransactions} />
+							</Route>
 						<Route exact path="/signup">
 							{user ? (
 								<Redirect to="/" />

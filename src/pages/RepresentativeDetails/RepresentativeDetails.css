@@ -20,14 +20,14 @@
 	justify-content: center;
 	align-items: center;
 	width: inherit;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .each-stock-ticker-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin-top: 5px;
+	margin-top: 8px;
 }
 
 .stocks-held-title-txt {
@@ -38,9 +38,11 @@
 	margin-top: 10px;
 	background-color: rgba(113, 37, 15, 0.9);
 	border: 1px solid #292934;
+	color: white;
 	border-radius: 8px;
 	padding: 10px;
 	width: 80%;
+	font-size: 16px;
 }
 
 .each-stock-ticker {
@@ -64,7 +66,8 @@
 .purchase-txt,
 .sale-txt {
 	font-size: 25px;
-	margin: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .transaction-container-purchase {
@@ -74,7 +77,7 @@
 	align-items: center;
 	margin: 10px;
 	padding: 10px;
-	width: 200px;
+	width: 170px;
 	height: 100px;
 	border: 1px black solid;
 	background-color: rgba(93, 141, 106, 0.7);
@@ -87,7 +90,7 @@
 	align-items: center;
 	margin: 10px;
 	padding: 10px;
-	width: 200px;
+	width: 170px;
 	height: 100px;
 	border: 1px black solid;
 	background-color: rgba(204, 79, 52, 0.7);
@@ -102,13 +105,17 @@ a {
 	cursor: pointer;
 	background: rgb(32, 58, 95);
 	color: white;
+	border: 1px rgba(113, 37, 15, 1) solid;
 }
 
 .watchList-button-watched {
 	margin-top: 10px;
 	background: rgb(32, 58, 95);
 	border: 1px solid #292934;
+	color: white;
 	border-radius: 8px;
 	padding: 10px;
 	width: 80%;
+	font-size: 16px;
+
 }

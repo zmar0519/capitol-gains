@@ -47,6 +47,9 @@ button {
 	border: 1px solid #292934;
 	border-radius: 8px;
 	padding: 10px;
+	font-size: 16px;
+	margin: 10px 0;
+
 }
 
 .menu-items button:hover {
