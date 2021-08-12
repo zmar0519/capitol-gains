@@ -1,6 +1,7 @@
 .signup-page {
 	display: flex;
 	height: 94vh;
+	font-family: "Yeseva One", cursive;
 }
 
 .form-container {
@@ -9,21 +10,19 @@
 	flex-direction: column;
 	align-items: center;
 	max-width: 450px;
+	font-family: "Yeseva One", cursive;
 }
 
-.form-container input,
-select,
-button {
-	padding: 16px;
+#input-Username, #input-Email, 
+#input-Password, #profilePic-button{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px;
 	font-size: 16px;
 	margin-bottom: 16px;
 	color: rgb(230,174,125);
-}
-
-.form-container input {
-	border: 1px solid #292934;
-	border-radius: 7px;
-	background-color: rgb(191,158,134);
+	border-radius: 8px;
 }
 
 .signup-title-container {
@@ -40,19 +39,21 @@ button {
 	width: 100%;
 }
 
-#submit-button {
-	margin-top: 22px;
-	background: rgb(234,188,86);
-	border: none;
-	color: white;
-	font-weight: 600;
-	border-radius: 7px;
+#submit-signup-btn {
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 16px;
+	color: rgb(230,174,125);
+	border-radius: 8px;
+	width: 70%;
+	text-align: center;
+	font-family: "Yeseva One", cursive;
 }
 
 #profilePic-button {
 	border: 1px solid #292934;
 	border-radius: 7px;
-	background: rgb(191,158,134);
+	background: rgb(230,174,125);
 	color: #757575;
 	text-align: left;
 }
