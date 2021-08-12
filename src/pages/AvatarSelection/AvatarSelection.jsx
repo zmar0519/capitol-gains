@@ -4,6 +4,8 @@ import "./AvatarSelection.css"
 // Assets
 import moon from "../../assets/Avatars/moon.png"
 import man from "../../assets/Avatars/man.png"
+import diamondHands from "../../assets/Avatars/diamondHands.png"
+import stonks from "../../assets/Avatars/stonks.png"
 
 const AvatarSelection = (props) => {
 	return (
@@ -24,6 +26,8 @@ const AvatarSelection = (props) => {
 					>
 						<option value={moon}>Moon</option>
 						<option value={man}>Man</option>
+						<option value={diamondHands}>Diamond Hands</option>
+						<option value={stonks}>Stonks</option>
 					</select>
 					<button onClick={props.handlePopup} type="button">
 						Confirm
