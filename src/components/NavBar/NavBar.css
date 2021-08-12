@@ -32,6 +32,8 @@
 	font-size: 35px;
 	color: rgb(234, 188, 86);
 	font-family: "Yeseva One", cursive;
+	display: flex;
+	margin-left: 140px;
 }
 
 .my-profile,
@@ -41,7 +43,7 @@
 	display: flex;
 	align-items: center;
 	color: rgb(246, 224, 179);
-	margin: 15px 10px 0;
+	margin: 0 10px 0;
 }
 
 .my-profile-btn,
@@ -95,3 +97,21 @@
 a {
 	text-decoration: none;
 }
+
+.logo-home {
+	display: flex;
+	flex-direction: row;
+}
+
+.cg-logo {
+	position: absolute;
+	margin-left: -115px;
+	height: 200px;
+
+}
+
+/* .cg-logo-container {
+	height: 100%;
+	width: 100px;
+	position: absolute;
+} */
