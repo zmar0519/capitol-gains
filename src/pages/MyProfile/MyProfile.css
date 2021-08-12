@@ -5,21 +5,19 @@
 	align-items: center;
 }
 
+.profile-user-info {
+	margin-top: 30px;
+}
+
 .profile-name {
 	text-align: center;
 	width: 100%;
+	margin-top: 10px;
 	font-size: 30px;
+	font-family: "Yeseva One", cursive;
+
 }
 
-.update-btn {
-	color:black;
-	margin-top: 10px;
-	background-color: rgba(113, 37, 15, 0.9);
-	border: 1px solid #292934;
-	border-radius: 8px;
-	padding: 10px;
-	width: 80%;
-}
 
 .profile-head-shot {
 	width: 100px;
@@ -46,10 +44,23 @@
 	font-size: 15px;
 	margin: 10px;
 	text-align: center;
+	font-family: "Yeseva One", cursive;
+
 }
 
 .profile-sen-rep-container {
 	width: 50%;
+	border-top: 1px black solid;
+	padding: 20px 0;
+	height: 100%;
+}
+
+.profile-sen-rep-container:nth-child(1) {
+	border-right: 1px black solid;
+}
+.profile-sen-rep-container:nth-child(2) {
+	border-left: 1px black solid;
+	margin-left: -1px;
 }
 
 img {
@@ -66,13 +77,16 @@ img {
 .profile-senator-rep-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 50px;
 	width: 100%;
 }
 
 .profile-sen-rep-txt {
 	width: 100%;
 	text-align: center;
+	font-size: 20px;
+	font-family: "Yeseva One", cursive;
+
 }
 
 .profile-inner-sen-rep-container {
@@ -81,4 +95,62 @@ img {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 30px;
+}
+
+.profile-each-rep-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-delete-container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100%;
+	justify-content: right;
+	align-items: flex-end;
+	text-align: right;
+	margin: 0 0 -30px -30px;
+	border-color: rgb(32, 58, 95);
+}
+
+.profile-delete-container button {
+	z-index: 100;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	text-align: center;
+	background-color: rgb(160, 54, 25);
+	color: white;
+	opacity: .3;
+}
+
+.profile-delete-container button:hover{
+	cursor: pointer;
+	opacity: 1;
+}
+
+.profile-update-container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100%;
+	justify-content: right;
+	align-items: flex-end;
+	text-align: right;
+	margin: 0 0 0 0;
+}
+
+#profile-update-btn {
+	padding: 0;
+	height: fit-content;
+	width: fit-content;
+	margin: 0;
+	background-color: rgb(71, 90, 116);
+	color: white;
+	opacity: .5;
+}
+
+#profile-update-btn:hover {
+	background-color: rgb(160, 54, 25);
+	opacity: 1;
 }
