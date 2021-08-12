@@ -16,7 +16,6 @@ function StockByRep(props) {
 	const [percent, setPercent] = useState(null)
 	const [epoch, setEpoch] = useState()
 
-	console.log(props)
 	useEffect(() => {
 		async function getPercent() {
 			if (stockPrices) {

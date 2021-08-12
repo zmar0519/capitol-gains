@@ -61,7 +61,10 @@ const App = () => {
 		}
 		return 0
 	}
-
+	const updateUser = () => {
+		const user = getUser()
+		setUser(user)
+	}
 	const handleDeleteRep = async(repId) => {
 		await deleteFollowing(repId)
 		setUser({...user, reps: user.reps.filter(rep => rep._id !== repId)})
@@ -190,12 +193,14 @@ const App = () => {
 								<RepresentativeDetails
 									user={user}
 									setUser={setUser}
+									updateUser={updateUser}
 									houseTransactions={houseTransactions}
 									currentRepresentative={currentRepresentative}
 									setCurrentRepresentative={setCurrentRepresentative}
 									currentRepresentativeTransactions={
 										currentRepresentativeTransactions
 									}
+									handleSignupOrLogin={handleSignupOrLogin}
 									setCurrentRepresentativeTransactions={
 										setCurrentRepresentativeTransactions
 									}
@@ -254,7 +259,7 @@ const App = () => {
                 path="/UpdateProfile/Profile"
               >
 				{user &&
-			    <UpdateProfile currentUser={user} />}
+			    <UpdateProfile currentUser={user} handleSignupOrLogin={handleSignupOrLogin} />}
               </Route>
 						<Route exact path="/stocks/:ticker">
 							{user && (

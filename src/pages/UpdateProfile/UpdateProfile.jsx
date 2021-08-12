@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, Link, withRouter } from "react-router-dom";
 import "./UpdateProfile.css";
 import moon from "../../assets/Avatars/moon.png";
 
@@ -32,9 +32,11 @@ const UpdateProfile = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateProfile(props.currentUser._id, formData); // created in userService.js
+      await updateProfile(props.currentUser._id, formData); 
+      props.handleSignupOrLogin()// created in userService.js
       //props.handleSignupOrLogin();
-      history.push("/");
+      
+      history.push(`/myProfile/${props.currentUser._id}`);
     } catch (error) {
       setAuthError(error.message);
     }
