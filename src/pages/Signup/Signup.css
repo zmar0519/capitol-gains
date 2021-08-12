@@ -44,6 +44,11 @@
 	align-items: center;
 }
 
+.sub{
+	font-style: italic;
+	margin: 15px;
+}
+
 .register-form {
 	display: flex;
 	flex-direction: column;

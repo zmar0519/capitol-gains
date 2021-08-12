@@ -51,13 +51,13 @@ const UpdateProfile = (props) => {
 				/>
 			)}
 
-			<div className="form-container">
-				<div className="title-container">
-					<h1>Update Profile</h1>
-					{authError ? <h3>{authError}</h3> : <h3>Invest Like Politicians</h3>}
+			<div className="update-form-container">
+				<div className="update-title-container">
+					<h1 id="update-profile">Update Profile</h1>
+					{authError ? <h3>{authError}</h3> : <h3 id="sub2">Invest Like Politicians</h3>}
 				</div>
 				<form className="update-form" onSubmit={handleSubmit}>
-					<input
+					<input id="update-name"
 						onChange={handleChange}
 						value={formData.handle}
 						autoComplete="off"
@@ -65,13 +65,13 @@ const UpdateProfile = (props) => {
 						name="handle"
 						type="text"
 					/>
-					<button id="profilePic-button" type="button" onClick={handlePopup}>
+					<button id="update-profilePic-button" type="button" onClick={handlePopup}>
 						Change Profile Picture
 					</button>
 
 					<div className="redirect-container">
 						{/* <className="redirect-link" to="/myProfile"> */}
-						<button id="submit-button" type="submit">
+						<button id="update-button" type="submit">
 							Submit Changes
 						</button>
 					</div>

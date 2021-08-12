@@ -64,7 +64,7 @@ const SignUp = (props) => {
             {authError ? (
               <h3>{authError}</h3>
             ) : (
-              <h3 id="sub">Invest Like Politicians</h3>
+              <h3 className="sub">Invest Like Politicians</h3>
             )}
           </div>
           <form className="register-form" onSubmit={handleSubmit}>
