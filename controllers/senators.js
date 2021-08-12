@@ -2,7 +2,19 @@ import { Senator } from "../models/senator.js"
 import { User } from "../models/user.js"
 import { createJWT } from "./auth.js"
 
-export { addToWatchlist, getUserSenators }
+export { addToWatchlist, getUserSenators, deleteFollowingSen }
+
+function deleteFollowingSen(req, res) {
+	User.findById(req.user._id)
+	.populate("reps")
+	.populate("senators")
+	.then((user) => {
+		user.senators = user.senators.filter(senator => !senator._id.equals(req.params.id))
+		user.save()
+		const token = createJWT(user)
+		res.json({ token })
+	})
+}
 
 function addToWatchlist(req, res) {
 	Senator.findOne({ name: req.body.name })
