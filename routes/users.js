@@ -10,6 +10,8 @@ const router = Router()
 // /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get("/", checkAuth, usersCtrl.index)
+router.put("/:id", checkAuth, usersCtrl.update)
 router.delete('/:id', checkAuth, repsCtrl.deleteFollowing)
+
 
 export { router }

@@ -17,6 +17,7 @@ import Login from "../Login/Login"
 import Landing from "../Landing/Landing"
 import Users from "../Users/Users"
 import MyProfile from "../MyProfile/MyProfile"
+import UpdateProfile from "../UpdateProfile/UpdateProfile"
 
 // Services
 import * as houseApiService from "../../services/houseApiService"
@@ -239,6 +240,14 @@ const App = () => {
 								/>
 							</ProtectedRoute>
 						</Route>
+            <Route
+                authenticated={authenticated}
+                exact
+                path="/UpdateProfile/Profile"
+              >
+				{user &&
+			    <UpdateProfile currentUser={user} />}
+              </Route>
 						<Route exact path="/stocks/:ticker">
 							{user && (
 							<StockDetails
@@ -254,7 +263,6 @@ const App = () => {
 				</div>
 			</main>
 		</>
-	)
 }
 
 export default App
