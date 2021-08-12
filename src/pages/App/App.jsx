@@ -65,17 +65,14 @@ const App = () => {
 		const user = getUser()
 		setUser(user)
 	}
-	const handleDeleteRep = async (repId) => {
+	const handleDeleteRep = async(repId) => {
 		await deleteFollowing(repId)
-		setUser({ ...user, reps: user.reps.filter((rep) => rep._id !== repId) })
+		setUser({...user, reps: user.reps.filter(rep => rep._id !== repId)})
 	}
 
-	const handleDeleteSenator = async (senId) => {
+	const handleDeleteSenator = async(senId) => {
 		await deleteFollowingSen(senId)
-		setUser({
-			...user,
-			senators: user.senators.filter((senator) => senator._id !== senId),
-		})
+		setUser({...user, senators: user.senators.filter(senator => senator._id !== senId)})
 	}
 
 	useEffect(() => {
@@ -170,10 +167,10 @@ const App = () => {
 							{user ? <Users /> : <Redirect to="/login" />}
 						</Route>
 						<Route exact path="/senators">
-							<Senators senatorList={senatorList} />
+								<Senators senatorList={senatorList} />
 						</Route>
 						<Route exact path="/representatives">
-							<Representatives representativeList={representativeList} />
+								<Representatives representativeList={representativeList} />
 						</Route>
 						<Route exact path={`/senators/:senatorName`}>
 							{user && (
@@ -218,20 +215,20 @@ const App = () => {
 							path="/representatives/:representativeName/:ticker/:date"
 						>
 							{user && (
-								<StockByRep
-									houseTransactions={houseTransactions}
-									currentRepresentative={currentRepresentative}
-									setCurrentRepresentative={setCurrentRepresentative}
-									currentRepresentativeTransactions={
-										currentRepresentativeTransactions
-									}
-									setCurrentRepresentativeTransactions={
-										setCurrentRepresentativeTransactions
-									}
-									// movedStocks={moverStocks}
-									// setMovedStocks={setMoverStocks}
-									representativeList={representativeList}
-								/>
+							<StockByRep
+								houseTransactions={houseTransactions}
+								currentRepresentative={currentRepresentative}
+								setCurrentRepresentative={setCurrentRepresentative}
+								currentRepresentativeTransactions={
+									currentRepresentativeTransactions
+								}
+								setCurrentRepresentativeTransactions={
+									setCurrentRepresentativeTransactions
+								}
+								// movedStocks={moverStocks}
+								// setMovedStocks={setMoverStocks}
+								representativeList={representativeList}
+							/>
 							)}
 						</Route>
 						<Route
@@ -239,51 +236,42 @@ const App = () => {
 							path="/senators/:senatorName/:ticker/:month/:day/:year"
 						>
 							{user && (
-								<StockBySenator
-									senateTransactions={senateTransactions}
-									senatorList={senatorList}
-									currentSenator={currentSenator}
-									setCurrentSenator={setCurrentSenator}
-									currentSenatorTransactions={currentSenatorTransactions}
-									setCurrentSenatorTransactions={setCurrentSenatorTransactions}
-								/>
-							)}
+							<StockBySenator
+								senateTransactions={senateTransactions}
+								senatorList={senatorList}
+								currentSenator={currentSenator}
+								setCurrentSenator={setCurrentSenator}
+								currentSenatorTransactions={currentSenatorTransactions}
+								setCurrentSenatorTransactions={setCurrentSenatorTransactions}
+							/>)}
 						</Route>
 						<Route exact path="/myProfile/:myProfile">
-							<ProtectedRoute
-								authenticated={authenticated}
-								exact
-								path="/myProfile/:myProfile"
-							>
-								<MyProfile
-									currentUser={user}
+							<ProtectedRoute authenticated={authenticated} exact path="/myProfile/:myProfile">
+								<MyProfile currentUser={user}
 									setUser={setUser}
 									handleDeleteRep={handleDeleteRep}
 									handleDeleteSenator={handleDeleteSenator}
 								/>
 							</ProtectedRoute>
 						</Route>
-						<Route
-							authenticated={authenticated}
-							exact
-							path="/UpdateProfile/Profile"
-						>
-							{user && (
-								<UpdateProfile
-									currentUser={user}
-									handleSignupOrLogin={handleSignupOrLogin}
-								/>
-							)}
-						</Route>
+            <Route
+                authenticated={authenticated}
+                exact
+                path="/UpdateProfile/Profile"
+              >
+				{user &&
+			    <UpdateProfile currentUser={user} handleSignupOrLogin={handleSignupOrLogin} />}
+              </Route>
 						<Route exact path="/stocks/:ticker">
 							{user && (
-								<StockDetails
-									senateTransactions={senateTransactions}
-									senatorList={senatorList}
-									houseTransactions={houseTransactions}
-									representativeList={representativeList}
-								/>
+							<StockDetails
+								senateTransactions={senateTransactions}
+								senatorList={senatorList}
+								houseTransactions={houseTransactions}
+								representativeList={representativeList}
+							/>
 							)}
+
 						</Route>
 					</div>
 				</div>

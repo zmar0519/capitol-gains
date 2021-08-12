@@ -1,5 +1,6 @@
-import React from "react"
-import { Link, withRouter } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { Link, useHistory, withRouter } from "react-router-dom"
+import SideMenu from "../../components/SideMenu/SideMenu"
 import "./Senators.css"
 import SenHeader from "../../components/SenHeader/SenHeader"
 

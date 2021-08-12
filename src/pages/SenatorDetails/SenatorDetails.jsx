@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Link, withRouter } from "react-router-dom"
-import {
-	addSenToWatchlist,
-	getUserSenators,
-} from "../../services/senatorService"
+import { Link, useHistory, withRouter } from "react-router-dom"
+import SideMenu from "../../components/SideMenu/SideMenu"
+import { addSenToWatchlist, getUserSenators } from "../../services/senatorService"
 import "./SenatorDetails.css"
 
 const SenatorDetails = (props) => {
@@ -11,18 +9,20 @@ const SenatorDetails = (props) => {
 	// const [currentSenatorTransactions, setCurrentSenatorTransactions] = useState([])
 	const [owns, setOwns] = useState(false)
 
-	function getOwnership() {
-		getUserSenators().then((data) => {
-			let ownership = false
-			data.senators.forEach((sen) => {
-				if (sen.name === props.match.params.senatorName) {
-					console.log(props.match.params.senatorName)
-					ownership = true
-				}
+
+		function getOwnership() {
+			getUserSenators().then((data) => {
+				let ownership = false
+				data.senators.forEach(sen => {
+					if(sen.name === props.match.params.senatorName) {
+						console.log(props.match.params.senatorName)
+						ownership = true
+					}
+				})
+				setOwns(ownership)
 			})
-			setOwns(ownership)
-		})
-	}
+		}
+
 
 	function compareDates(a, b) {
 		if (b.transaction_date < a.transaction_date) {
@@ -89,7 +89,7 @@ const SenatorDetails = (props) => {
 					/>
 				</div>
 				<div className="senator-name">{props.currentSenator[0]?.name}</div>
-				{!owns ? (
+				{!owns ? 
 					<button
 						type="button"
 						className="watchList-button"
@@ -102,14 +102,13 @@ const SenatorDetails = (props) => {
 							})
 							setTimeout(() => {
 								getOwnership()
-							}, 300)
+							}, 1000); 
 						}}
 					>
 						Add To WatchList
 					</button>
-				) : (
-					<button className="watchList-button-watched">Watching</button>
-				)}
+					: <button className="watchList-button-watched">Watching</button>	
+				}
 				<div className="stocks-held-container">
 					<div className="stocks-held-title-txt">Stocks Held</div>
 					<div className="each-stock-ticker-container">

@@ -1,0 +1,8 @@
+.rep-header {
+	font-size: 12px;
+	font-family: "Yeseva One", cursive;
+	color: rgb(32, 58, 95);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
