@@ -152,9 +152,9 @@ const App = () => {
 						<SideMenu />
 					</div>
 					<div className="app-main-content">
-						<Route exact path="/">
-							<Landing user={user} senateTrans={senateTransactions} />
-						</Route>
+							<Route exact path="/">
+								<Landing user={user} senateTrans={senateTransactions} />
+							</Route>
 						<Route exact path="/signup">
 							{user ? (
 								<Redirect to="/" />

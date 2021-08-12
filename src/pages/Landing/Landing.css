@@ -7,10 +7,9 @@
 }
 
 #landing-img {
-	width: 101.65%;
+	width: 100%;
+	display: inline;
 	height: 100vh;
 	z-index: 2;
-	margin-left: -10px;
-	display: flex;
 	border-radius: 0;
 }
