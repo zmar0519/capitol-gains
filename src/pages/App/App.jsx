@@ -170,6 +170,7 @@ const App = () => {
 								<SenatorDetails
 									senateTransactions={senateTransactions}
 									user={user}
+									setUser={setUser}
 									senatorList={senatorList}
 									currentSenator={currentSenator}
 									setCurrentSenator={setCurrentSenator}
@@ -183,6 +184,8 @@ const App = () => {
 						<Route exact path={`/representatives/:representativeName`}>
 							{authenticated && (
 								<RepresentativeDetails
+									user={user}
+									setUser={setUser}
 									houseTransactions={houseTransactions}
 									currentRepresentative={currentRepresentative}
 									setCurrentRepresentative={setCurrentRepresentative}

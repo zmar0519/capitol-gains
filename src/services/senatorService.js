@@ -34,6 +34,7 @@ export function getUserSenators() {
 		),
 	})
 		.then((res) => {
+			console.log(res)
 			if (res.ok) return res.json()
 			throw new Error("Bad Credentials")
 		})

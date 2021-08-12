@@ -32,7 +32,7 @@ const UpdateProfile = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateProfile(props.currentUser._id,formData); // created in userService.js
+      await updateProfile(props.currentUser._id, formData); // created in userService.js
       //props.handleSignupOrLogin();
       history.push("/");
     } catch (error) {
