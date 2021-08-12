@@ -145,16 +145,15 @@ const App = () => {
 						authenticated={authenticated}
 						handleLogout={handleLogout}
 					/>
-
 				</div>
 				<div className="app-main-container">
 					<div className="app-side-menu">
 						<SideMenu />
 					</div>
 					<div className="app-main-content">
-							<Route exact path="/">
-								<Landing user={user} senateTrans={senateTransactions} />
-							</Route>
+						<Route exact path="/">
+							<Landing user={user} senateTrans={senateTransactions} />
+						</Route>
 						<Route exact path="/signup">
 							{user ? (
 								<Redirect to="/" />
@@ -179,7 +178,7 @@ const App = () => {
 							<Representatives representativeList={representativeList} />
 						</Route>
 						<Route exact path={`/senators/:senatorName`}>
-							{user && (
+							{user ? (
 								<SenatorDetails
 									senateTransactions={senateTransactions}
 									user={user}
@@ -192,10 +191,12 @@ const App = () => {
 									movedStocks={movedStocks}
 									setMovedStocks={setMovedStocks}
 								/>
+							) : (
+								<Redirect to="/login" />
 							)}
 						</Route>
 						<Route exact path={`/representatives/:representativeName`}>
-							{authenticated && (
+							{user ? (
 								<RepresentativeDetails
 									user={user}
 									setUser={setUser}
@@ -214,6 +215,8 @@ const App = () => {
 									setMovedStocks={setMovedStocks}
 									representativeList={representativeList}
 								/>
+							) : (
+								<Redirect to="/login" />
 							)}
 						</Route>
 						<Route
