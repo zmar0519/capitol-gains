@@ -1,23 +1,52 @@
-.signup-page {
+.update-page {
 	display: flex;
+	flex-flow: column;
+	align-items: center;
 	height: 94vh;
+	font-family: "Yeseva One", cursive;
+	color:rgb(32,58,95);
 }
 
-.form-container {
-	width: 65%;
+.update-form {
+	width: 60%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 450px;
+	font-family: "Yeseva One", cursive;
 }
 
-.form-container input,
-select,
-button {
-	padding: 16px;
-	font-size: 16px;
-	margin-bottom: 16px;
-	color: rgb(200, 200, 200);
+#update-name, #update-profilePic-button{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 8px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: rgb(32,58,95);
+	margin-bottom: 15px;
+	background-color: white;
+	max-width: 72%;
+}
+
+#update-profilePic-button{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 8px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: rgb(32,58,95);
+	margin-bottom: 15px;
+	background-color: white;
+	max-width: 72%;
+}
+
+#update-button {
+	padding: 6px;
+	font-family: "Yeseva One", cursive;
+	color: rgb(32,58,95);
+	border-radius: 5px;
 }
 
 .form-container input {
@@ -39,19 +68,4 @@ button {
 	width: 100%;
 }
 
-#submit-button {
-	margin-top: 22px;
-	background: #7450e9;
-	border: none;
-	color: white;
-	font-weight: 600;
-	border-radius: 7px;
-}
 
-#profilePic-button {
-	border: 1px solid #292934;
-	border-radius: 7px;
-	background: white;
-	color: #757575;
-	text-align: left;
-}
