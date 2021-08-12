@@ -1,10 +1,9 @@
 import styles from "./Landing.css"
+import landingImg from "../../assets/LandingPage/window.png"
 
 const Landing = ({ user }) => {
 	return (
-		<div className={styles.container}>
-			<div className="pic"></div>
-		</div>
+		<img id="landing-img" src={landingImg} alt="" />
 	)
 }
 

@@ -5,6 +5,12 @@
 	background-color: white;
 	height: 100%;
 }
-.pic {
-	background-image: url("../../assets/LandingPage/LandingPage.png")
+
+#landing-img {
+	width: 101.7%;
+	height: 100vh;
+	z-index: 2;
+	margin-left: -10px;
+	display: flex;
+	border-radius: 0;
 }
