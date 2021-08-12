@@ -6,6 +6,8 @@
 ## Getting Started
 Find the app available [here](https://capitol-gains.herokuapp.com/).
 
+You can view our public Trello Board [here](https://trello.com/b/QtYziefn/capitol-gains-unit-3-project).
+
 ### Background
 The stock market has been around for hundreds of years and many trace its origins back to Amsterdam in the 1600s when the East India Trading Co used the idea to raise money to pay dividends to other investors (this is the definition of a ponzi scheme).
 
