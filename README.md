@@ -1,4 +1,4 @@
-# Capitol Gain
+# Capitol Gains
 
 ![Logo Below](https://i.imgur.com/LHDKP2e.jpg)
 
