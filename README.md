@@ -21,6 +21,7 @@ Capitol Gains allows you to see the publicly released disclosures that have been
 This is the Unit 3 group project that is a culmination of all the skills we have learned since the beginning of the bootcamp.
 
 This application uses the following technologoy:
+* React
 * HTML
 * CSS
 * JavaScript
